@@ -84,19 +84,10 @@ gulp.task('js', function() {
     .transform(babelify, {presets: ["es2015"]})
     .bundle()
     .pipe(source('app.js'))
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('./docs'))
     .pipe(browserSync.stream())
     .pipe(buffer())
 });
-
-// gulp.task('js', () => {
-//   browserify(['./src/js/index.js'])
-//   .transform(babelify)
-//   .bundle()
-//   .pipe(source('app.js')
-//   .pipe(gulp.dest('build'))
-//   .pipe(buffer())
-// });
 
 gulp.task('moveJsFallbacks', function() {
    gulp.src('./src/js/fallbacks/**/*.js')
@@ -212,6 +203,9 @@ gulp.task('production', function(done) {
     done();
   });
 });
+// Short hands for `production`
+gulp.task('prod', ['production']);
+gulp.task('p',    ['production']);
 
 // Default task - references 'build' task
 gulp.task('default', ['build']);
