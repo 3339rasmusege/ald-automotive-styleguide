@@ -1,0 +1,7 @@
+{% extends 'layouts/default.html' %}
+{% import "macros/example-macro.html" as example %}
+{% block content %}
+  {% include "partials/Nav.html" %}
+  <h1>Index</h1>
+  Macro example: {{ example.greatMacro('😁') }}
+{% endblock %}
