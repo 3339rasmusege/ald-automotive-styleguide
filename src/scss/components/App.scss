@@ -1,11 +1,9 @@
 .App {
-  // ...
+  font-family: $font-family;
+  font-weight: 300;
 
-  // @media (min-width: 375px) {}
-  // @media (min-width: 414px) {}
-  // @media (min-width: 768px) {}
-  // @media (min-width: 1280px) {}
-  // @media (min-width: 1440px) {}
-  // @media (min-width: 1600px) {}
-  // @media (min-width: 1920px) {}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family;
+    font-weight: 700;
+  }
 }//.App
