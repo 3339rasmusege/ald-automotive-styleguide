@@ -21,11 +21,13 @@ var babelify = require('babelify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+var plumber = require('gulp-plumber');
 
 requireDir('./gulp-tasks');
 
 gulp.task('html', function() {
   return gulp.src(['./src/pages/**/*.+(html|nunjucks)'])
+    .pipe(plumber())
     .pipe(data(function() {
       return require('./src/data/data.json')
     }))
