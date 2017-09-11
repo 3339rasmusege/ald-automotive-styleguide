@@ -1,0 +1,23 @@
+{% macro large(text, modifierClass) %}
+  <h1 class='Heading Heading--large {{modifierClass}}'>
+    {{text}}
+  </h1>
+{% endmacro %}
+
+{% macro medium(text, modifierClass) %}
+  <h2 class='Heading Heading--medium {{modifierClass}}'>
+    {{text}}
+  </h2>
+{% endmacro %}
+
+{% macro small(text, modifierClass) %}
+  <h3 class='Heading Heading--small {{modifierClass}}'>
+    {{text}}
+  </h3>
+{% endmacro %}
+
+{% macro tiny(text, modifierClass) %}
+  <h4 class='Heading Heading--tiny {{modifierClass}}'>
+    {{text}}
+  </h4>
+{% endmacro %}

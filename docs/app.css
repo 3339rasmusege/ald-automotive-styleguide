@@ -410,9 +410,56 @@ template {
 .App {
   font-family: Antenna, sans-serif;
   font-weight: 300; }
-  .App h1, .App h2, .App h3, .App h4, .App h5, .App h6 {
-    font-family: Antenna, sans-serif;
-    font-weight: 700; }
+
+h1, h2, h3, h4, h5, h6,
+.Heading {
+  font-weight: 300;
+  font-family: Antenna, sans-serif; }
+
+.Heading--large {
+  font-size: 20px;
+  line-height: 25px; }
+
+.Heading--medium {
+  font-size: 18px;
+  line-height: 23px; }
+
+.Heading--small {
+  font-size: 16px;
+  line-height: 22px; }
+
+.Heading--tiny {
+  font-size: 14px;
+  line-height: 21px; }
+
+@media (min-width: 1300px) {
+  .Heading--large {
+    font-size: 28px;
+    line-height: 37px; }
+  .Heading--medium {
+    font-size: 20px;
+    line-height: 25px; }
+  .Heading--small {
+    font-size: 18px;
+    line-height: 23px; } }
+
+.Heading--white {
+  color: #fff; }
+
+.Heading--black {
+  color: #000; }
+
+.Heading--darkGray {
+  color: #5C5C5C; }
+
+.Heading--bold {
+  font-weight: 700; }
+
+.Heading--regular {
+  font-weight: 400; }
+
+.Heading--light {
+  font-weight: 300; }
 
 .Logo {
   width: 84px;
@@ -441,3 +488,51 @@ template {
 @media (min-width: 1300px) and (min-width: 1300px) {
   .Logo > a {
     width: 117px; } }
+
+.Paragraph {
+  font-weight: 300; }
+
+.Paragraph > a {
+  color: #2D96CD;
+  font-weight: 400;
+  text-decoration: none; }
+  .Paragraph > a:hover {
+    color: #38AFED; }
+
+.Paragraph--large {
+  font-size: 16px;
+  line-height: 26px; }
+
+.Paragraph--medium {
+  font-size: 15px;
+  line-height: 25px; }
+
+.Paragraph--small {
+  font-size: 12px;
+  line-height: 20px; }
+
+@media (min-width: 1300px) {
+  .Paragraph--large {
+    font-size: 20px;
+    line-height: 34px; }
+  .Paragraph--medium {
+    font-size: 18px;
+    line-height: 28px; } }
+
+.Paragraph--white {
+  color: #fff; }
+
+.Paragraph--black {
+  color: #000; }
+
+.Paragraph--darkGray {
+  color: #7C7C7C; }
+
+.Paragraph--bold {
+  font-weight: 700; }
+
+.Paragraph--regular {
+  font-weight: 400; }
+
+.Paragraph--light {
+  font-weight: 300; }

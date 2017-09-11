@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5, h6,
+.Heading {
+  font-weight: 300;
+  font-family: $font-family;
+}
+
+.Heading--large  { font-size: 20px; line-height: 25px }
+.Heading--medium { font-size: 18px; line-height: 23px; }
+.Heading--small  { font-size: 16px; line-height: 22px; }
+.Heading--tiny   { font-size: 14px; line-height: 21px; }
+
+@media #{$laptop} {
+  .Heading--large  { font-size: 28px; line-height: 37px; }
+  .Heading--medium { font-size: 20px; line-height: 25px; }
+  .Heading--small  { font-size: 18px; line-height: 23px; }
+}
+
+// Colors
+.Heading--white    { color: #fff; }
+.Heading--black    { color: #000; }
+.Heading--darkGray { color: #5C5C5C; }
+
+// Weights
+.Heading--bold    { font-weight: 700; }
+.Heading--regular { font-weight: 400; }
+.Heading--light   { font-weight: 300; }
