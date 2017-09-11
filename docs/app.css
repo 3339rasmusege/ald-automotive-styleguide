@@ -157,7 +157,7 @@ strong {
  */
 b,
 strong {
-  font-weight: bolder; }
+  font-weight: 700; }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -429,11 +429,89 @@ template {
 [hidden] {
   display: none; }
 
+[data-background-image] {
+  background-color: #E8E8E8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
 .App {
   font-family: Antenna, sans-serif;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.BigImage {
+  margin: 0;
+  position: relative;
+  min-height: 314px;
+  overflow: hidden; }
+
+.BigImage:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, black 0%, transparent 100%);
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.BigImage-text {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  padding: 34px;
+  padding-top: 30px; }
+
+.BigImage-heading {
+  margin: 0;
+  margin-bottom: 10px; }
+
+.BigImage-cta {
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400; }
+  .BigImage-cta:hover {
+    text-decoration: underline; }
+  .BigImage-cta:after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    background-image: url(/images/caret-right.png);
+    background-size: 6px;
+    background-repeat: no-repeat;
+    margin-left: .5em;
+    position: relative;
+    top: .07em; }
+
+@media (min-width: 768px) {
+  .BigImage {
+    min-height: 398px; }
+  .BigImage-text {
+    padding-top: 40px;
+    padding-left: 96px; } }
+
+@media (min-width: 1300px) {
+  .BigImage {
+    min-height: 625px; }
+  .BigImage-cta {
+    font-size: 15px; }
+  .BigImage-cta:after {
+    width: 7px;
+    height: 12px;
+    background-size: 7px;
+    top: .1em; }
+  .BigImage-text {
+    padding-top: 50px;
+    padding-left: 124px; } }
+
+@media (min-width: 1600px) {
+  .BigImage {
+    min-height: 700px; } }
 
 .Button, .Field, .Upload-input + .Upload-button {
   display: inline-block;
