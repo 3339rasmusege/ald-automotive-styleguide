@@ -32,6 +32,12 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 /* Sections
    ========================================================================== */
 /**
@@ -409,9 +415,11 @@ template {
 
 .App {
   font-family: Antenna, sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
-.Button {
+.Button, .Upload-input + .Upload-button {
   display: inline-block;
   height: 55px;
   text-align: center;
@@ -424,7 +432,7 @@ template {
   color: #fff;
   font-size: 15px;
   font-family: Antenna, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .025em;
   line-height: 50.875px;
   width: auto;
@@ -433,10 +441,12 @@ template {
   outline: 0;
   transition: background-color .2s ease; }
 
-.Button:hover,
-.Button:focus {
+.Button:hover, .Upload-input + .Upload-button:hover,
+.Button:focus,
+.Upload-input + .Upload-button:focus {
   background-color: #2DDBA8;
-  cursor: pointer; }
+  cursor: pointer;
+  box-shadow: inset 0 -2px 0 0 #21A57D; }
 
 .Button--fullWidth {
   width: 100%; }
@@ -639,7 +649,7 @@ template {
   display: none !important; }
 
 .selectric-Dropdown[class*="Dropdown--medium"] .label {
-  margin: 0 48px 0 14px;
+  margin: 0 48px 0 17px;
   font-size: 14px;
   line-height: 48px;
   height: 48px; }
@@ -650,7 +660,7 @@ template {
   line-height: 48px; }
 
 .selectric-Dropdown[class*="Dropdown--large"] .label {
-  margin: 0 53px 0 14px;
+  margin: 0 53px 0 20px;
   font-size: 14px;
   line-height: 53px;
   height: 53px; }
@@ -815,3 +825,53 @@ h1, h2, h3, h4, h5, h6,
 
 .Paragraph--light {
   font-weight: 300; }
+
+.Upload-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.Upload-input + .Upload-button {
+  width: 100%;
+  line-height: 55px;
+  background-color: #9B9B9B;
+  box-shadow: inset 0 -2px 0 0 #8D8D8D;
+  padding: 0 0 0 20px;
+  text-align: left;
+  position: relative; }
+
+.Upload-button:after {
+  content: "";
+  display: block;
+  width: 21px;
+  height: 21px;
+  background-image: url(/images/circular-arrow-up.png);
+  background-repeat: no-repeat;
+  background-size: 21px;
+  background-position: center right;
+  position: absolute;
+  top: 17px;
+  right: 17px; }
+
+.Upload-button.is-loaded:after {
+  background-image: url(/images/circular-cross.png); }
+
+.Upload-input:focus + .Upload-button,
+.Upload-input + .Upload-button:hover {
+  background-color: #BABABA;
+  box-shadow: inset 0 -2px 0 0 #A5A5A5;
+  cursor: pointer; }
+
+.Upload-list {
+  margin-top: 10px;
+  font-size: 14px; }
+
+.Upload-listRemove {
+  display: none;
+  text-decoration: underline;
+  color: #B1B1B1;
+  margin-left: .75em;
+  margin-bottom: 1em; }

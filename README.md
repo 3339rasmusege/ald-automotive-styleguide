@@ -1,6 +1,7 @@
 # ALD Automotive Styleguide
 
 Notice that the build folder is named 'docs'. This allows us to host it on Github Pages.
+Naming convention for components follows https://suitcss.github.io/
 
 ## Gulp tasks
 - `gulp s` starts development server

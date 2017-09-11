@@ -270,7 +270,7 @@ $selectric-inner-height-large:  $selectric-height-large - ($selectric-border-wid
 // Sizes
 .selectric-Dropdown[class*="Dropdown--medium"] {
   .label {
-    margin: 0 $selectric-inner-height-medium 0 $selectric-spacing;
+    margin: 0 $selectric-inner-height-medium 0 $selectric-spacing+3px;
     font-size: $selectric-font-size;
     line-height: $selectric-inner-height-medium;
     height: $selectric-inner-height-medium;
@@ -285,7 +285,7 @@ $selectric-inner-height-large:  $selectric-height-large - ($selectric-border-wid
 
 .selectric-Dropdown[class*="Dropdown--large"] {
   .label {
-    margin: 0 $selectric-inner-height-large 0 $selectric-spacing;
+    margin: 0 $selectric-inner-height-large 0 $selectric-spacing+6px;
     font-size: $selectric-font-size;
     line-height: $selectric-inner-height-large;
     height: $selectric-inner-height-large;

@@ -118,7 +118,7 @@ gulp.task('devServer', ['css', 'js'], function() {
       baseDir: "./docs",
     },
     notify: false,
-    gohstMode: false,
+    ghostMode: false,
     open: false
   });
   gulp.watch("src/**/*.scss", ['css']);

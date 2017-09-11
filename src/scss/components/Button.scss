@@ -11,7 +11,7 @@ $buttonHeight: 55px;
   color: #fff;
   font-size: 15px;
   font-family: $font-family;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: .025em;
   line-height: $buttonHeight*.925;
   width: auto;
@@ -25,6 +25,7 @@ $buttonHeight: 55px;
 .Button:focus {
   background-color: $lightGreen;
   cursor: pointer;
+  box-shadow: inset 0 -2px 0 0 #21A57D;
 }
 
 .Button--fullWidth {
