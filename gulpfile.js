@@ -36,6 +36,10 @@ gulp.task('html', function() {
         './src/templates'
       ]
     }))
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      minifyJS: true
+    }))
     .pipe(gulp.dest('./docs'))
 });
 
@@ -124,7 +128,8 @@ gulp.task('devServer', ['css', 'js'], function() {
       baseDir: "./docs",
     },
     notify: false,
-    gohstMode: false
+    gohstMode: false,
+    open: false
   });
   gulp.watch("src/**/*.scss", ['css']);
   gulp.watch("src/**/*.js", ['js']);
