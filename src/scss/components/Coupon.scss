@@ -1,4 +1,26 @@
+$couponWidth: 244px;
+
 .Coupon {
+  width: $couponWidth;
+  height: 98px;
+  overflow: hidden;
+  transition: height .2s ease;
+}
 
-}//.Coupon
+.Coupon-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  display: block;
+}
 
+.Field.Coupon-field {
+  margin-bottom: 14px;
+}
+
+.Coupon-button {
+  width: $couponWidth;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
