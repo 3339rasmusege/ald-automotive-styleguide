@@ -77,22 +77,14 @@ gulp.task('compressCss', function() {
     .pipe(gulp.dest('./docs'))
 });
 
-// gulp.task('js', function() {
-//   return gulp.src(['./src/js/index.js'])
-//     .pipe(concat('app.js'))
-//     .pipe(babel({presets: ['env']}))
-//     .pipe(gulp.dest('./docs'))
-//     .pipe(browserSync.stream())
-// });
-
 gulp.task('js', function() {
-  return browserify(['./src/js/index.js'])
-    .transform(babelify, {presets: ["es2015"]})
-    .bundle()
-    .pipe(source('app.js'))
+  return gulp.src([
+    './src/js/vendor/**/*.js',
+    './src/js/utilities/**/*.js',
+    './src/js/components/**/*.js'
+  ])
+    .pipe(concat('app.js'))
     .pipe(gulp.dest('./docs'))
-    .pipe(browserSync.stream())
-    .pipe(buffer())
 });
 
 gulp.task('moveJsFallbacks', function() {
