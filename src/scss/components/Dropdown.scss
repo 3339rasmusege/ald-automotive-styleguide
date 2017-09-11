@@ -331,5 +331,7 @@ $selectric-inner-height-large:  $selectric-height-large - ($selectric-border-wid
 
 // Bold label
 .selectric-Dropdown[class*="Dropdown--boldLabel"] {
-  .label { font-weight: 700; }
+  .label {
+    font-weight: 700;
+  }
 }

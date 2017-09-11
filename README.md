@@ -14,9 +14,8 @@ Notice that the build folder is named 'docs'. This allows us to host it on Githu
 - `gulp ru --name utilityName` removes a utility.
 
 ## Todos
-- favicon
 - button
 - form
 - upload field
 - Set up hosting
-- set up generic loading screen
+- index page

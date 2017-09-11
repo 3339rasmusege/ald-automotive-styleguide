@@ -411,6 +411,36 @@ template {
   font-family: Antenna, sans-serif;
   font-weight: 300; }
 
+.Button {
+  display: inline-block;
+  height: 55px;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  background-color: #00B681;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 15px;
+  font-family: Antenna, sans-serif;
+  font-weight: 300;
+  letter-spacing: .025em;
+  line-height: 50.875px;
+  width: auto;
+  padding: 0 55px;
+  box-shadow: inset 0 -2px 0 0 #008931;
+  outline: 0;
+  transition: background-color .2s ease; }
+
+.Button:hover,
+.Button:focus {
+  background-color: #2DDBA8;
+  cursor: pointer; }
+
+.Button--fullWidth {
+  width: 100%; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
