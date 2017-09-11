@@ -1,34 +1,80 @@
 {% extends 'layouts/default.html' %}
 {% block content %}
-  <h1>Components</h1>
 
-  {% include 'partials/Logo.html' %}
+  <style>
+    .Components { padding: 20px; }
 
-  {% import "macros/headings.html" as Heading %}
-  {{ Heading.large('Large heading') }}
-  {{ Heading.medium('Medium heading') }}
-  {{ Heading.small('Small heading') }}
-  {{ Heading.tiny('Tiny heading') }}
+    @media (min-width: 768px) {
+      .Components { padding: 40px; }
+    }
 
-  {{ Heading.large('Large gray heading', 'Heading--darkGray') }}
-  {{ Heading.medium('Medium gray heading', 'Heading--darkGray') }}
-  {{ Heading.small('Small gray heading', 'Heading--darkGray') }}
-  {{ Heading.tiny('Tiny gray heading', 'Heading--darkGray') }}
+    @media (min-width: 1200px) {
+      .Components {
+        padding: 0;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+    }
 
-  {{ Heading.large('Large gray and bold heading', 'Heading--darkGray Heading--bold') }}
-  {{ Heading.medium('Medium gray and bold heading', 'Heading--darkGray Heading--bold') }}
-  {{ Heading.small('Small gray and bold heading', 'Heading--darkGray Heading--bold') }}
-  {{ Heading.tiny('Tiny gray and bold heading', 'Heading--darkGray Heading--bold') }}
+    h1, h2, h3, h4, h5, h6,
+    .selectric-wrapper,
+    .Logo,
+    .Paragraph { margin-bottom: 1.5em; }
+  </style>
 
-  <select class="Dropdown Dropdown--hideFirstOption" tabindex="0">
-    <option value="modeller">Modeller</option>
-    <option value="Focus">Focus</option>
-    <option value="cmax">C-max</option>
-    <option value="kuga">Kuga</option>
-  </select>
+  <div class="Components">
 
-  <p class="Paragraph Paragraph--small Paragraph--darkGray">Privatleasing via Ford Privatleasing. <a href="#">Leasingydelserne</a> er faste og inklusive serviceaftale, finansierings- og leveringsomkostninger og moms. Leasingaftalen er godkendt af FDM. Positiv kreditgodkendelse forudsættes. Tilbuddet gælder, så længe lager haves – dog skal bilen indregistreres senest 30/9 2017.</p>
-  <p class="Paragraph Paragraph--medium Paragraph--darkGray">Privatleasing via Ford Privatleasing. <a href="#">Leasingydelserne</a> er faste og inklusive serviceaftale, finansierings- og leveringsomkostninger og moms. Leasingaftalen er godkendt af FDM. Positiv kreditgodkendelse forudsættes. Tilbuddet gælder, så længe lager haves – dog skal bilen indregistreres senest 30/9 2017.</p>
-  <p class="Paragraph Paragraph--large Paragraph--darkGray">Privatleasing via Ford Privatleasing. <a href="#">Leasingydelserne</a> er faste og inklusive serviceaftale, finansierings- og leveringsomkostninger og moms. Leasingaftalen er godkendt af FDM. Positiv kreditgodkendelse forudsættes. Tilbuddet gælder, så længe lager haves – dog skal bilen indregistreres senest 30/9 2017.</p>
+    <h1>Components</h1>
 
+    {% include 'partials/Logo.html' %}
+
+    {% import "macros/headings.html" as Heading %}
+    {{ Heading.large('Large heading') }}
+    {{ Heading.medium('Medium heading') }}
+    {{ Heading.small('Small heading') }}
+    {{ Heading.tiny('Tiny heading') }}
+
+    {{ Heading.large('Large gray heading', 'Heading--darkGray') }}
+    {{ Heading.medium('Medium gray heading', 'Heading--darkGray') }}
+    {{ Heading.small('Small gray heading', 'Heading--darkGray') }}
+    {{ Heading.tiny('Tiny gray heading', 'Heading--darkGray') }}
+
+    {{ Heading.large('Large gray and bold heading', 'Heading--darkGray Heading--bold') }}
+    {{ Heading.medium('Medium gray and bold heading', 'Heading--darkGray Heading--bold') }}
+    {{ Heading.small('Small gray and bold heading', 'Heading--darkGray Heading--bold') }}
+    {{ Heading.tiny('Tiny gray and bold heading', 'Heading--darkGray Heading--bold') }}
+
+    <p class="Paragraph Paragraph--small Paragraph--darkGray">Privatleasing via Ford Privatleasing. <a href="#">Leasingydelserne</a> er faste og inklusive serviceaftale, finansierings- og leveringsomkostninger og moms. Leasingaftalen er godkendt af FDM. Positiv kreditgodkendelse forudsættes. Tilbuddet gælder, så længe lager haves – dog skal bilen indregistreres senest 30/9 2017.</p>
+    <p class="Paragraph Paragraph--medium Paragraph--darkGray">Privatleasing via Ford Privatleasing. <a href="#">Leasingydelserne</a> er faste og inklusive serviceaftale, finansierings- og leveringsomkostninger og moms. Leasingaftalen er godkendt af FDM. Positiv kreditgodkendelse forudsættes. Tilbuddet gælder, så længe lager haves – dog skal bilen indregistreres senest 30/9 2017.</p>
+    <p class="Paragraph Paragraph--large Paragraph--darkGray">Privatleasing via Ford Privatleasing. <a href="#">Leasingydelserne</a> er faste og inklusive serviceaftale, finansierings- og leveringsomkostninger og moms. Leasingaftalen er godkendt af FDM. Positiv kreditgodkendelse forudsættes. Tilbuddet gælder, så længe lager haves – dog skal bilen indregistreres senest 30/9 2017.</p>
+
+    <select class="Dropdown Dropdown--small Dropdown--hideFirstOption" tabindex="0">
+      <option value="modeller">Small white dropdown</option>
+      <option value="Focus">Janella</option>
+      <option value="cmax">Beckeisha</option>
+      <option value="kuga">Camillou</option>
+    </select>
+
+    <select class="Dropdown Dropdown--medium Dropdown--hideFirstOption" tabindex="0">
+      <option value="modeller">Medium white dropdown</option>
+      <option value="Focus">Janella</option>
+      <option value="cmax">Beckeisha</option>
+      <option value="kuga">Camillou</option>
+    </select>
+
+    <select class="Dropdown Dropdown--large Dropdown--shadow Dropdown--lightBorder Dropdown--hideFirstOption" tabindex="0">
+      <option value="modeller">Large white dropdown with shadow</option>
+      <option value="Focus">Janella</option>
+      <option value="cmax">Beckeisha</option>
+      <option value="kuga">Camillou</option>
+    </select>
+
+    <select class="Dropdown Dropdown--medium Dropdown--blue Dropdown--boldLabel Dropdown--hideFirstOption" tabindex="0">
+      <option value="modeller">Medium blue dropdown</option>
+      <option value="Focus">Janella</option>
+      <option value="cmax">Beckeisha</option>
+      <option value="kuga">Camillou</option>
+    </select>
+
+  </div><!-- /.Components -->
 {% endblock %}

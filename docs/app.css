@@ -413,8 +413,7 @@ template {
 
 .selectric-wrapper {
   position: relative;
-  cursor: pointer;
-  margin: 20px; }
+  cursor: pointer; }
 
 .selectric-responsive {
   width: 100%; }
@@ -431,11 +430,11 @@ template {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 0 38px 0 14px;
+    margin: 0 41px 0 14px;
     font-size: 14px;
-    line-height: 38px;
+    line-height: 41px;
     color: #515151;
-    height: 38px;
+    height: 41px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -445,14 +444,14 @@ template {
     position: absolute;
     right: 0;
     top: 0;
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
+    width: 41px;
+    height: 41px;
+    line-height: 41px;
     background-color: #FFFFFF;
     color: #515151;
     text-align: center;
     font: 0/0 a;
-    *font: 20px/38px Lucida Sans Unicode, Arial Unicode MS, Arial; }
+    *font: 20px/41px Lucida Sans Unicode, Arial Unicode MS, Arial; }
     .selectric .button:after {
       content: "";
       position: absolute;
@@ -471,9 +470,11 @@ template {
 .selectric-focus .selectric {
   border-color: #9a9a9a; }
 
-.selectric-hover .selectric {
+.selectric-hover .selectric,
+.selectric-hover.selectric-Dropdown[class*="Dropdown--lightBorder"] .selectric {
   border-color: #5C5C5C; }
-  .selectric-hover .selectric .button:after {
+  .selectric-hover .selectric .button:after,
+  .selectric-hover.selectric-Dropdown[class*="Dropdown--lightBorder"] .selectric .button:after {
     border-top-color: #5C5C5C; }
 
 .selectric-open {
@@ -482,6 +483,8 @@ template {
     border-color: #5C5C5C; }
   .selectric-open .selectric-items {
     display: block; }
+  .selectric-open .selectric .button:after {
+    border-top-color: #5C5C5C; }
 
 .selectric-disabled {
   filter: alpha(opacity=50);
@@ -604,6 +607,58 @@ template {
 
 [class*="Dropdown--hideFirstOption"] .selectric-items ul li:first-child {
   display: none !important; }
+
+.selectric-Dropdown[class*="Dropdown--medium"] .label {
+  margin: 0 48px 0 14px;
+  font-size: 14px;
+  line-height: 48px;
+  height: 48px; }
+
+.selectric-Dropdown[class*="Dropdown--medium"] .button {
+  width: 48px;
+  height: 48px;
+  line-height: 48px; }
+
+.selectric-Dropdown[class*="Dropdown--large"] .label {
+  margin: 0 53px 0 14px;
+  font-size: 14px;
+  line-height: 53px;
+  height: 53px; }
+
+.selectric-Dropdown[class*="Dropdown--large"] .button {
+  width: 53px;
+  height: 53px;
+  line-height: 53px; }
+
+.selectric-Dropdown[class*="Dropdown--lightBorder"] .selectric {
+  border-color: #E5E5E5; }
+
+.selectric-Dropdown[class*="Dropdown--shadow"] .selectric {
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.125); }
+
+.selectric-Dropdown[class*="Dropdown--blue"] .selectric {
+  background: #2D96CD;
+  border: 0;
+  box-shadow: inset 0 -1px 0 0 #155E84;
+  transition: background-color .2s ease; }
+  .selectric-Dropdown[class*="Dropdown--blue"] .selectric:hover {
+    background-color: #1A6B95; }
+    .selectric-Dropdown[class*="Dropdown--blue"] .selectric:hover .button {
+      background-color: #1A6B95; }
+
+.selectric-Dropdown[class*="Dropdown--blue"] .label {
+  color: #fff; }
+
+.selectric-Dropdown[class*="Dropdown--blue"] .button {
+  background: #2D96CD;
+  box-shadow: inset 0 -1px 0 0 #155E84;
+  transition: background-color .2s ease; }
+
+.selectric-Dropdown[class*="Dropdown--blue"] .button:after {
+  border-top-color: #fff; }
+
+.selectric-Dropdown[class*="Dropdown--boldLabel"] .label {
+  font-weight: 700; }
 
 h1, h2, h3, h4, h5, h6,
 .Heading {
