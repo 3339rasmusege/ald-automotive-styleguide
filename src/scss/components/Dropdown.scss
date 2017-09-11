@@ -1,18 +1,19 @@
-$selectric-main-color:      #DDD !default;                                              // Color used in border
-$selectric-secondary-color: #BBB !default;                                              // Color used in button
-$selectric-text-color:      #444 !default;                                              // Color used in label
-$selectric-bg-color:        #F8F8F8 !default;                                           // Background color
+$selectric-main-color:      #CDCDCD !default;                                              // Color used in border
+$selectric-secondary-color: #515151 !default;                                              // Color used in button
+$selectric-text-color:      #515151 !default;                                              // Color used in label
+$selectric-bg-color:        #FFFFFF !default;                                           // Background color
 $selectric-btn-bg-color:    #F8f8f8 !default;                                           // Button background color
 $selectric-height:          40px !default;                                              // Outer height
-$selectric-spacing:         10px !default;                                              // Label left padding
+$selectric-spacing:         14px !default;                                              // Label left padding
 $selectric-border-width:    1px !default;                                               // Outer border width
-$selectric-border-radius:   0px !default;                                               // Border radius
+$selectric-border-radius:   4px !default;                                               // Border radius
 $selectric-inner-height:    $selectric-height - ($selectric-border-width * 2) !default; // Inner height
-$selectric-font-size:       12px !default;                                              // Font size
+$selectric-font-size:       14px !default;                                              // Font size
 
 .selectric-wrapper {
   position: relative;
   cursor: pointer;
+  margin: 20px;
 }
 
 .selectric-responsive {
@@ -25,6 +26,7 @@ $selectric-font-size:       12px !default;                                      
   background: $selectric-bg-color;
   position: relative;
   overflow: hidden;
+  transition: border .2s ease;
 
   .label {
     display: block;
@@ -47,14 +49,14 @@ $selectric-font-size:       12px !default;                                      
     width: $selectric-inner-height;
     height: $selectric-inner-height;
     line-height: $selectric-inner-height;
-    background-color: $selectric-btn-bg-color;
+    background-color: $selectric-bg-color;
     color: $selectric-secondary-color;
     text-align: center;
     font: 0/0 a;
     *font: 20px/#{$selectric-inner-height} Lucida Sans Unicode, Arial Unicode MS, Arial;
 
     &:after {
-      content: " ";
+      content: "";
       position: absolute;
       top: 0;
       right: 0;
@@ -64,8 +66,9 @@ $selectric-font-size:       12px !default;                                      
       width: 0;
       height: 0;
       border: 4px solid transparent;
-      border-top-color: $selectric-secondary-color;
+      border-top-color: #8A8A8A;
       border-bottom: none;
+      transition: border .2s ease;
     }
   }
 }
@@ -75,13 +78,11 @@ $selectric-font-size:       12px !default;                                      
 }
 
 .selectric-hover .selectric {
-  border-color: darken($selectric-main-color, 10%);
+  border-color: #5C5C5C;
 
   .button {
-    color: darken($selectric-secondary-color, 10%);
-
     &:after {
-      border-top-color: darken($selectric-secondary-color, 10%);
+      border-top-color: #5C5C5C;
     }
   }
 }
@@ -90,7 +91,7 @@ $selectric-font-size:       12px !default;                                      
   z-index: 9999;
 
   .selectric {
-    border-color: darken($selectric-main-color, 10%);
+    border-color: #5C5C5C;
   }
 
   .selectric-items {
@@ -166,9 +167,10 @@ $selectric-font-size:       12px !default;                                      
   top: 100%;
   left: 0;
   background: $selectric-bg-color;
-  border: 1px solid darken($selectric-main-color, 10%);
+  border: 0;
   z-index: -1;
-  box-shadow: 0 0 10px -6px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+  border-radius: $selectric-border-radius;
 
   .selectric-scroll {
     height: 100%;
@@ -184,16 +186,17 @@ $selectric-font-size:       12px !default;                                      
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: $selectric-font-size;
+    font-size: 13px;
     line-height: 20px;
     min-height: 20px;
   }
 
   li {
     display: block;
-    padding: 10px;
-    color: #666;
+    padding: 10px 14px;
+    color: #A9A9A9;
     cursor: pointer;
+    border-bottom: 1px solid #EAEAEA;
 
     &.selected {
       background: #E0E0E0;
@@ -201,13 +204,13 @@ $selectric-font-size:       12px !default;                                      
     }
 
     &.highlighted {
-      background: #D0D0D0;
-      color: #444;
+      background: $selectric-bg-color;
+      color: #A9A9A9;
     }
 
     &:hover {
-      background: #D5D5D5;
-      color: #444;
+      background: #F5F5F5;
+      color: #5C5C5C;
     }
   }
 
@@ -238,5 +241,14 @@ $selectric-font-size:       12px !default;                                      
     li {
       padding-left: 25px;
     }
+  }
+}
+
+// Hide the first item in the Dropdown
+// This is useful when the first item is also used as the label for the select
+// and you don't need the label after the user has selected an option
+[class*="Dropdown--hideFirstOption"] {
+  .selectric-items ul li:first-child {
+    display: none !important;
   }
 }
