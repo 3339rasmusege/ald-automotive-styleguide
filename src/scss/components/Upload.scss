@@ -33,10 +33,6 @@
   right: 17px;
 }
 
-.Upload-button.is-loaded:after {
-  background-image: url(/images/circular-cross.png);
-}
-
 .Upload-input:focus + .Upload-button,
 .Upload-input + .Upload-button:hover {
   background-color: #BABABA;
@@ -47,7 +43,7 @@
 .Upload-list {
   margin-top: 10px;
   font-size: 14px;
-  // span { color: #fff; }
+  span { color: #fff; }
 }
 
 .Upload-listRemove {

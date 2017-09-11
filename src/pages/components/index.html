@@ -20,7 +20,10 @@
     .selectric-wrapper,
     .Logo,
     .Paragraph,
-    .Button { margin-bottom: 1.5em; }
+    .Button,
+    .Upload,
+    form,
+    .Field { margin-bottom: 1.5em; }
   </style>
 
   <div class="Components">
@@ -86,5 +89,11 @@
       <div class="Upload-list"><span></span><a href="#" class="Upload-listRemove">Fjern</a></div>
     </div>
 
-  </div><!-- /.Components -->
+    <form style="background-color: #19315B; padding: 30px 30px 10px;">
+      <input class="Field" type="text" placeholder="Text field...">
+      <input class="Field" type="text" placeholder="Text field..." value="Filled out field">
+      <input class="Field is-error" type="text" placeholder="Text field..." value="Filled out field with error">
+    </form>
+
+  </div>
 {% endblock %}
