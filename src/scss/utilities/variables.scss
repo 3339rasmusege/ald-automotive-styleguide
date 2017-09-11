@@ -2,3 +2,17 @@
 $font-family: Antenna, sans-serif;
 
 // Colors
+
+// Screen sizes
+$smallScreen:    414px;
+$mediumScreen:   768px;
+$largeScreen:   1300px;
+$xLargeScreen:  1600px;
+$xxLargeScreen: 1900px;
+
+// Media queries
+$phone:        (only screen and (max-width:#{$smallScreen}));
+$tablet:       (only screen and (min-width:#{$mediumScreen}));
+$laptop:       (only screen and (min-width:#{$largeScreen}));
+$desktop:      (only screen and (min-width:#{$xLargeScreen}));
+$largeDesktop: (only screen and (min-width:#{$xxLargeScreen}));
