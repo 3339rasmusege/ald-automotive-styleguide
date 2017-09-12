@@ -87,6 +87,9 @@ $(function() {
 // Paragraph
 
 
+// Title
+
+
 ( function( $, window, document, undefined ){
 	$( '.Upload-input' ).each( function(){
 

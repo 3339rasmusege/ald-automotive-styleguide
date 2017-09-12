@@ -891,7 +891,7 @@ template {
     height: 41px;
     float: right;
     line-height: 41px;
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: none;
     color: #515151;
     padding: 0;
@@ -920,7 +920,7 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 300;
   font-family: Antenna, sans-serif; }
 
-.Heading--large {
+.Heading--large, .Title-heading {
   font-size: 20px;
   line-height: 25px; }
 
@@ -937,7 +937,7 @@ h1, h2, h3, h4, h5, h6,
   line-height: 21px; }
 
 @media (min-width: 1300px) {
-  .Heading--large {
+  .Heading--large, .Title-heading {
     font-size: 28px;
     line-height: 37px; }
   .Heading--medium {
@@ -947,7 +947,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: 18px;
     line-height: 23px; } }
 
-.Heading--white {
+.Heading--white, .Title-heading {
   color: #fff; }
 
 .Heading--black {
@@ -1041,6 +1041,51 @@ h1, h2, h3, h4, h5, h6,
 
 .Paragraph--light {
   font-weight: 300; }
+
+.Title {
+  background-color: #19315B;
+  text-align: center; }
+
+.Title-inner {
+  max-width: 320px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 130px; }
+
+.Title-heading {
+  margin-bottom: 18px;
+  padding: 0 20px; }
+
+.Title-subheading {
+  color: #BEBEBE;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 0 20px; }
+
+@media (min-width: 768px) {
+  .Title-inner {
+    padding-top: 60px;
+    padding-bottom: 60px; }
+  .Title-heading {
+    margin-bottom: 24px; }
+  .Title-subheading {
+    font-size: 16px;
+    line-height: 25px; } }
+
+@media (min-width: 1300px) {
+  .Title {
+    text-align: left;
+    height: 470px; }
+  .Title-inner {
+    padding-top: 100px;
+    padding-left: 130px;
+    padding-right: 130px;
+    max-width: 530px;
+    margin: 0; }
+  .Title-heading {
+    padding: 0; }
+  .Title-subheading {
+    padding: 0; } }
 
 .Upload-input {
   width: 0.1px;

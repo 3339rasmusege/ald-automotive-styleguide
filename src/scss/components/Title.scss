@@ -1,0 +1,44 @@
+.Title {
+  background-color: $darkBlue;
+  text-align: center;
+}
+
+.Title-inner {
+  max-width: 320px;
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 130px;
+}
+
+.Title-heading {
+  @extend .Heading--large;
+  @extend .Heading--white;
+  margin-bottom: 18px;
+  padding: 0 20px;
+}
+
+.Title-subheading {
+  color: #BEBEBE;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 0 20px;
+}
+
+@media #{$tablet} {
+  .Title-inner { padding-top: 60px; padding-bottom: 60px; }
+  .Title-heading { margin-bottom: 24px; }
+  .Title-subheading { font-size: 16px; line-height: 25px; }
+}
+
+@media #{$laptop} {
+  .Title { text-align: left; height: 470px; }
+  .Title-inner {
+    padding-top: 100px;
+    padding-left: 130px;
+    padding-right: 130px;
+    max-width: 530px;
+    margin: 0;
+  }
+  .Title-heading { padding: 0; }
+  .Title-subheading { padding: 0; }
+}
