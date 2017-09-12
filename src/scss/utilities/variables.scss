@@ -26,3 +26,7 @@ $tablet:       (only screen and (min-width:#{$mediumScreen}));
 $laptop:       (only screen and (min-width:#{$largeScreen}));
 $desktop:      (only screen and (min-width:#{$xLargeScreen}));
 $largeDesktop: (only screen and (min-width:#{$xxLargeScreen}));
+
+// Sizes
+$maxContentWidth: 1260px;
+$maxSiteWidth: 1440px;

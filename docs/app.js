@@ -56,7 +56,7 @@ $(function() {
 
   // Add class to Field when it has been filled out
   function addRemoveClasses(element) {
-    if( element.val() ) {
+      if( element.val() ) {
       element.addClass('is-filled')
     } else {
       element.removeClass('is-filled')
@@ -73,6 +73,9 @@ $(function() {
   })
 
 })();
+
+// Header
+
 
 // Heading
 

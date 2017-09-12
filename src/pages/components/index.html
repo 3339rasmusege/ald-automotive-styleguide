@@ -1,31 +1,6 @@
 {% extends 'layouts/default.html' %}
 {% block content %}
 
-  <style>
-    .Components { padding: 20px; }
-
-    @media (min-width: 768px) {
-      .Components { padding: 40px; }
-    }
-
-    @media (min-width: 1200px) {
-      .Components {
-        padding: 0;
-        max-width: 800px;
-        margin: 0 auto;
-      }
-    }
-
-    h1, h2, h3, h4, h5, h6,
-    .selectric-wrapper,
-    .Logo,
-    .Paragraph,
-    .Button,
-    .Upload,
-    form,
-    .Field { margin-bottom: 1.5em; }
-  </style>
-
   <div class="Components">
 
     <h1>Components</h1>
@@ -107,6 +82,8 @@
         <a class="BigImage-cta" href="#">Beregn pris her</a>
       </div>
     </figure>
+
+    {% include 'partials/Header.html' %}
 
   </div>
 {% endblock %}
