@@ -148,6 +148,22 @@ gulp.task('renameAssetRefs', function() {
     .pipe(gulp.dest('./docs/'))
 });
 
+// Rename references to css and js assets for GitHub Pages
+// Used by the `ghp` task
+gulp.task('renameAssetRefsForGitHubPages', function() {
+  return gulp.src('./docs/**/*.html')
+    .pipe(replace('http://localhost:3000/', '/ald-automotive-styleguide'))
+    .pipe(gulp.dest('./docs/'))
+});
+
+// Rename references to fonts in css files (for GitHub Pages)
+// Used by the `ghp` task
+gulp.task('renameFontRefsForGitHubPages', function() {
+  return gulp.src('./docs/*.css')
+    .pipe(replace('url(fonts', 'url(ald-automotive-styleguide/fonts/'))
+    .pipe(gulp.dest('./docs/'))
+});
+
 // Rename app.css for cache busting
 gulp.task('renameAppCss', function() {
   return gulp.src('./docs/app.css')
@@ -206,3 +222,12 @@ gulp.task('p',    ['production']);
 
 // Default task - references 'build' task
 gulp.task('default', ['build']);
+
+// Build for GitHub pages
+gulp.task('ghp', function(done) {
+  runSequence(
+    'production', 'renameAssetRefsForGitHubPages', 'renameFontRefsForGitHubPages', function() {
+      runSequence('removeUnwantedFiles')
+    done();
+  });
+});

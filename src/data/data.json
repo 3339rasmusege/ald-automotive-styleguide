@@ -1,5 +1,6 @@
 {
   "site": {
-    "title": "Ford Showroom"
+    "title": "Ford Showroom",
+    "basepath": "http://localhost:3000/"
   }
 }

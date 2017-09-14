@@ -1,5 +1,7 @@
 # ALD Automotive Styleguide
 
+https://rommel-dk.github.io/ald-automotive-styleguide/
+
 Notice that the build folder is named 'docs'. This allows us to host it on Github Pages.
 Naming convention for components follows https://suitcss.github.io/
 
@@ -7,6 +9,7 @@ Naming convention for components follows https://suitcss.github.io/
 - `gulp s` starts development server
 - `gulp build` builds for development
 - `gulp production` builds for production in the 'docs' folder
+- `gulp ghp` builds for deployment on GitHub pages in the 'docs' folder
 
 ## Generate tasks
 - `gulp gc --name ComponentName` generates css, js and html for a new component.
@@ -15,8 +18,5 @@ Naming convention for components follows https://suitcss.github.io/
 - `gulp ru --name utilityName` removes a utility.
 
 ## Todos
-- button
-- form
-- upload field
 - Set up hosting
 - index page
