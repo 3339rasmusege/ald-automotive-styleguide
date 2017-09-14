@@ -203,7 +203,13 @@ gulp.task('removeBuild', function() {
 // Build for development
 gulp.task('build', function(done) {
   runSequence(
-    'removeBuild', 'html', 'css', 'js', 'images', 'moveFonts', 'moveJsFallbacks', function() {
+    'removeBuild',
+    'html',
+    'css',
+    'js',
+    'images',
+    'moveFonts',
+    'moveJsFallbacks', function() {
     done();
   });
 });
@@ -211,9 +217,14 @@ gulp.task('build', function(done) {
 // Build for production
 gulp.task('production', function(done) {
   runSequence(
-    'removeBuild', 'build', 'compressCss', 'compressJs', 'compressHtml', 'moveFavicons', function() {
-    runSequence('cachebust', 'removeUnwantedFiles')
-    done();
+    'removeBuild',
+    'build',
+    'compressCss',
+    'compressJs',
+    'compressHtml',
+    'moveFavicons', function() {
+      runSequence('cachebust', 'removeUnwantedFiles')
+      done();
   });
 });
 // Short hands for `production`
@@ -226,8 +237,15 @@ gulp.task('default', ['build']);
 // Build for GitHub pages
 gulp.task('ghp', function(done) {
   runSequence(
-    'production', 'renameAssetRefsForGitHubPages', 'renameFontRefsForGitHubPages', function() {
-      runSequence('removeUnwantedFiles')
-    done();
+    'removeBuild',
+    'build',
+    'compressCss',
+    'compressJs',
+    'compressHtml',
+    'moveFavicons',
+    'renameAssetRefsForGitHubPages',
+    'renameFontRefsForGitHubPages', function() {
+      runSequence('cachebust', 'removeUnwantedFiles')
+      done();
   });
 });
