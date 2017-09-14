@@ -12,7 +12,7 @@
  *
  * Released on: March 10, 2017
  */
-.swiper-container {
+.Swiper {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -20,17 +20,17 @@
   /* Fix of Webkit flickering */
   z-index: 1;
 }
-.swiper-container-no-flexbox .swiper-slide {
+.swiper-container-no-flexbox .Swiper-slide {
   float: left;
 }
-.swiper-container-vertical > .swiper-wrapper {
+.swiper-container-vertical > .Swiper-wrapper {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
 }
-.swiper-wrapper {
+.Swiper-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
@@ -50,21 +50,21 @@
   box-sizing: content-box;
 }
 .swiper-container-android .swiper-slide,
-.swiper-wrapper {
+.Swiper-wrapper {
   -webkit-transform: translate3d(0px, 0, 0);
   -moz-transform: translate3d(0px, 0, 0);
   -o-transform: translate(0px, 0px);
   -ms-transform: translate3d(0px, 0, 0);
   transform: translate3d(0px, 0, 0);
 }
-.swiper-container-multirow > .swiper-wrapper {
+.swiper-container-multirow > .Swiper-wrapper {
   -webkit-box-lines: multiple;
   -moz-box-lines: multiple;
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.swiper-container-free-mode > .swiper-wrapper {
+.swiper-container-free-mode > .Swiper-wrapper {
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
   -ms-transition-timing-function: ease-out;
@@ -72,7 +72,7 @@
   transition-timing-function: ease-out;
   margin: 0 auto;
 }
-.swiper-slide {
+.Swiper-slide {
   -webkit-flex-shrink: 0;
   -ms-flex: 0 0 auto;
   flex-shrink: 0;
@@ -82,10 +82,10 @@
 }
 /* Auto Height */
 .swiper-container-autoheight,
-.swiper-container-autoheight .swiper-slide {
+.swiper-container-autoheight .Swiper-slide {
   height: auto;
 }
-.swiper-container-autoheight .swiper-wrapper {
+.swiper-container-autoheight .Swiper-wrapper {
   -webkit-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
@@ -97,7 +97,7 @@
   transition-property: transform, height;
 }
 /* a11y */
-.swiper-container .swiper-notification {
+.Swiper .swiper-notification {
   position: absolute;
   left: 0;
   top: 0;
@@ -165,7 +165,7 @@
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 }
 /* Pagination Styles */
-.swiper-pagination {
+.Swiper-pagination {
   position: absolute;
   text-align: center;
   -webkit-transition: 300ms;
@@ -195,8 +195,8 @@
   height: 8px;
   display: inline-block;
   border-radius: 100%;
-  background: #000;
-  opacity: 0.2;
+  background: #fff;
+  opacity: 0.35;
 }
 button.swiper-pagination-bullet {
   border: none;
@@ -216,7 +216,7 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #007aff;
+  background: #fff;
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
   background: #fff;
@@ -371,7 +371,7 @@ button.swiper-pagination-bullet {
 }
 /* Coverflow */
 .swiper-container-coverflow .swiper-wrapper,
-.swiper-container-flip .swiper-wrapper {
+.swiper-container-flip .Swiper-wrapper {
   /* Windows 8 IE 10 fix */
   -ms-perspective: 1200px;
 }
@@ -381,7 +381,7 @@ button.swiper-pagination-bullet {
   overflow: visible;
 }
 .swiper-container-cube .swiper-slide,
-.swiper-container-flip .swiper-slide {
+.swiper-container-flip .Swiper-slide {
   pointer-events: none;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -389,8 +389,8 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
   z-index: 1;
 }
-.swiper-container-cube .swiper-slide .swiper-slide,
-.swiper-container-flip .swiper-slide .swiper-slide {
+.swiper-container-cube .Swiper-slide .swiper-slide,
+.swiper-container-flip .Swiper-slide .Swiper-slide {
   pointer-events: none;
 }
 .swiper-container-cube .swiper-slide-active,
@@ -414,7 +414,7 @@ button.swiper-pagination-bullet {
   backface-visibility: hidden;
 }
 /* Cube */
-.swiper-container-cube .swiper-slide {
+.swiper-container-cube .Swiper-slide {
   visibility: hidden;
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
@@ -423,7 +423,7 @@ button.swiper-pagination-bullet {
   width: 100%;
   height: 100%;
 }
-.swiper-container-cube.swiper-container-rtl .swiper-slide {
+.swiper-container-cube.swiper-container-rtl .Swiper-slide {
   -webkit-transform-origin: 100% 0;
   -moz-transform-origin: 100% 0;
   -ms-transform-origin: 100% 0;
@@ -432,7 +432,7 @@ button.swiper-pagination-bullet {
 .swiper-container-cube .swiper-slide-active,
 .swiper-container-cube .swiper-slide-next,
 .swiper-container-cube .swiper-slide-prev,
-.swiper-container-cube .swiper-slide-next + .swiper-slide {
+.swiper-container-cube .swiper-slide-next + .Swiper-slide {
   pointer-events: auto;
   visibility: visible;
 }
@@ -449,21 +449,21 @@ button.swiper-pagination-bullet {
   z-index: 0;
 }
 /* Fade */
-.swiper-container-fade.swiper-container-free-mode .swiper-slide {
+.swiper-container-fade.swiper-container-free-mode .Swiper-slide {
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
   -ms-transition-timing-function: ease-out;
   -o-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-.swiper-container-fade .swiper-slide {
+.swiper-container-fade .Swiper-slide {
   pointer-events: none;
   -webkit-transition-property: opacity;
   -moz-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
 }
-.swiper-container-fade .swiper-slide .swiper-slide {
+.swiper-container-fade .Swiper-slide .Swiper-slide {
   pointer-events: none;
 }
 .swiper-container-fade .swiper-slide-active,
@@ -571,5 +571,70 @@ button.swiper-pagination-bullet {
 @keyframes swiper-preloader-spin {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+
+.Swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.Swiper-slide {
+  position: relative;
+}
+
+/*img*/.Swiper-fullWidthImage {
+  width: 100%;
+}
+
+.Swiper-heading {
+  font-size: 12px;
+  color: #fff;
+  z-index: 2;
+  @media #{$tablet} {
+    font-size: 14px;
+  }
+}
+
+.Swiper-heading--topLeft {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+  @media #{$tablet} {
+    top: 20px;
+    left: 37px;
+  }
+}
+
+.Swiper--topGradient .Swiper-slide:after {
+  content: "";
+  display: block;
+  background-color: pink;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  opacity: .5;
+  @media #{$tablet} { height: 104px; }
+}
+
+.Swiper-pagination--topLeft {
+  text-align: left;
+  top: 17px;
+  left: auto;
+  right: 25px;
+  width: auto;
+  @media #{$tablet} { top: 29px; }
+}
+
+.Swiper--onlyShowPaginationOnDektop {
+  .Swiper-pagination {
+    display: none;
+    @media #{$laptop} { display: block; }
   }
 }
