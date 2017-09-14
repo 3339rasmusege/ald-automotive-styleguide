@@ -164,6 +164,12 @@ gulp.task('renameFontRefsForGitHubPages', function() {
     .pipe(gulp.dest('./docs/'))
 });
 
+gulp.task('renameImageUrlsForGitHubPages', function() {
+  return gulp.src('./docs/*.css')
+    .pipe(replace('url(/images', 'url(/ald-automotive-styleguide/images'))
+    .pipe(gulp.dest('./docs/'))
+});
+
 // Rename app.css for cache busting
 gulp.task('renameAppCss', function() {
   return gulp.src('./docs/app.css')
@@ -244,7 +250,8 @@ gulp.task('ghp', function(done) {
     'compressHtml',
     'moveFavicons',
     'renameAssetRefsForGitHubPages',
-    'renameFontRefsForGitHubPages', function() {
+    'renameFontRefsForGitHubPages',
+    'renameImageUrlsForGitHubPages', function() {
       runSequence('cachebust', 'removeUnwantedFiles')
       done();
   });

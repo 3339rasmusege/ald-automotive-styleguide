@@ -7,7 +7,6 @@ Naming convention for components follows https://suitcss.github.io/
 
 ## Gulp tasks
 - `gulp s` starts development server
-- `gulp build` builds for development
 - `gulp production` builds for production in the 'docs' folder
 - `gulp ghp` builds for deployment on GitHub pages in the 'docs' folder
 
@@ -18,5 +17,5 @@ Naming convention for components follows https://suitcss.github.io/
 - `gulp ru --name utilityName` removes a utility.
 
 ## Todos
-- Set up hosting
 - index page
+- format components page - prettier
