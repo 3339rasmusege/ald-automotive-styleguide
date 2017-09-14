@@ -1,8 +1,11 @@
+// http://idangero.us/swiper/api/
+
 (function() {
 
   var swiper = new Swiper('.Swiper', {
     pagination: '.Swiper-pagination',
     paginationClickable: true,
+    autoplay: 3000,
     spaceBetween: 0,
     slideClass: 'Swiper-slide',
     wrapperClass: 'Swiper-wrapper',
