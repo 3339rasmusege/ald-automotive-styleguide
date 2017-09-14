@@ -160,7 +160,7 @@ gulp.task('renameAssetRefsForGitHubPages', function() {
 // Used by the `ghp` task
 gulp.task('renameFontRefsForGitHubPages', function() {
   return gulp.src('./docs/*.css')
-    .pipe(replace('url(fonts', 'url(ald-automotive-styleguide/fonts/'))
+    .pipe(replace('url(fonts', 'url(/ald-automotive-styleguide/fonts/'))
     .pipe(gulp.dest('./docs/'))
 });
 
