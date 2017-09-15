@@ -50,6 +50,17 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 
 })();
 
+(function(){
+
+  $('[data-href]').click( function(){
+    var href = $(this).attr('data-href')
+    if( href.length ) {
+      window.location.href = href
+    }
+  })
+
+})();
+
 
 // BigImage
 
@@ -141,7 +152,10 @@ $(function() {
     breakpoints: {
       1300: {
         slidesPerView: 2.75
-      }
+      },
+      // 1000: {
+      //   slidesPerView: 3.5
+      // }
     }
   })
 

@@ -17,7 +17,6 @@ Naming convention for components follows https://suitcss.github.io/
 - `gulp ru --name utilityName` removes a utility.
 
 ## Todos
-- ModelSelector
-- Make ModelSelector clickable
+- make blue Dropdown go to url
 - index page
 - format components page - prettier

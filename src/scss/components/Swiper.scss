@@ -22,6 +22,7 @@
 }
 .swiper-container-no-flexbox .Swiper-slide {
   float: left;
+  overflow: hidden;
 }
 .swiper-container-vertical > .Swiper-wrapper {
   -webkit-box-orient: vertical;
@@ -592,6 +593,7 @@ button.swiper-pagination-bullet {
   font-size: 12px;
   color: #fff;
   z-index: 2;
+  transition: color .2s ease;
   @media #{$tablet} {
     font-size: 14px;
   }
@@ -615,7 +617,6 @@ button.swiper-pagination-bullet {
 .Swiper--topGradient .Swiper-slide:after {
   content: "";
   display: block;
-  background-color: pink;
   height: 100px;
   position: absolute;
   top: 0;
@@ -633,7 +634,8 @@ button.swiper-pagination-bullet {
   top: 17px;
   left: auto;
   right: 25px;
-  width: auto;
+  width: 250px !important;
+  bottom: auto !important;
   @media #{$tablet} { top: 29px; }
 }
 

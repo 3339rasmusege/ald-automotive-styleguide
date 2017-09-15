@@ -435,6 +435,9 @@ template {
   background-repeat: no-repeat;
   background-position: center center; }
 
+[data-href]:hover {
+  cursor: pointer; }
+
 .App {
   font-family: Antenna, sans-serif;
   font-weight: 300;
@@ -567,6 +570,14 @@ template {
 
 .Caret--up {
   transform: rotate(90deg); }
+
+.ComponentList {
+  background-color: #E8E8E8; }
+
+.ComponentList-heading {
+  margin: 0 0 30px;
+  background: #000;
+  padding: 1em 30px 1.15em; }
 
 .Coupon {
   width: 244px;
@@ -942,6 +953,10 @@ h1, h2, h3, h4, h5, h6,
   font-weight: 300;
   font-family: Antenna, sans-serif; }
 
+.Heading--huge {
+  font-size: 24px;
+  line-height: 32px; }
+
 .Heading--large, .Title-heading {
   font-size: 20px;
   line-height: 25px; }
@@ -959,6 +974,9 @@ h1, h2, h3, h4, h5, h6,
   line-height: 21px; }
 
 @media (min-width: 1300px) {
+  .Heading--huge {
+    font-size: 42px;
+    line-height: 48px; }
   .Heading--large, .Title-heading {
     font-size: 28px;
     line-height: 37px; }
@@ -968,6 +986,11 @@ h1, h2, h3, h4, h5, h6,
   .Heading--small {
     font-size: 18px;
     line-height: 23px; } }
+
+@media (min-width: 1600px) {
+  .Heading--huge {
+    font-size: 60px;
+    line-height: 66px; } }
 
 .Heading--white, .Title-heading {
   color: #fff; }
@@ -1074,6 +1097,29 @@ h1, h2, h3, h4, h5, h6,
   width: 235px;
   height: 280px; }
 
+.ModelSelector .Swiper-slide:hover img,
+.ModelSelector .Swiper-slide:focus img {
+  transform: scale3d(1.075, 1.075, 1); }
+
+.ModelSelector .Swiper-slide:hover .Swiper-heading,
+.ModelSelector .Swiper-slide:focus .Swiper-heading {
+  color: #2D96CD; }
+
+.ModelSelector .Swiper-slide .Swiper-heading {
+  position: absolute;
+  bottom: 32px;
+  left: 35px;
+  margin: 0; }
+
+.ModelSelector .Swiper-slide img {
+  width: 210px;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  margin-left: -105px;
+  transform: scale3d(1, 1, 1);
+  transition: transform .2s ease; }
+
 .ModelSelector-next,
 .ModelSelector-previous {
   display: none; }
@@ -1104,6 +1150,14 @@ h1, h2, h3, h4, h5, h6,
         position: absolute;
         top: 37.5px;
         left: 65px; } }
+  @media (min-width: 1300px) {
+    .ModelSelector-next,
+    .ModelSelector-previous {
+      width: 96px;
+      left: 94px; }
+      .ModelSelector-next:after,
+      .ModelSelector-previous:after {
+        left: 96px; } }
 
 @media (min-width: 768px) {
   .ModelSelector-next {
@@ -1114,6 +1168,12 @@ h1, h2, h3, h4, h5, h6,
       right: 65px;
       transform: scaleX(-1); } }
 
+@media (min-width: 1300px) {
+  .ModelSelector-next {
+    right: 94px; }
+    .ModelSelector-next:after {
+      right: 96px; } }
+
 .ModelSelector-next > .Caret,
 .ModelSelector-previous > .Caret {
   position: absolute;
@@ -1121,6 +1181,21 @@ h1, h2, h3, h4, h5, h6,
   left: 50%;
   margin-left: -11.5px;
   margin-top: -11.5px; }
+
+.ModelSelector-swiperHeading {
+  position: absolute;
+  z-index: 99;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  top: 30px;
+  left: 50%;
+  width: 70%;
+  margin-left: -35%;
+  display: none; }
+  @media (min-width: 768px) {
+    .ModelSelector-swiperHeading {
+      display: block; } }
 
 .ModelSelectorWidth {
   position: relative;
@@ -1205,7 +1280,8 @@ h1, h2, h3, h4, h5, h6,
   z-index: 1; }
 
 .swiper-container-no-flexbox .Swiper-slide {
-  float: left; }
+  float: left;
+  overflow: hidden; }
 
 .swiper-container-vertical > .Swiper-wrapper {
   -ms-flex-direction: column;
@@ -1663,7 +1739,8 @@ button.swiper-pagination-bullet {
 .Swiper-heading {
   font-size: 12px;
   color: #fff;
-  z-index: 2; }
+  z-index: 2;
+  transition: color .2s ease; }
   @media (min-width: 768px) {
     .Swiper-heading {
       font-size: 14px; } }
@@ -1686,7 +1763,6 @@ button.swiper-pagination-bullet {
 .Swiper--topGradient .Swiper-slide:after {
   content: "";
   display: block;
-  background-color: pink;
   height: 100px;
   position: absolute;
   top: 0;
@@ -1705,7 +1781,8 @@ button.swiper-pagination-bullet {
   top: 17px;
   left: auto;
   right: 25px;
-  width: auto; }
+  width: 250px !important;
+  bottom: auto !important; }
   @media (min-width: 768px) {
     .Swiper-pagination--topLeft {
       top: 29px; } }
