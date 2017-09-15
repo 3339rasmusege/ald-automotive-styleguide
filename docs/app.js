@@ -61,15 +61,28 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 
 })();
 
+(function(){
 
-// BigImage
+  var colors = $('.ColorSelector .ColorSelector-color');
 
+  colors.each( function(){
+    var color = $(this).attr('data-color')
+    var colorName = $(this).attr('data-color-name')
+    $(this).find('label').append('<span style="background-color:'+color+';"></span>')
+    $(this).append('<span class="ColorSelector-colorLabel">'+colorName+'</span>')
+  })
 
-// Button
+  // When a color is clicked
+  $('.ColorSelector-color').click( function() {
+    $('.ColorSelector-color').each( function(){
+      $(this).removeClass('is-selected')
+    })
+    if($(this).find('input').is(':checked')) {
+      $(this).addClass('is-selected')
+    }
+  })
 
-
-// Caret
-
+})();
 
 ( function() {
 
@@ -127,15 +140,6 @@ $(function() {
 
 })();
 
-// Header
-
-
-// Heading
-
-
-// Logo
-
-
 // http://idangero.us/swiper/api/
 
 (function() {
@@ -179,10 +183,6 @@ $(function() {
 
 })();
 
-
-// Paragraph
-
-
 // http://idangero.us/swiper/api/
 
 (function() {
@@ -222,9 +222,6 @@ $(function() {
   })
 
 })();
-
-// Title
-
 
 ( function( $, window, document, undefined ){
 	$( '.Upload-input' ).each( function(){
