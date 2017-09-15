@@ -1292,6 +1292,123 @@ h1, h2, h3, h4, h5, h6,
       padding-left: 190px;
       padding-right: 190px; } }
 
+.PackageSelector {
+  background-color: #F3F3F3;
+  padding-bottom: 400px; }
+
+.PackageSelector-heading {
+  text-align: center;
+  padding-top: 50px;
+  margin: 0;
+  margin-bottom: 34px; }
+
+.PackageSelector-optionDetails {
+  max-height: 0;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: max-height .4s ease; }
+
+.PackageSelector-optionDetails ul li {
+  opacity: 0;
+  transform: scale3d(0.75, 0.75, 0.75);
+  transform-origin: left; }
+
+.PackageSelector-optionDetails.is-open {
+  max-height: 1000px; }
+  .PackageSelector-optionDetails.is-open ul li {
+    opacity: 1;
+    transform: scale3d(1, 1, 1); }
+
+.PackageSelector-optionDetails ul li:nth-child(1) {
+  transition: opacity 0.2s ease 25ms, transform 0.2s ease 25ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(2) {
+  transition: opacity 0.2s ease 50ms, transform 0.2s ease 50ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(3) {
+  transition: opacity 0.2s ease 75ms, transform 0.2s ease 75ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(4) {
+  transition: opacity 0.2s ease 100ms, transform 0.2s ease 100ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(5) {
+  transition: opacity 0.2s ease 125ms, transform 0.2s ease 125ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(6) {
+  transition: opacity 0.2s ease 150ms, transform 0.2s ease 150ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(7) {
+  transition: opacity 0.2s ease 175ms, transform 0.2s ease 175ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(8) {
+  transition: opacity 0.2s ease 200ms, transform 0.2s ease 200ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(9) {
+  transition: opacity 0.2s ease 225ms, transform 0.2s ease 225ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(10) {
+  transition: opacity 0.2s ease 250ms, transform 0.2s ease 250ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(11) {
+  transition: opacity 0.2s ease 275ms, transform 0.2s ease 275ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(12) {
+  transition: opacity 0.2s ease 300ms, transform 0.2s ease 300ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(13) {
+  transition: opacity 0.2s ease 325ms, transform 0.2s ease 325ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(14) {
+  transition: opacity 0.2s ease 350ms, transform 0.2s ease 350ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(15) {
+  transition: opacity 0.2s ease 375ms, transform 0.2s ease 375ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(16) {
+  transition: opacity 0.2s ease 400ms, transform 0.2s ease 400ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(17) {
+  transition: opacity 0.2s ease 425ms, transform 0.2s ease 425ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(18) {
+  transition: opacity 0.2s ease 450ms, transform 0.2s ease 450ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(19) {
+  transition: opacity 0.2s ease 475ms, transform 0.2s ease 475ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(20) {
+  transition: opacity 0.2s ease 500ms, transform 0.2s ease 500ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(21) {
+  transition: opacity 0.2s ease 525ms, transform 0.2s ease 525ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(22) {
+  transition: opacity 0.2s ease 550ms, transform 0.2s ease 550ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(23) {
+  transition: opacity 0.2s ease 575ms, transform 0.2s ease 575ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(24) {
+  transition: opacity 0.2s ease 600ms, transform 0.2s ease 600ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(25) {
+  transition: opacity 0.2s ease 625ms, transform 0.2s ease 625ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(26) {
+  transition: opacity 0.2s ease 650ms, transform 0.2s ease 650ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(27) {
+  transition: opacity 0.2s ease 675ms, transform 0.2s ease 675ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(28) {
+  transition: opacity 0.2s ease 700ms, transform 0.2s ease 700ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(29) {
+  transition: opacity 0.2s ease 725ms, transform 0.2s ease 725ms; }
+
+.PackageSelector-optionDetails ul li:nth-child(30) {
+  transition: opacity 0.2s ease 750ms, transform 0.2s ease 750ms; }
+
 .Paragraph {
   font-weight: 300; }
 

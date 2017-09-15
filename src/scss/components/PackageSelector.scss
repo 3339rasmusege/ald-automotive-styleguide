@@ -1,0 +1,41 @@
+.PackageSelector {
+  background-color: #F3F3F3;
+  padding-bottom: 400px;
+}
+
+.PackageSelector-heading {
+  text-align: center;
+  padding-top: 50px;
+  margin: 0;
+  margin-bottom: 34px;
+}
+
+.PackageSelector-optionDetails {
+  max-height: 0;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: max-height .4s ease;
+}
+
+.PackageSelector-optionDetails ul li {
+  opacity: 0;
+  transform: scale3d(.75, .75, .75);
+  transform-origin: left;
+}
+
+// Open state
+.PackageSelector-optionDetails.is-open {
+  max-height: 1000px;
+  ul li {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@for $i from 1 through 30 {
+  $transitionDelay: (($i*25)+0);
+  .PackageSelector-optionDetails ul li:nth-child(#{$i}) {
+    transition: opacity   .2s ease #{$transitionDelay}ms,
+                transform .2s ease #{$transitionDelay}ms;
+  }
+}
