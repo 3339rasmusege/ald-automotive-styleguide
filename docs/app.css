@@ -546,6 +546,28 @@ template {
 .Button--fullWidth {
   width: 100%; }
 
+.Caret {
+  display: block;
+  width: 23px;
+  height: 23px;
+  background-size: 11.5px;
+  background-image: url(/images/arrow-left.png);
+  background-repeat: no-repeat;
+  background-position: 4px 1px;
+  background-color: transparent; }
+  .Caret:hover, .Caret:focus {
+    cursor: pointer;
+    background-position: 4px -31px; }
+
+.Caret--right {
+  transform: scaleX(-1); }
+
+.Caret--down {
+  transform: rotate(-90deg); }
+
+.Caret--up {
+  transform: rotate(90deg); }
+
 .Coupon {
   width: 244px;
   height: 98px;
@@ -993,6 +1015,124 @@ h1, h2, h3, h4, h5, h6,
 @media (min-width: 1300px) and (min-width: 1300px) {
   .Logo > a {
     width: 117px; } }
+
+.ModelSelector {
+  background-color: #fff;
+  padding-bottom: 10px; }
+  @media (min-width: 768px) {
+    .ModelSelector {
+      padding-bottom: 0; } }
+
+.ModelSelector.ModelSelector--verticalList {
+  border-radius: 4px; }
+
+.ModelSelector .ModelSelector-dropdown {
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 20px 30px 34px; }
+  .ModelSelector .ModelSelector-dropdown h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 24px; }
+  @media (min-width: 768px) {
+    .ModelSelector .ModelSelector-dropdown {
+      display: none; } }
+
+.ModelSelector-model {
+  border-top: 1px solid #E7E7E7;
+  height: 170px;
+  position: relative; }
+
+.ModelSelector.ModelSelector--verticalList .ModelSelector-modelInner {
+  max-width: 400px;
+  position: relative;
+  height: 170px;
+  margin: 0 auto; }
+
+.ModelSelector.ModelSelector--verticalList .Swiper-heading {
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.ModelSelector .Swiper-heading {
+  line-height: 20px; }
+  .ModelSelector .Swiper-heading > b {
+    display: block; }
+  @media (min-width: 768px) {
+    .ModelSelector .Swiper-heading {
+      line-height: 23px; } }
+
+.ModelSelector.ModelSelector--verticalList .ModelSelector-model img {
+  width: 230px;
+  position: absolute;
+  bottom: -5px;
+  right: 5px; }
+
+.ModelSelector .Swiper-slide {
+  width: 235px;
+  height: 280px; }
+
+.ModelSelector-next,
+.ModelSelector-previous {
+  display: none; }
+  .ModelSelector-next:hover, .ModelSelector-next:focus,
+  .ModelSelector-previous:hover,
+  .ModelSelector-previous:focus {
+    cursor: pointer; }
+  @media (min-width: 768px) {
+    .ModelSelector-next,
+    .ModelSelector-previous {
+      display: block;
+      width: 65px;
+      background-color: #fff;
+      height: 280px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 99; }
+      .ModelSelector-next:after,
+      .ModelSelector-previous:after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 205px;
+        background-image: url(/images/model-selector-button-shadow.png);
+        background-size: 7px;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 37.5px;
+        left: 65px; } }
+
+@media (min-width: 768px) {
+  .ModelSelector-next {
+    left: auto;
+    right: 0; }
+    .ModelSelector-next:after {
+      left: auto;
+      right: 65px;
+      transform: scaleX(-1); } }
+
+.ModelSelector-next > .Caret,
+.ModelSelector-previous > .Caret {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -11.5px;
+  margin-top: -11.5px; }
+
+.ModelSelectorWidth {
+  position: relative;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .ModelSelectorWidth {
+      padding-left: 65px;
+      padding-right: 65px; } }
+  @media (min-width: 1300px) {
+    .ModelSelectorWidth {
+      padding-left: 190px;
+      padding-right: 190px; } }
 
 .Paragraph {
   font-weight: 300; }
@@ -1527,6 +1667,12 @@ button.swiper-pagination-bullet {
   @media (min-width: 768px) {
     .Swiper-heading {
       font-size: 14px; } }
+
+.Swiper-heading--dark {
+  color: #000; }
+  @media (min-width: 768px) {
+    .Swiper-heading--dark {
+      color: #5C5C5C; } }
 
 .Swiper-heading--topLeft {
   position: absolute;

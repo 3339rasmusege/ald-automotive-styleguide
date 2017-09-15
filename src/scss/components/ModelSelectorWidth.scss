@@ -1,0 +1,6 @@
+.ModelSelectorWidth {
+  position: relative;
+  width: 100%;
+  @media #{$tablet} { padding-left: 65px; padding-right: 65px; }
+  @media #{$laptop} { padding-left: 190px; padding-right: 190px; }
+}

@@ -57,6 +57,9 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 // Button
 
 
+// Caret
+
+
 ( function() {
 
   var coupon = $('.Coupon')
@@ -122,6 +125,46 @@ $(function() {
 // Logo
 
 
+// http://idangero.us/swiper/api/
+
+(function() {
+
+  var ModelSelector = new Swiper('.ModelSelector', {
+    spaceBetween: 0,
+    slideClass: 'Swiper-slide',
+    wrapperClass: 'Swiper-wrapper',
+    slideActiveClass: 'is-active',
+    slidesPerView: 4.5,
+    nextButton: '.ModelSelector-next',
+    prevButton: '.ModelSelector-previous',
+    // when window width is <= value
+    breakpoints: {
+      1300: {
+        slidesPerView: 2.75
+      }
+    }
+  })
+
+  // Don't show ModelSelector as a slider unless we're on a tablet or bigger
+  // Also add/remove some classes for styling
+  function initModelSelector() {
+    if( window.matchMedia("(max-width: 767px)").matches ) {
+      ModelSelector.destroy(true, true)
+      $('.ModelSelector').addClass('ModelSelector--verticalList')
+      $('.ModelSelector.Swiper').removeClass('Swiper')
+      $('.ModelSelector .Swiper-slide').addClass('ModelSelector-model')
+      $('.ModelSelector .Swiper-slide').removeClass('Swiper-slide')
+      $('.ModelSelector .Swiper-slideInner').addClass('ModelSelector-modelInner')
+      $('.ModelSelector .Swiper-slideInner').removeClass('Swiper-slideInner')
+      $('.ModelSelector .Swiper-wrapper').addClass('ModelSelector-inner')
+      $('.ModelSelector .Swiper-wrapper').removeClass('Swiper-wrapper')
+    }
+  }
+
+  initModelSelector()
+
+})();
+
 
 // Paragraph
 
@@ -130,7 +173,7 @@ $(function() {
 
 (function() {
 
-  var swiper = new Swiper('.Swiper', {
+  var swiper = new Swiper('.Swiper--big', {
     pagination: '.Swiper-pagination',
     paginationClickable: true,
     autoplay: 3000,
@@ -141,8 +184,7 @@ $(function() {
   })
 
   function positionPagination() {
-    var heading = $('.Swiper-slide.is-active .Swiper-heading')
-    console.log(heading)
+    var heading = $('.Swiper--big .Swiper-slide.is-active .Swiper-heading')
     if( !heading.length ) {
       var headingOffset = 25
     } else {
@@ -152,8 +194,7 @@ $(function() {
       if(headingOffset < 280) { headingOffset = 280 }
     }
 
-
-    $('.Swiper-pagination').css({ 'left': headingOffset+'px' })
+    $('.Swiper--big .Swiper-pagination').css({ 'left': headingOffset+'px' })
   }
 
   positionPagination()

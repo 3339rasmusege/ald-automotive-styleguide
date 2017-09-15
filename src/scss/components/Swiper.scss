@@ -597,6 +597,11 @@ button.swiper-pagination-bullet {
   }
 }
 
+.Swiper-heading--dark {
+  color: #000;
+  @media #{$tablet} { color: #5C5C5C; }
+}
+
 .Swiper-heading--topLeft {
   position: absolute;
   top: 10px;

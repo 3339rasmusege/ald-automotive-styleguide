@@ -1,0 +1,21 @@
+$caretSize: 23px;
+
+.Caret {
+  display: block;
+  width: $caretSize;
+  height: $caretSize;
+  background-size: $caretSize/2;
+  background-image: url(/images/arrow-left.png);
+  background-repeat: no-repeat;
+  background-position: 4px 1px;
+  background-color: transparent;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-position: 4px -31px;
+  }
+}
+
+.Caret--right { transform: scaleX(-1); }
+.Caret--down { transform: rotate(-90deg); }
+.Caret--up   { transform: rotate(90deg); }

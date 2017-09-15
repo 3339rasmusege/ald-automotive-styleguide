@@ -2,7 +2,7 @@
 
 (function() {
 
-  var swiper = new Swiper('.Swiper', {
+  var swiper = new Swiper('.Swiper--big', {
     pagination: '.Swiper-pagination',
     paginationClickable: true,
     autoplay: 3000,
@@ -13,8 +13,7 @@
   })
 
   function positionPagination() {
-    var heading = $('.Swiper-slide.is-active .Swiper-heading')
-    console.log(heading)
+    var heading = $('.Swiper--big .Swiper-slide.is-active .Swiper-heading')
     if( !heading.length ) {
       var headingOffset = 25
     } else {
@@ -24,8 +23,7 @@
       if(headingOffset < 280) { headingOffset = 280 }
     }
 
-
-    $('.Swiper-pagination').css({ 'left': headingOffset+'px' })
+    $('.Swiper--big .Swiper-pagination').css({ 'left': headingOffset+'px' })
   }
 
   positionPagination()
