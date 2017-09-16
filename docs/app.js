@@ -199,25 +199,30 @@ $(function() {
 
 (function(){
 
-  $('.PackageSelector-optionHeader').click(function(){
-    $('.PackageSelector-optionDetails').removeClass('is-open')
-    $(this).parent().find('.PackageSelector-optionDetails').addClass('is-open')
-    $(this).find('input[type="radio"]').prop('checked', true)
-  })
+  function openClosePackageOption(element) {
+    var clickedPackageOption = element.closest('.PackageSelector-option')
+    var allPackageOptions = clickedPackageOption.parent('form').find('.PackageSelector-option')
 
-  $('.PackageSelector-optionHeader .PackageSelector-optionOpenClose').click(function(){
-    if( $(this).parent('.PackageSelector-option').hasClass('is-open') ) {
-      $(this).parent('.PackageSelector-option').removeClass('is-open')
+    // Close all open options
+    allPackageOptions.each( function() {
+      if( $(this)[0] !== clickedPackageOption[0] ) {
+        $(this).removeClass('is-open')
+      }
+    })
+
+    // Open clicked option
+    if( clickedPackageOption.hasClass('is-open') ) {
+      clickedPackageOption.removeClass('is-open')
     } else {
-      $(this).parent('.PackageSelector-option').addClass('is-open')
+      clickedPackageOption.addClass('is-open')
     }
+  }
+
+  $('.PackageSelector-optionOpenClose').click( function(){
+    openClosePackageOption($(this))
   })
 
 })();
-
-// TODO: select when label is clicked
-// TODO: open when caret is clicked
-// TODO: colorselecor: set selected on pageload
 
 // http://idangero.us/swiper/api/
 

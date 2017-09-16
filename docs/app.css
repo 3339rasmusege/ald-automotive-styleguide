@@ -1302,6 +1302,12 @@ h1, h2, h3, h4, h5, h6,
   margin: 0;
   margin-bottom: 34px; }
 
+.PackageSelector-optionHeader {
+  background: #fff;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: -1px; }
+
 .PackageSelector-optionDetails {
   max-height: 0;
   overflow: hidden;
@@ -1313,9 +1319,9 @@ h1, h2, h3, h4, h5, h6,
   transform: scale3d(0.75, 0.75, 0.75);
   transform-origin: left; }
 
-.PackageSelector-optionDetails.is-open {
+.PackageSelector-option.is-open .PackageSelector-optionDetails {
   max-height: 1000px; }
-  .PackageSelector-optionDetails.is-open ul li {
+  .PackageSelector-option.is-open .PackageSelector-optionDetails ul li {
     opacity: 1;
     transform: scale3d(1, 1, 1); }
 

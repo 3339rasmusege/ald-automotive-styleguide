@@ -10,6 +10,13 @@
   margin-bottom: 34px;
 }
 
+.PackageSelector-optionHeader {
+  background: #fff;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: -1px;
+}
+
 .PackageSelector-optionDetails {
   max-height: 0;
   overflow: hidden;
@@ -24,7 +31,7 @@
 }
 
 // Open state
-.PackageSelector-optionDetails.is-open {
+.PackageSelector-option.is-open .PackageSelector-optionDetails {
   max-height: 1000px;
   ul li {
     opacity: 1;
@@ -32,6 +39,7 @@
   }
 }
 
+// Add a transition delay to each list item
 @for $i from 1 through 30 {
   $transitionDelay: (($i*25)+0);
   .PackageSelector-optionDetails ul li:nth-child(#{$i}) {
