@@ -18,14 +18,15 @@ Naming convention for components follows https://suitcss.github.io/
 
 ## Todos
 - make blue Dropdown go to url
+- Dark blue sticky footer
+- Dark blue sticky footer scroll down to it on click
 - Gray text area
 - Whtie text area
 - Footer
 - Hero with swiper
 - Hero with image
 - Dark gray heading
-- Dark blue sticky footer
-- Dark blue sticky footer scroll down to it on click
 - index page
 - format components page - prettier
 - live update "Din konfiguration"
+- global max page width

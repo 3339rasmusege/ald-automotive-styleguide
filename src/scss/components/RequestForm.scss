@@ -1,7 +1,4 @@
 .RequestForm {
-  background-color: $darkerBlue;
-  box-shadow: inset 0 0 0 20px maroon;
-  width: 100%;
 }
 
 .RequestForm-openClose {
@@ -13,6 +10,29 @@
   right: 25px;
   opacity: 0;
   transition: opacity .2s ease;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transition: background-color .2s ease;
+  h3 {
+    color: #fff;
+    font-size: 12px;
+    padding: 0 23px;
+    margin: 0;
+    height: 52px;
+    line-height: 51px;
+    @media #{$tablet} { padding: 0 32px; }
+  }
+  .Caret {
+    position: absolute;
+    top: 19px;
+    right: 23px;
+    @media #{$tablet} { right: 32px; }
+  }
+  &:hover,
+  &:focus {
+    background-color: $lighterBlue;
+    cursor: pointer;
+  }
   @media #{$tablet} { left: 74px; right: 74px; }
   @media #{$laptop} { left: 130px; right: auto; width: 380px; }
 }
@@ -33,24 +53,113 @@
 
 .RequestForm-overview {
   background-color: $darkBlue;
-  height: 714px;
-  box-shadow: inset 0 0 0 20px hotpink;
-  @media #{$tablet} { height: 633px; }
+  // box-shadow: inset 0 0 0 20px hotpink;
   @media #{$laptop} {
-    height: 834px;
     float: left;
     width: 33.33%;
   }
 }
 
+.RequestForm-overviewHeader {
+  padding: 0 48px;
+  overflow: hidden;
+  @media #{$tablet} {
+    padding-right: 74px;
+    padding-left: 106px;
+  }
+  @media #{$laptop} {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+.RequestForm-overviewPrice {
+  @extend .Heading;
+  @extend .Heading--small;
+  @extend .Heading--white;
+  font-size: 16px;
+  font-weight: 700;
+  height: 48px;
+  line-height: 50px;
+  @media #{$tablet} {
+    float: left;
+    height: 66px;
+  }
+  @media #{$laptop} {
+    font-size: 20px;
+    float: none;
+    height: 88px;
+    line-height: 66px;
+  }
+}
+
+.RequestForm-overviewPriceDetails {
+  color: #fff;
+  font-size: 10px;
+  line-height: 19px;
+  padding: 14px 0;
+  p { margin: 0; }
+  @media #{$tablet} {
+    height: 66px;
+    float: right;
+    text-align: right;
+  }
+  @media #{$laptop} {
+    float: none;
+    text-align: left;
+    height: 88px;
+    padding-top: 24px;
+  }
+}
+
 .RequestForm-form {
   background-color: $darkerBlue;
-  height: 810px;
-  box-shadow: inset 0 0 0 20px aqua;
-  @media #{$tablet} { height: 748px; }
+  // box-shadow: inset 0 0 0 20px aqua;
   @media #{$laptop} {
-    height: 834px;
     float: right;
     width: 66.66%;
+    padding: 0 66px;
+  }
+}
+
+.RequestForm-configuration {
+  ul {
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #3A4A65;
+  }
+  ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    color: #fff;
+    padding: 11px 48px;
+    line-height: 1;
+    border-bottom: 1px solid #3A4A65;
+    @media #{$tablet} {
+      padding: 12px 106px;
+
+      // Checkmark
+      &:before {
+        content: "";
+        display: inline-block;
+        background-image: url(/images/checkmark-large-gray.png);
+        background-size: 11px;
+        background-repeat: no-repeat;
+        width: 11px;
+        height: 11px;
+        margin-right: .75em;
+      }
+    }
+    @media #{$laptop} { padding: 12px 32px; }
+  }
+  .Heading {
+    font-size: 13px;
+    padding: 15px 48px;
+    line-height: 1;
+    margin: 0;
+    @media #{$tablet} { padding: 23px 106px; }
+    @media #{$laptop} { padding: 13px 32px 23px; }
   }
 }

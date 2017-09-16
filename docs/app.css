@@ -562,6 +562,13 @@ template {
     cursor: pointer;
     background-position: 4px -31px; }
 
+.Caret--small {
+  width: 7px;
+  height: 12px;
+  background-image: url(/images/caret-left.png);
+  background-size: 7px;
+  background-position: 0 0; }
+
 .Caret--right {
   transform: scaleX(-1); }
 
@@ -1133,7 +1140,8 @@ h1, h2, h3, h4, h5, h6,
 .Heading,
 .FeatureSelector-option .FeatureSelector-optionKey,
 .FeatureSelector-option .FeatureSelector-optionValue,
-.PackageSelector-optionHeader h3 {
+.PackageSelector-optionHeader h3,
+.RequestForm-overviewPrice {
   font-weight: 300;
   font-family: Antenna, sans-serif; }
 
@@ -1149,7 +1157,7 @@ h1, h2, h3, h4, h5, h6,
   font-size: 18px;
   line-height: 23px; }
 
-.Heading--small {
+.Heading--small, .RequestForm-overviewPrice {
   font-size: 16px;
   line-height: 22px; }
 
@@ -1168,7 +1176,7 @@ h1, h2, h3, h4, h5, h6,
   .Heading--medium {
     font-size: 20px;
     line-height: 25px; }
-  .Heading--small {
+  .Heading--small, .RequestForm-overviewPrice {
     font-size: 18px;
     line-height: 23px; } }
 
@@ -1177,7 +1185,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: 60px;
     line-height: 66px; } }
 
-.Heading--white, .Title-heading {
+.Heading--white, .RequestForm-overviewPrice, .Title-heading {
   color: #fff; }
 
 .Heading--black {
@@ -1656,11 +1664,6 @@ h1, h2, h3, h4, h5, h6,
 .Paragraph--light {
   font-weight: 300; }
 
-.RequestForm {
-  background-color: #12274B;
-  box-shadow: inset 0 0 0 20px maroon;
-  width: 100%; }
-
 .RequestForm-openClose {
   background-color: #2D96CD;
   height: 52px;
@@ -1669,7 +1672,30 @@ h1, h2, h3, h4, h5, h6,
   left: 25px;
   right: 25px;
   opacity: 0;
-  transition: opacity .2s ease; }
+  transition: opacity .2s ease;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transition: background-color .2s ease; }
+  .RequestForm-openClose h3 {
+    color: #fff;
+    font-size: 12px;
+    padding: 0 23px;
+    margin: 0;
+    height: 52px;
+    line-height: 51px; }
+    @media (min-width: 768px) {
+      .RequestForm-openClose h3 {
+        padding: 0 32px; } }
+  .RequestForm-openClose .Caret {
+    position: absolute;
+    top: 19px;
+    right: 23px; }
+    @media (min-width: 768px) {
+      .RequestForm-openClose .Caret {
+        right: 32px; } }
+  .RequestForm-openClose:hover, .RequestForm-openClose:focus {
+    background-color: #38AFED;
+    cursor: pointer; }
   @media (min-width: 768px) {
     .RequestForm-openClose {
       left: 74px;
@@ -1689,30 +1715,119 @@ h1, h2, h3, h4, h5, h6,
       box-shadow: inset 0 0 0 20px pink; } }
 
 .RequestForm-overview {
-  background-color: #19315B;
-  height: 714px;
-  box-shadow: inset 0 0 0 20px hotpink; }
-  @media (min-width: 768px) {
-    .RequestForm-overview {
-      height: 633px; } }
+  background-color: #19315B; }
   @media (min-width: 1300px) {
     .RequestForm-overview {
-      height: 834px;
       float: left;
       width: 33.33%; } }
 
-.RequestForm-form {
-  background-color: #12274B;
-  height: 810px;
-  box-shadow: inset 0 0 0 20px aqua; }
+.RequestForm-overviewHeader {
+  padding: 0 48px;
+  overflow: hidden; }
   @media (min-width: 768px) {
-    .RequestForm-form {
-      height: 748px; } }
+    .RequestForm-overviewHeader {
+      padding-right: 74px;
+      padding-left: 106px; } }
+  @media (min-width: 1300px) {
+    .RequestForm-overviewHeader {
+      padding-right: 32px;
+      padding-left: 32px; } }
+
+.RequestForm-overviewPrice {
+  font-size: 16px;
+  font-weight: 700;
+  height: 48px;
+  line-height: 50px; }
+  @media (min-width: 768px) {
+    .RequestForm-overviewPrice {
+      float: left;
+      height: 66px; } }
+  @media (min-width: 1300px) {
+    .RequestForm-overviewPrice {
+      font-size: 20px;
+      float: none;
+      height: 88px;
+      line-height: 66px; } }
+
+.RequestForm-overviewPriceDetails {
+  color: #fff;
+  font-size: 10px;
+  line-height: 19px;
+  padding: 14px 0; }
+  .RequestForm-overviewPriceDetails p {
+    margin: 0; }
+  @media (min-width: 768px) {
+    .RequestForm-overviewPriceDetails {
+      height: 66px;
+      float: right;
+      text-align: right; } }
+  @media (min-width: 1300px) {
+    .RequestForm-overviewPriceDetails {
+      float: none;
+      text-align: left;
+      height: 88px;
+      padding-top: 24px; } }
+
+.RequestForm-form {
+  background-color: #12274B; }
   @media (min-width: 1300px) {
     .RequestForm-form {
-      height: 834px;
       float: right;
-      width: 66.66%; } }
+      width: 66.66%;
+      padding: 0 66px; } }
+
+.RequestForm-configuration ul {
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #3A4A65; }
+
+.RequestForm-configuration ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: #fff;
+  padding: 11px 48px;
+  line-height: 1;
+  border-bottom: 1px solid #3A4A65; }
+  @media (min-width: 768px) {
+    .RequestForm-configuration ul li {
+      padding: 12px 106px; }
+      .RequestForm-configuration ul li:before {
+        content: "";
+        display: inline-block;
+        background-image: url(/images/checkmark-large-gray.png);
+        background-size: 11px;
+        background-repeat: no-repeat;
+        width: 11px;
+        height: 11px;
+        margin-right: .75em; } }
+  @media (min-width: 1300px) {
+    .RequestForm-configuration ul li {
+      padding: 12px 32px; } }
+
+.RequestForm-configuration .Heading, .RequestForm-configuration .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .RequestForm-configuration .FeatureSelector-optionKey, .RequestForm-configuration
+.FeatureSelector-option .FeatureSelector-optionValue,
+.FeatureSelector-option .RequestForm-configuration .FeatureSelector-optionValue, .RequestForm-configuration .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .RequestForm-configuration h3, .RequestForm-configuration .RequestForm-overviewPrice {
+  font-size: 13px;
+  padding: 15px 48px;
+  line-height: 1;
+  margin: 0; }
+  @media (min-width: 768px) {
+    .RequestForm-configuration .Heading, .RequestForm-configuration .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .RequestForm-configuration .FeatureSelector-optionKey, .RequestForm-configuration
+    .FeatureSelector-option .FeatureSelector-optionValue,
+    .FeatureSelector-option .RequestForm-configuration .FeatureSelector-optionValue, .RequestForm-configuration .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .RequestForm-configuration h3, .RequestForm-configuration .RequestForm-overviewPrice {
+      padding: 23px 106px; } }
+  @media (min-width: 1300px) {
+    .RequestForm-configuration .Heading, .RequestForm-configuration .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .RequestForm-configuration .FeatureSelector-optionKey, .RequestForm-configuration
+    .FeatureSelector-option .FeatureSelector-optionValue,
+    .FeatureSelector-option .RequestForm-configuration .FeatureSelector-optionValue, .RequestForm-configuration .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .RequestForm-configuration h3, .RequestForm-configuration .RequestForm-overviewPrice {
+      padding: 13px 32px 23px; } }
+
+.RequestFormFooterWrapper {
+  position: relative;
+  background-color: #12274B;
+  width: 100%; }
 
 /**
  * Swiper 3.4.2

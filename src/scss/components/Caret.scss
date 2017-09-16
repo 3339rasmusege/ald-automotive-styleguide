@@ -16,6 +16,14 @@ $caretSize: 23px;
   }
 }
 
+.Caret--small {
+  width: 7px;
+  height: 12px;
+  background-image: url(/images/caret-left.png);
+  background-size: 7px;
+  background-position: 0 0;
+}
+
 .Caret--right { transform: scaleX(-1); }
 .Caret--down { transform: rotate(-90deg); }
 .Caret--up   { transform: rotate(90deg); }
