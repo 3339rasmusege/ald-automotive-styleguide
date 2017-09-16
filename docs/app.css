@@ -933,6 +933,96 @@ template {
 .selectric-Dropdown[class*="Dropdown--boldLabel"] .label {
   font-weight: 700; }
 
+.FeatureSelector {
+  background-color: #fff;
+  padding-bottom: 54px; }
+  @media (min-width: 768px) {
+    .FeatureSelector {
+      padding-bottom: 66px; } }
+
+.FeatureSelector-heading {
+  text-align: center;
+  padding-top: 50px;
+  margin: 0;
+  margin-bottom: 34px; }
+  @media (min-width: 768px) {
+    .FeatureSelector-heading {
+      margin-bottom: 44px; } }
+
+.FeatureSelector-form {
+  max-width: 480px;
+  margin: 0 auto;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5; }
+  @media (min-width: 480px) {
+    .FeatureSelector-form {
+      border-left: 1px solid #E5E5E5;
+      border-right: 1px solid #E5E5E5; } }
+
+.FeatureSelector-option {
+  border-bottom: 1px solid #E5E5E5;
+  height: 64px;
+  position: relative; }
+  .FeatureSelector-option:last-child {
+    border: 0; }
+
+.FeatureSelector-option label {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
+  border: 1px solid #979797;
+  background: #fff;
+  position: absolute;
+  top: 18px;
+  left: 23px;
+  overflow: hidden;
+  text-indent: -1000px;
+  transform: scale3d(1, 1, 1);
+  transition: transform .2s ease; }
+  .FeatureSelector-option label:hover, .FeatureSelector-option label:focus {
+    transform: scale3d(1.085, 1.085, 1); }
+
+.FeatureSelector-option label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  background-image: url(/images/checkmark-large.png);
+  background-size: 14px;
+  background-repeat: no-repeat;
+  width: 14px;
+  height: 12px;
+  transform: scale3d(0, 0, 0);
+  transition: transform .1s ease; }
+
+.FeatureSelector-option input[type="checkbox"] {
+  display: none; }
+
+.FeatureSelector-option input[type="checkbox"]:checked + label:hover, .FeatureSelector-option input[type="checkbox"]:checked + label:focus {
+  transform: scale3d(1, 1, 1); }
+
+.FeatureSelector-option input[type="checkbox"]:checked + label:after {
+  transform: scale3d(1, 1, 1); }
+
+.FeatureSelector-option .FeatureSelector-optionKey,
+.FeatureSelector-option .FeatureSelector-optionValue {
+  height: 64px;
+  margin: 0;
+  line-height: 63px !important;
+  padding-left: 72px;
+  padding-right: 20px;
+  float: left;
+  width: 65%; }
+
+.FeatureSelector-option .FeatureSelector-optionValue {
+  padding: 0;
+  padding-right: 20px;
+  float: right;
+  width: 35%;
+  text-align: right; }
+
 .Field {
   height: 50px;
   text-align: left;
@@ -957,6 +1047,14 @@ template {
 
 .Field.is-error {
   border-color: #FF4F4F !important; }
+
+.Footer {
+  height: 560px;
+  background-color: #fff;
+  box-shadow: inset 0 0 0 20px pink; }
+  @media (min-width: 768px) {
+    .Footer {
+      height: 260px; } }
 
 .Header {
   height: 83px;
@@ -1033,6 +1131,8 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .Heading,
+.FeatureSelector-option .FeatureSelector-optionKey,
+.FeatureSelector-option .FeatureSelector-optionValue,
 .PackageSelector-optionHeader h3 {
   font-weight: 300;
   font-family: Antenna, sans-serif; }
@@ -1053,7 +1153,8 @@ h1, h2, h3, h4, h5, h6,
   font-size: 16px;
   line-height: 22px; }
 
-.Heading--tiny, .PackageSelector-optionHeader h3 {
+.Heading--tiny, .FeatureSelector-option .FeatureSelector-optionKey,
+.FeatureSelector-option .FeatureSelector-optionValue, .PackageSelector-optionHeader h3 {
   font-size: 14px;
   line-height: 21px; }
 
@@ -1082,7 +1183,8 @@ h1, h2, h3, h4, h5, h6,
 .Heading--black {
   color: #000; }
 
-.Heading--darkGray, .PackageSelector-optionHeader h3 {
+.Heading--darkGray, .FeatureSelector-option .FeatureSelector-optionKey,
+.FeatureSelector-option .FeatureSelector-optionValue, .PackageSelector-optionHeader h3 {
   color: #5C5C5C; }
 
 .Heading--bold {
@@ -1553,6 +1655,64 @@ h1, h2, h3, h4, h5, h6,
 
 .Paragraph--light {
   font-weight: 300; }
+
+.RequestForm {
+  background-color: #12274B;
+  box-shadow: inset 0 0 0 20px maroon;
+  width: 100%; }
+
+.RequestForm-openClose {
+  background-color: #2D96CD;
+  height: 52px;
+  position: absolute;
+  top: -52px;
+  left: 25px;
+  right: 25px;
+  opacity: 0;
+  transition: opacity .2s ease; }
+  @media (min-width: 768px) {
+    .RequestForm-openClose {
+      left: 74px;
+      right: 74px; } }
+  @media (min-width: 1300px) {
+    .RequestForm-openClose {
+      left: 130px;
+      right: auto;
+      width: 380px; } }
+
+.RequestForm-overviewFormWrapper {
+  overflow: hidden; }
+  @media (min-width: 1300px) {
+    .RequestForm-overviewFormWrapper {
+      width: 1180px;
+      margin: 0 auto;
+      box-shadow: inset 0 0 0 20px pink; } }
+
+.RequestForm-overview {
+  background-color: #19315B;
+  height: 714px;
+  box-shadow: inset 0 0 0 20px hotpink; }
+  @media (min-width: 768px) {
+    .RequestForm-overview {
+      height: 633px; } }
+  @media (min-width: 1300px) {
+    .RequestForm-overview {
+      height: 834px;
+      float: left;
+      width: 33.33%; } }
+
+.RequestForm-form {
+  background-color: #12274B;
+  height: 810px;
+  box-shadow: inset 0 0 0 20px aqua; }
+  @media (min-width: 768px) {
+    .RequestForm-form {
+      height: 748px; } }
+  @media (min-width: 1300px) {
+    .RequestForm-form {
+      height: 834px;
+      float: right;
+      width: 66.66%; } }
 
 /**
  * Swiper 3.4.2

@@ -24,8 +24,8 @@ Naming convention for components follows https://suitcss.github.io/
 - Hero with swiper
 - Hero with image
 - Dark gray heading
-- PackageSelector
-- Featureselector
 - Dark blue sticky footer
+- Dark blue sticky footer scroll down to it on click
 - index page
 - format components page - prettier
+- live update "Din konfiguration"

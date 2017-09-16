@@ -1,4 +1,4 @@
 // Dropdowns using http://selectric.js.org/
-$(function() {
+$(window).bind("load", function() {
   $('.Dropdown').selectric();
 });

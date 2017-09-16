@@ -62,242 +62,360 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 })();
 
 (function(){
+  $(window).bind("load", function() {
 
-  var colors = $('.ColorSelector .ColorSelector-color');
+    var colors = $('.ColorSelector .ColorSelector-color');
 
-  // When page is loaded: set checked color
-  $('.ColorSelector-color').each( function(){
-    if($(this).find('input').is(':checked')) {
-      $(this).addClass('is-selected')
-    }
-  })
-
-  function setActiveColor(element) {
+    // When page is loaded: set checked color
     $('.ColorSelector-color').each( function(){
-      $(this).removeClass('is-selected')
-      $(this).find('input').removeAttr('checked')
+      if($(this).find('input').is(':checked')) {
+        $(this).addClass('is-selected')
+      }
     })
-    if(element.find('input').is(':checked')) {
-      element.addClass('is-selected')
+
+    function setActiveColor(element) {
+      $('.ColorSelector-color').each( function(){
+        $(this).removeClass('is-selected')
+        $(this).find('input').removeAttr('checked')
+      })
+      if(element.find('input').is(':checked')) {
+        element.addClass('is-selected')
+      }
     }
-  }
 
-  // Build colors
-  colors.each( function(){
-    var color = $(this).attr('data-color')
-    var colorName = $(this).attr('data-color-name')
-    $(this).find('label').append('<span style="background-color:'+color+';"></span>')
-    $(this).append('<span class="ColorSelector-colorLabel">'+colorName+'</span>')
+    // Build colors
+    colors.each( function(){
+      var color = $(this).attr('data-color')
+      var colorName = $(this).attr('data-color-name')
+      $(this).find('label').append('<span style="background-color:'+color+';"></span>')
+      $(this).append('<span class="ColorSelector-colorLabel">'+colorName+'</span>')
+    })
+
+
+    // When a color is clicked
+    $('.ColorSelector-color').click( function() {
+      setActiveColor($(this))
+    })
   })
-
-
-  // When a color is clicked
-  $('.ColorSelector-color').click( function() {
-    setActiveColor($(this))
-  })
-
 })();
 
-( function() {
+(function(){
+  $(window).bind("load", function() {
 
-  var coupon = $('.Coupon')
-  var couponField = coupon.find('.Coupon-field')
-  var couponButton = coupon.find('.Coupon-button')
+    var coupon = $('.Coupon')
+    var couponField = coupon.find('.Coupon-field')
+    var couponButton = coupon.find('.Coupon-button')
 
-  function showButton() {
-    if( couponField.val() ) {
-      coupon.addClass('is-open')
-      coupon.css({ 'height': '160px' })
-      setTimeout( function() {
-        couponButton.css({ 'opacity': '1' })
-      }, 200)
-    } else {
-      couponButton.css({ 'opacity': '0' })
-      setTimeout( function() {
-        coupon.removeClass('is-open')
-        coupon.css({ 'height': '98px' })
-      }, 200)
+    function showButton() {
+      if( couponField.val() ) {
+        coupon.addClass('is-open')
+        coupon.css({ 'height': '160px' })
+        setTimeout( function() {
+          couponButton.css({ 'opacity': '1' })
+        }, 200)
+      } else {
+        couponButton.css({ 'opacity': '0' })
+        setTimeout( function() {
+          coupon.removeClass('is-open')
+          coupon.css({ 'height': '98px' })
+        }, 200)
+      }
     }
-  }
 
-  couponField.keyup( function() {
-    showButton()
+    couponField.keyup( function() {
+      showButton()
+    })
+
   })
-
 })();
 
 // Dropdowns using http://selectric.js.org/
-$(function() {
+$(window).bind("load", function() {
   $('.Dropdown').selectric();
 });
 
+// FeatureSelector
+
+
 (function(){
-  var Field = $('.Field')
+  $(window).bind("load", function() {
 
-  // Add class to Field when it has been filled out
-  function addRemoveClasses(element) {
-      if( element.val() ) {
-      element.addClass('is-filled')
-    } else {
-      element.removeClass('is-filled')
-      element.removeClass('is-error')
+    var Field = $('.Field')
+
+    // Add class to Field when it has been filled out
+    function addRemoveClasses(element) {
+        if( element.val() ) {
+        element.addClass('is-filled')
+      } else {
+        element.removeClass('is-filled')
+        element.removeClass('is-error')
+      }
     }
-  }
 
-  Field.each( function() {
-    addRemoveClasses($(this))
+    Field.each( function() {
+      addRemoveClasses($(this))
+    })
+
+    Field.keyup( function() {
+      addRemoveClasses($(this))
+    })
+
   })
-
-  Field.keyup( function() {
-    addRemoveClasses($(this))
-  })
-
 })();
+
+// Footer
+
 
 // http://idangero.us/swiper/api/
 
 (function() {
+  $(window).bind("load", function() {
 
-  var ModelSelector = new Swiper('.ModelSelector', {
-    spaceBetween: 0,
-    slideClass: 'Swiper-slide',
-    wrapperClass: 'Swiper-wrapper',
-    slideActiveClass: 'is-active',
-    slidesPerView: 4.5,
-    nextButton: '.ModelSelector-next',
-    prevButton: '.ModelSelector-previous',
-    // when window width is <= value
-    breakpoints: {
-      1300: {
-        slidesPerView: 2.75
-      },
-      // 1000: {
-      //   slidesPerView: 3.5
-      // }
-    }
-  })
-
-  // Don't show ModelSelector as a slider unless we're on a tablet or bigger
-  // Also add/remove some classes for styling
-  function initModelSelector() {
-    if( window.matchMedia("(max-width: 767px)").matches ) {
-      ModelSelector.destroy(true, true)
-      $('.ModelSelector').addClass('ModelSelector--verticalList')
-      $('.ModelSelector.Swiper').removeClass('Swiper')
-      $('.ModelSelector .Swiper-slide').addClass('ModelSelector-model')
-      $('.ModelSelector .Swiper-slide').removeClass('Swiper-slide')
-      $('.ModelSelector .Swiper-slideInner').addClass('ModelSelector-modelInner')
-      $('.ModelSelector .Swiper-slideInner').removeClass('Swiper-slideInner')
-      $('.ModelSelector .Swiper-wrapper').addClass('ModelSelector-inner')
-      $('.ModelSelector .Swiper-wrapper').removeClass('Swiper-wrapper')
-    }
-  }
-
-  initModelSelector()
-
-})();
-
-(function(){
-
-  function openClosePackageOption(element) {
-    var clickedPackageOption = element.closest('.PackageSelector-option')
-    var allPackageOptions = clickedPackageOption.parent('form').find('.PackageSelector-option')
-
-    // Close all open options
-    allPackageOptions.each( function() {
-      if( $(this)[0] !== clickedPackageOption[0] ) {
-        $(this).removeClass('is-open')
+    var ModelSelector = new Swiper('.ModelSelector', {
+      spaceBetween: 0,
+      slideClass: 'Swiper-slide',
+      wrapperClass: 'Swiper-wrapper',
+      slideActiveClass: 'is-active',
+      slidesPerView: 4.5,
+      nextButton: '.ModelSelector-next',
+      prevButton: '.ModelSelector-previous',
+      // when window width is <= value
+      breakpoints: {
+        1300: {
+          slidesPerView: 2.75
+        },
+        // 1000: {
+        //   slidesPerView: 3.5
+        // }
       }
     })
 
-    // Open clicked option
-    if( clickedPackageOption.hasClass('is-open') ) {
-      clickedPackageOption.removeClass('is-open')
-    } else {
-      clickedPackageOption.addClass('is-open')
+    // Don't show ModelSelector as a slider unless we're on a tablet or bigger
+    // Also add/remove some classes for styling
+    function initModelSelector() {
+      if( window.matchMedia("(max-width: 767px)").matches ) {
+        ModelSelector.destroy(true, true)
+        $('.ModelSelector').addClass('ModelSelector--verticalList')
+        $('.ModelSelector.Swiper').removeClass('Swiper')
+        $('.ModelSelector .Swiper-slide').addClass('ModelSelector-model')
+        $('.ModelSelector .Swiper-slide').removeClass('Swiper-slide')
+        $('.ModelSelector .Swiper-slideInner').addClass('ModelSelector-modelInner')
+        $('.ModelSelector .Swiper-slideInner').removeClass('Swiper-slideInner')
+        $('.ModelSelector .Swiper-wrapper').addClass('ModelSelector-inner')
+        $('.ModelSelector .Swiper-wrapper').removeClass('Swiper-wrapper')
+      }
     }
-  }
 
-  $('.PackageSelector-optionOpenClose').click( function(){
-    openClosePackageOption($(this))
+    initModelSelector()
+
   })
-
 })();
+
+(function(){
+  $(window).bind("load", function() {
+
+    function openClosePackageOption(element) {
+      var clickedPackageOption = element.closest('.PackageSelector-option')
+      var allPackageOptions = clickedPackageOption.parent('form').find('.PackageSelector-option')
+
+      // Close all open options
+      allPackageOptions.each( function() {
+        if( $(this)[0] !== clickedPackageOption[0] ) {
+          $(this).removeClass('is-open')
+        }
+      })
+
+      // Open clicked option
+      if( clickedPackageOption.hasClass('is-open') ) {
+        clickedPackageOption.removeClass('is-open')
+      } else {
+        clickedPackageOption.addClass('is-open')
+      }
+    }
+
+    $('.PackageSelector-optionOpenClose').click( function(){
+      openClosePackageOption($(this))
+    })
+
+  })
+})();
+
+// (function(){
+//
+//
+//     var laptopScreenWidth = 1300
+//     var tabletScreenWidth =  768
+//
+//     var requestForm = $('.RequestFormFooterWrapper')
+//     var requestFormToggle = requestForm.find('.RequestForm-openClose')
+//     var requestFormOverview = requestForm.find('.RequestForm-overview')
+//
+//     // Set height of the visible part of RequestForm
+//     if (window.matchMedia("(min-width: "+laptopScreenWidth+"px)").matches) {
+//       var visibleHeightOfRequestForm = 88
+//     } else if (window.matchMedia("(min-width: "+tabletScreenWidth+"px)").matches) {
+//       var visibleHeightOfRequestForm = 67
+//     } else {
+//       var visibleHeightOfRequestForm = 52
+//     }
+//
+//     var footerPosition = $('.Footer').position()
+//     var unstickPoint = footerPosition.top + ((visibleHeightOfRequestForm*2) + (requestFormToggle.height()*2))
+//
+//     console.log('visibleHeightOfRequestForm: '+visibleHeightOfRequestForm + '\n')
+//     console.log('footerPosition: '+footerPosition.top + '\n')
+//     console.log('unstickPoint: '+unstickPoint + '\n')
+//     console.log('requestFormToggle.height: '+requestFormToggle.height() + '\n')
+//
+//     // Set the size of RequestForm-openClose
+//     function setTogglePosition() {
+//       var overviewPosition = requestFormOverview.position()
+//       if (window.matchMedia("(min-width: "+laptopScreenWidth+"px)").matches) {
+//         requestFormToggle.css({
+//           'left': overviewPosition.left+'px',
+//           'width': requestFormOverview.width()+'px',
+//           'opacity': '1'
+//         })
+//       } else if (window.matchMedia("(min-width: "+tabletScreenWidth+"px)").matches) {
+//         requestFormToggle.css({
+//           'left': '74px',
+//           'width': 'auto',
+//           'opacity': '1'
+//         })
+//       } else {
+//         requestFormToggle.css({
+//           'left': '25px',
+//           'width': 'auto',
+//           'opacity': '1'
+//         })
+//       }
+//     }
+//
+//     function putRequestFormAtBottom() {
+//       var windowHeight = window.innerHeight
+//
+//       // Set position of RequestForm
+//       requestForm.css({
+//         'opacity': '1',
+//         'position': 'fixed',
+//         'transform': 'translate3d(0, ' + (windowHeight - visibleHeightOfRequestForm) + 'px, 0)',
+//         'box-shadow': 'inset 0 0 0 20px maroon'
+//       })
+//       $('body').css({
+//         'padding-bottom': requestForm.height()+'px'
+//       })
+//     }
+//
+//     function unstickRequestForm() {
+//       requestForm.css({
+//         'position': 'relative',
+//         'transform': 'translate3d(0, 0, 0)',
+//         'box-shadow': 'inset 0 0 0 20px red'
+//       })
+//       $('body').css({
+//         'padding-bottom': '0'
+//       })
+//     }
+//
+//     // On pageload
+//     putRequestFormAtBottom()
+//     setTogglePosition()
+//
+//     $( window ).resize(function() {
+//       putRequestFormAtBottom()
+//       setTogglePosition()
+//     })
+//
+//     $(window).scroll(function (event) {
+//       if($(window).scrollTop() + $(window).height() == ($(document).height())) {
+//         unstickRequestForm()
+//
+//       } else {
+//         putRequestFormAtBottom()
+//       }
+//     })
+//
+//
+// })();
 
 // http://idangero.us/swiper/api/
 
 (function() {
+  $(window).bind("load", function() {
 
-  var swiper = new Swiper('.Swiper--big', {
-    pagination: '.Swiper-pagination',
-    paginationClickable: true,
-    autoplay: 3000,
-    spaceBetween: 0,
-    slideClass: 'Swiper-slide',
-    wrapperClass: 'Swiper-wrapper',
-    slideActiveClass: 'is-active'
-  })
+    var swiper = new Swiper('.Swiper--big', {
+      pagination: '.Swiper-pagination',
+      paginationClickable: true,
+      autoplay: 3000,
+      spaceBetween: 0,
+      slideClass: 'Swiper-slide',
+      wrapperClass: 'Swiper-wrapper',
+      slideActiveClass: 'is-active'
+    })
 
-  function positionPagination() {
-    var heading = $('.Swiper--big .Swiper-slide.is-active .Swiper-heading')
-    if( !heading.length ) {
-      var headingOffset = 25
-    } else {
-      var headingWidth = heading.width()
-      var headingPositionLeft = heading.position('left')
-      var headingOffset = headingPositionLeft.left + headingWidth + 20
-      if(headingOffset < 280) { headingOffset = 280 }
+    function positionPagination() {
+      var heading = $('.Swiper--big .Swiper-slide.is-active .Swiper-heading')
+      if( !heading.length ) {
+        var headingOffset = 25
+      } else {
+        var headingWidth = heading.width()
+        var headingPositionLeft = heading.position('left')
+        var headingOffset = headingPositionLeft.left + headingWidth + 20
+        if(headingOffset < 280) { headingOffset = 280 }
+      }
+
+      $('.Swiper--big .Swiper-pagination').css({ 'left': headingOffset+'px' })
     }
 
-    $('.Swiper--big .Swiper-pagination').css({ 'left': headingOffset+'px' })
-  }
-
-  positionPagination()
-
-  swiper.on('slideChangeEnd', function () {
     positionPagination()
-  })
 
-  swiper.on('onResize', function () {
-    positionPagination()
-  })
+    swiper.on('slideChangeEnd', function () {
+      positionPagination()
+    })
 
+    swiper.on('onResize', function () {
+      positionPagination()
+    })
+
+  })
 })();
 
-( function( $, window, document, undefined ){
-	$( '.Upload-input' ).each( function(){
+$(window).bind("load", function() {
+	( function( $, window, document, undefined ){
+		$( '.Upload-input' ).each( function(){
 
-		var $input	 = $( this ),
-			$uploadList	 = $(this).parent().find('.Upload-list'),
-			uploadListVal = $uploadList.html()
+			var $input	 = $( this ),
+				$uploadList	 = $(this).parent().find('.Upload-list'),
+				uploadListVal = $uploadList.html()
 
-		$input.on( 'change', function( e ){
-			var fileName = ''
+			$input.on( 'change', function( e ){
+				var fileName = ''
 
-			if( this.files && this.files.length > 1 ) {
-				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length )
-			} else if( e.target.value ) {
-				fileName = e.target.value.split( '\\' ).pop()
-      }
+				if( this.files && this.files.length > 1 ) {
+					fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length )
+				} else if( e.target.value ) {
+					fileName = e.target.value.split( '\\' ).pop()
+	      }
 
-			if( fileName ) {
-				$uploadList.find( 'span' ).html( fileName )
-				$uploadList.find('.Upload-listRemove').show()
-			} else {
-				$uploadList.html( uploadListVal )
-      }
+				if( fileName ) {
+					$uploadList.find( 'span' ).html( fileName )
+					$uploadList.find('.Upload-listRemove').show()
+				} else {
+					$uploadList.html( uploadListVal )
+	      }
+			})
+
+			// Firefox bug fix
+			$input
+			.on( 'focus', function(){ $input.addClass( 'has-focus' ) })
+			.on( 'blur', function(){ $input.removeClass( 'has-focus' ) })
 		})
 
-		// Firefox bug fix
-		$input
-		.on( 'focus', function(){ $input.addClass( 'has-focus' ) })
-		.on( 'blur', function(){ $input.removeClass( 'has-focus' ) })
-	})
-
-  // Remove link
-  $('.Upload-listRemove').on('click', function(e) {
-    e.preventDefault();
-    $(this).parent().find('span').html('')
-    $(this).hide()
-  })
-})( jQuery, window, document )
+	  // Remove link
+	  $('.Upload-listRemove').on('click', function(e) {
+	    e.preventDefault();
+	    $(this).parent().find('span').html('')
+	    $(this).hide()
+	  })
+	})( jQuery, window, document )
+})
