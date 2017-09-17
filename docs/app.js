@@ -65,6 +65,9 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
   })
 })();
 
+// BenefitsSection
+
+
 (function(){
   $(window).bind("load", function() {
 

@@ -14,7 +14,7 @@
 }
 
 .ModelSelectorSection-info {
-  overflow: hidden;
+  @include clearfix;
   @media #{$tablet} {
     padding: 60px 40px;
   }

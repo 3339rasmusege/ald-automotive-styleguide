@@ -449,6 +449,53 @@ template {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.BenefitsSection {
+  background-color: #fff;
+  padding: 24px;
+  padding-bottom: 70px; }
+  .BenefitsSection:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media (min-width: 768px) {
+    .BenefitsSection {
+      padding: 50px 40px 60px; } }
+  @media (min-width: 1300px) {
+    .BenefitsSection {
+      padding: 80px 130px 130px; } }
+
+.BenefitsSection-image {
+  padding: 20px 0 30px; }
+  .BenefitsSection-image img {
+    width: 100%; }
+  @media (min-width: 768px) {
+    .BenefitsSection-image {
+      float: left;
+      width: 50%;
+      padding-top: 0;
+      padding-right: 30px; } }
+  @media (min-width: 1300px) {
+    .BenefitsSection-image {
+      padding-right: 60px; } }
+
+.BenefitsSection-copy .Heading, .BenefitsSection-copy .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .BenefitsSection-copy .FeatureSelector-optionKey, .BenefitsSection-copy
+.FeatureSelector-option .FeatureSelector-optionValue,
+.FeatureSelector-option .BenefitsSection-copy .FeatureSelector-optionValue, .BenefitsSection-copy .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .BenefitsSection-copy h3, .BenefitsSection-copy .RequestForm-overviewPrice {
+  font-size: 20px;
+  margin-bottom: 30px; }
+
+@media (min-width: 768px) {
+  .BenefitsSection-copy {
+    float: right;
+    width: 50%;
+    padding-left: 30px; } }
+
+@media (min-width: 1300px) {
+  .BenefitsSection-copy .Heading, .BenefitsSection-copy .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .BenefitsSection-copy .FeatureSelector-optionKey, .BenefitsSection-copy
+  .FeatureSelector-option .FeatureSelector-optionValue,
+  .FeatureSelector-option .BenefitsSection-copy .FeatureSelector-optionValue, .BenefitsSection-copy .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .BenefitsSection-copy h3, .BenefitsSection-copy .RequestForm-overviewPrice {
+    font-size: 28px; } }
+
 .BigImage {
   margin: 0;
   position: relative;
@@ -1518,14 +1565,18 @@ h1, h2, h3, h4, h5, h6,
     position: relative;
     top: -60px; } }
 
-.ModelSelectorSection-info {
-  overflow: hidden; }
-  @media (min-width: 768px) {
-    .ModelSelectorSection-info {
-      padding: 60px 40px; } }
-  @media (min-width: 1300px) {
-    .ModelSelectorSection-info {
-      padding: 10px 130px 100px; } }
+.ModelSelectorSection-info:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+@media (min-width: 768px) {
+  .ModelSelectorSection-info {
+    padding: 60px 40px; } }
+
+@media (min-width: 1300px) {
+  .ModelSelectorSection-info {
+    padding: 10px 130px 100px; } }
 
 .ModelSelectorSection-conditions {
   font-size: 12px;
