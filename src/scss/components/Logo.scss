@@ -34,3 +34,9 @@
     @media #{$laptop} { width: 117px; }
   }
 }
+
+.Logo--large {
+  width: 117px;
+  height: 66px;
+  background-size: 117px;
+}

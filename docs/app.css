@@ -38,6 +38,11 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #A9A9A9; }
@@ -690,6 +695,12 @@ template {
   opacity: 0;
   transition: opacity .2s ease; }
 
+.Divider {
+  height: 1px;
+  background-color: #626262;
+  margin-top: 29px;
+  margin-bottom: 29px; }
+
 .selectric-wrapper {
   position: relative;
   cursor: pointer; }
@@ -1036,7 +1047,7 @@ template {
   width: 100%;
   box-shadow: none;
   padding: 0 17px;
-  background-color: #19315B;
+  background-color: transparent;
   border: 1px solid #9D9D9D;
   font-weight: 400;
   transition: border .2s ease;
@@ -1044,7 +1055,7 @@ template {
 
 .Field:hover,
 .Field:focus {
-  background-color: #19315B;
+  background-color: transparent;
   box-shadow: none;
   border-color: #fff;
   cursor: default; }
@@ -1055,13 +1066,109 @@ template {
 .Field.is-error {
   border-color: #FF4F4F !important; }
 
+.Field--zipCode {
+  width: 168px; }
+
+.Field--marginBottom {
+  margin-bottom: 14px; }
+
+@media (min-width: 768px) {
+  .FieldGroup--zipCity .Field--zipCode {
+    float: left;
+    width: 33.33%; }
+  .FieldGroup--zipCity .Field--city {
+    float: right;
+    width: 64.25%; } }
+
 .Footer {
-  height: 560px;
   background-color: #fff;
-  box-shadow: inset 0 0 0 20px pink; }
+  padding: 30px; }
   @media (min-width: 768px) {
     .Footer {
-      height: 260px; } }
+      padding: 40px; } }
+  @media (min-width: 1300px) {
+    .Footer {
+      padding: 70px 0 60px;
+      min-height: 275px; } }
+
+@media (min-width: 1300px) {
+  .Footer-inner {
+    width: 1180px;
+    margin: 0 auto; } }
+
+@media (min-width: 768px) {
+  .Footer-contactInfo .Heading, .Footer-contactInfo .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .Footer-contactInfo .FeatureSelector-optionKey, .Footer-contactInfo
+  .FeatureSelector-option .FeatureSelector-optionValue,
+  .FeatureSelector-option .Footer-contactInfo .FeatureSelector-optionValue, .Footer-contactInfo .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .Footer-contactInfo h3, .Footer-contactInfo .RequestForm-overviewPrice {
+    margin-top: 0;
+    font-size: 14px !important; } }
+
+.Footer-contactInfo {
+  text-align: center;
+  font-size: 16px;
+  line-height: 28px;
+  color: #787878;
+  margin-bottom: 50px; }
+  .Footer-contactInfo p {
+    margin: 0; }
+  .Footer-contactInfo a {
+    color: #787878;
+    text-decoration: none; }
+    .Footer-contactInfo a:hover, .Footer-contactInfo a:focus {
+      text-decoration: none;
+      color: #000; }
+  @media (min-width: 768px) {
+    .Footer-contactInfo {
+      float: left;
+      width: 50%;
+      text-align: left;
+      font-size: 12px;
+      line-height: 21px; } }
+
+.Footer-contactInfoSection {
+  margin-bottom: 28px; }
+  @media (min-width: 1300px) {
+    .Footer-contactInfoSection {
+      display: inline-block;
+      margin-right: 60px; } }
+
+@media (min-width: 768px) {
+  .Footer-signature {
+    float: right;
+    width: 160px; } }
+
+@media (min-width: 1300px) {
+  .Footer-signature {
+    width: 50%;
+    text-align: right; } }
+
+.Footer-signature .selectric-Dropdown,
+.Footer-signature .Dropdown {
+  max-width: 212px;
+  margin: 0 auto 46px; }
+  @media (min-width: 768px) {
+    .Footer-signature .selectric-Dropdown,
+    .Footer-signature .Dropdown {
+      max-width: 160px;
+      margin-bottom: 40px; } }
+  @media (min-width: 1300px) {
+    .Footer-signature .selectric-Dropdown,
+    .Footer-signature .Dropdown {
+      display: inline-block;
+      margin: 0;
+      width: 200px;
+      text-align: left;
+      position: relative;
+      top: -10px; } }
+
+.Footer-signature .Logo {
+  margin: 0 auto 46px; }
+  @media (min-width: 1300px) {
+    .Footer-signature .Logo {
+      display: inline-block;
+      margin: 0 0 0 100px;
+      position: relative;
+      top: 10px; } }
 
 .Header {
   height: 83px;
@@ -1153,7 +1260,9 @@ h1, h2, h3, h4, h5, h6,
   font-size: 20px;
   line-height: 25px; }
 
-.Heading--medium {
+.Heading--medium, .Footer-contactInfo .Heading, .Footer-contactInfo .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .Footer-contactInfo .FeatureSelector-optionKey, .Footer-contactInfo
+.FeatureSelector-option .FeatureSelector-optionValue,
+.FeatureSelector-option .Footer-contactInfo .FeatureSelector-optionValue, .Footer-contactInfo .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .Footer-contactInfo h3, .Footer-contactInfo .RequestForm-overviewPrice {
   font-size: 18px;
   line-height: 23px; }
 
@@ -1173,7 +1282,9 @@ h1, h2, h3, h4, h5, h6,
   .Heading--large, .Title-heading {
     font-size: 28px;
     line-height: 37px; }
-  .Heading--medium {
+  .Heading--medium, .Footer-contactInfo .Heading, .Footer-contactInfo .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .Footer-contactInfo .FeatureSelector-optionKey, .Footer-contactInfo
+  .FeatureSelector-option .FeatureSelector-optionValue,
+  .FeatureSelector-option .Footer-contactInfo .FeatureSelector-optionValue, .Footer-contactInfo .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .Footer-contactInfo h3, .Footer-contactInfo .RequestForm-overviewPrice {
     font-size: 20px;
     line-height: 25px; }
   .Heading--small, .RequestForm-overviewPrice {
@@ -1188,7 +1299,9 @@ h1, h2, h3, h4, h5, h6,
 .Heading--white, .RequestForm-overviewPrice, .Title-heading {
   color: #fff; }
 
-.Heading--black {
+.Heading--black, .Footer-contactInfo .Heading, .Footer-contactInfo .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .Footer-contactInfo .FeatureSelector-optionKey, .Footer-contactInfo
+.FeatureSelector-option .FeatureSelector-optionValue,
+.FeatureSelector-option .Footer-contactInfo .FeatureSelector-optionValue, .Footer-contactInfo .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .Footer-contactInfo h3, .Footer-contactInfo .RequestForm-overviewPrice {
   color: #000; }
 
 .Heading--darkGray, .FeatureSelector-option .FeatureSelector-optionKey,
@@ -1232,6 +1345,11 @@ h1, h2, h3, h4, h5, h6,
 @media (min-width: 1300px) and (min-width: 1300px) {
   .Logo > a {
     width: 117px; } }
+
+.Logo--large {
+  width: 117px;
+  height: 66px;
+  background-size: 117px; }
 
 .ModelSelector {
   background-color: #fff;
@@ -1714,8 +1832,7 @@ h1, h2, h3, h4, h5, h6,
   @media (min-width: 1300px) {
     .RequestForm-overviewFormWrapper {
       width: 1180px;
-      margin: 0 auto;
-      box-shadow: inset 0 0 0 20px pink; } }
+      margin: 0 auto; } }
 
 .RequestForm-overview {
   background-color: #19315B; }
@@ -1770,14 +1887,6 @@ h1, h2, h3, h4, h5, h6,
       text-align: left;
       height: 88px;
       padding-top: 24px; } }
-
-.RequestForm-form {
-  background-color: #12274B; }
-  @media (min-width: 1300px) {
-    .RequestForm-form {
-      float: right;
-      width: 66.66%;
-      padding: 0 66px; } }
 
 .RequestForm-configuration ul {
   padding: 0;
@@ -1841,13 +1950,54 @@ h1, h2, h3, h4, h5, h6,
   font-size: 10px;
   line-height: 18px;
   color: #fff;
-  padding: 30px 48px; }
+  padding: 30px; }
   @media (min-width: 768px) {
     .RequestForm-smallPrint {
       padding: 38px 106px; } }
   @media (min-width: 1300px) {
     .RequestForm-smallPrint {
       padding: 38px 32px 120px; } }
+
+.RequestForm-form {
+  background-color: #12274B;
+  padding: 30px;
+  padding-bottom: 60px;
+  overflow: hidden; }
+  @media (min-width: 768px) {
+    .RequestForm-form {
+      padding-left: 106px;
+      padding-right: 106px;
+      padding-bottom: 70px; } }
+  @media (min-width: 1300px) {
+    .RequestForm-form {
+      float: right;
+      width: 66.66%;
+      padding: 0 66px; } }
+
+.RequestForm-formExplainer {
+  font-size: 12px;
+  color: #fff;
+  line-height: 20px;
+  margin-bottom: 36px; }
+  @media (min-width: 768px) {
+    .RequestForm-formExplainer {
+      padding-right: 100px;
+      padding-top: 14px;
+      margin-bottom: 40px; } }
+  @media (min-width: 768px) {
+    .RequestForm-formExplainer {
+      padding-right: 160px; } }
+
+@media (min-width: 768px) {
+  .RequestForm-form form {
+    max-width: 560px; } }
+
+.RequestForm-form form button {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .RequestForm-form form button {
+      width: auto;
+      float: right; } }
 
 .RequestFormFooterWrapper {
   position: relative;

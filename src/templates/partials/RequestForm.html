@@ -42,7 +42,25 @@
     </div>
 
     <div class="RequestForm-form">
-      Form
+      <h3 class="RequestForm-formHeading Heading Heading--white Heading--medium">Send en forspørgsel på din kommende bil</h3>
+      <p class="RequestForm-formExplainer">Udfyld oplysninger nedenfor og vi vil sende dig en PDF med oplysninger om Ford PrivatLeasing. En sælger vil vende tilbage til dig snarest muligt.</p>
+      <form>
+        <input class="Field Field--marginBottom" type="text" placeholder="Dit navn">
+        <input class="Field Field--marginBottom" type="text" placeholder="Adresse">
+        <div class="FieldGroup FieldGroup--zipCity">
+          <input class="Field Field--marginBottom Field--zipCode" type="number" placeholder="Postnummer">
+          <input class="Field Field--marginBottom Field--city" type="text" placeholder="By">
+        </div>
+        <input class="Field" type="email" placeholder="Email">
+        <div class="Divider"></div>
+        <div class="Upload">
+          <input type="file" name="file" id="file" class="Upload-input" data-multiple-caption="{count} files selected" multiple />
+          <label for="file" class="Upload-button">Upload kørekort eller pas</label>
+          <div class="Upload-list"><span></span><a href="#" class="Upload-listRemove">Fjern</a></div>
+        </div>
+        <div class="Divider"></div>
+        <button class="Button">Send forespørgsel</button>
+      </form>
     </div>
 
   </div>

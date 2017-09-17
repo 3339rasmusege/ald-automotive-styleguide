@@ -1,0 +1,15 @@
+.FieldGroup--zipCity {
+  @media #{$tablet} {
+    .Field--zipCode {
+      float: left;
+      width: 33.33%;
+    }
+    .Field--city {
+      float: right;
+      width: 64.25%;
+    }
+  }
+  @media #{$laptop} {
+    
+  }
+}
