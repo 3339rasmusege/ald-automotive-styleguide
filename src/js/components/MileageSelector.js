@@ -10,8 +10,8 @@
 
     function setMileageInConfList(value) {
       if( configurationList.length ) {
-        configurationList.find('li.mileage').remove()
-        configurationList.prepend('<li data-sort="0" class="mileage">Km: '+value+'</li>')
+        // configurationList.find('li.mileage').remove()
+        configurationList.find('li.mileage').text('Km: '+value)
       }
     }
 

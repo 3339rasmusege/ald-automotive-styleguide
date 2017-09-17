@@ -7,21 +7,25 @@
     // Add value to .RequestForm-configuration
     function setFeaturesInConfList() {
       if( configurationList.length ) {
-        configurationList.find('li.feature').remove()
-        setTimeout(function(){
-          featureSelector.find('input[type="checkbox"]').each(function(){
-            if( $(this).is(':checked') ) {
+        featureSelector.find('input[type="checkbox"]').each(function(){
+          if( $(this).is(':checked') ) {
+            if( !configurationList.find('li[data-input-name="'+$(this).attr('name')+'"]').length ) {
               var value = $(this).siblings('label').text()
-              configurationList.append('<li data-sort="3" class="feature">Ekstraudstyr: '+value+'</li>')
+              configurationList.append('<li data-input-name="'+$(this).attr('name')+'" data-sort="3" class="feature">Ekstraudstyr: '+value+'</li>')
             }
-          })
-        }, 100);
+          // If not checked
+          } else {
+            configurationList.find('li[data-input-name="'+$(this).attr('name')+'"]').remove()
+          }
+        })
       }
     }
 
     // On click:  Add value to .RequestForm-configuration
     featureSelector.find('.FeatureSelector-option label').click(function(){
-      setFeaturesInConfList()
+      setTimeout(function(){
+        setFeaturesInConfList()
+      }, 100);
     })
 
     // On pageload:  Add value to .RequestForm-configuration

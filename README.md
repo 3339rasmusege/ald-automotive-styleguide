@@ -25,7 +25,4 @@ Naming convention for components follows https://suitcss.github.io/:
 - `gulp ru --name utilityName` removes a utility.
 
 ## Todos
-- Sticky footer
-- Dark blue sticky footer scroll down to it on click
 - 'reload browser to see models' when resizing window
-- redo conf updating (stop from jumping around and shifting position)

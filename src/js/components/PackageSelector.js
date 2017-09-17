@@ -30,8 +30,8 @@
     // Add value to .RequestForm-configuration
     function setPackageInConfList(value) {
       if( configurationList.length ) {
-        configurationList.find('li.package').remove()
-        configurationList.append('<li data-sort="2" class="package">Udstyrspakke: '+value+'</li>')
+        // configurationList.find('li.package').remove()
+        configurationList.find('li.package').text('Udstyrspakke: '+value)
       }
     }
 

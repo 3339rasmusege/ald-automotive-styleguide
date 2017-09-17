@@ -112,8 +112,8 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
     // Add value to .RequestForm-configuration
     function setColorInConfList(value) {
       if( configurationList.length ) {
-        configurationList.find('li.color').remove()
-        configurationList.append('<li data-sort="1" class="color">Farve: '+value+'</li>')
+        // configurationList.find('li.color').remove()
+        configurationList.find('li.color').text('Farve: '+value)
       }
     }
 
@@ -193,21 +193,25 @@ $(window).bind("load", function() {
     // Add value to .RequestForm-configuration
     function setFeaturesInConfList() {
       if( configurationList.length ) {
-        configurationList.find('li.feature').remove()
-        setTimeout(function(){
-          featureSelector.find('input[type="checkbox"]').each(function(){
-            if( $(this).is(':checked') ) {
+        featureSelector.find('input[type="checkbox"]').each(function(){
+          if( $(this).is(':checked') ) {
+            if( !configurationList.find('li[data-input-name="'+$(this).attr('name')+'"]').length ) {
               var value = $(this).siblings('label').text()
-              configurationList.append('<li data-sort="3" class="feature">Ekstraudstyr: '+value+'</li>')
+              configurationList.append('<li data-input-name="'+$(this).attr('name')+'" data-sort="3" class="feature">Ekstraudstyr: '+value+'</li>')
             }
-          })
-        }, 100);
+          // If not checked
+          } else {
+            configurationList.find('li[data-input-name="'+$(this).attr('name')+'"]').remove()
+          }
+        })
       }
     }
 
     // On click:  Add value to .RequestForm-configuration
     featureSelector.find('.FeatureSelector-option label').click(function(){
-      setFeaturesInConfList()
+      setTimeout(function(){
+        setFeaturesInConfList()
+      }, 100);
     })
 
     // On pageload:  Add value to .RequestForm-configuration
@@ -260,8 +264,8 @@ $(window).bind("load", function() {
 
     function setMileageInConfList(value) {
       if( configurationList.length ) {
-        configurationList.find('li.mileage').remove()
-        configurationList.prepend('<li data-sort="0" class="mileage">Km: '+value+'</li>')
+        // configurationList.find('li.mileage').remove()
+        configurationList.find('li.mileage').text('Km: '+value)
       }
     }
 
@@ -380,8 +384,8 @@ $(window).bind("load", function() {
     // Add value to .RequestForm-configuration
     function setPackageInConfList(value) {
       if( configurationList.length ) {
-        configurationList.find('li.package').remove()
-        configurationList.append('<li data-sort="2" class="package">Udstyrspakke: '+value+'</li>')
+        // configurationList.find('li.package').remove()
+        configurationList.find('li.package').text('Udstyrspakke: '+value)
       }
     }
 

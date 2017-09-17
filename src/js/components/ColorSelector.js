@@ -42,8 +42,8 @@
     // Add value to .RequestForm-configuration
     function setColorInConfList(value) {
       if( configurationList.length ) {
-        configurationList.find('li.color').remove()
-        configurationList.append('<li data-sort="1" class="color">Farve: '+value+'</li>')
+        // configurationList.find('li.color').remove()
+        configurationList.find('li.color').text('Farve: '+value)
       }
     }
 
