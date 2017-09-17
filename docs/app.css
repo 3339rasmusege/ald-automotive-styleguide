@@ -1000,6 +1000,12 @@ template {
   .selectric-items .selectric-group li {
     padding-left: 25px; }
 
+.Dropdown {
+  display: none; }
+
+.selectric-Dropdown {
+  display: block; }
+
 [class*="Dropdown--hideFirstOption"] .selectric-items ul li:first-child {
   display: none !important; }
 

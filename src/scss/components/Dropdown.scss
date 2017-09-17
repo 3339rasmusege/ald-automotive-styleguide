@@ -260,6 +260,10 @@ $selectric-inner-height-large:  $selectric-height-large - ($selectric-border-wid
   }
 }
 
+.Dropdown { display: none; }
+
+.selectric-Dropdown { display: block; }
+
 // Hide the first item in the Dropdown
 // This is useful when the first item is also used as the label for the select
 // and you don't need the label after the user has selected an option
