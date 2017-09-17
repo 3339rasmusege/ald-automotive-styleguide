@@ -1044,10 +1044,13 @@ template {
 
 .FeatureSelector {
   background-color: #fff;
-  padding-bottom: 54px; }
+  padding-bottom: 120px; }
   @media (min-width: 768px) {
     .FeatureSelector {
-      padding-bottom: 66px; } }
+      padding-bottom: 130px; } }
+  @media (min-width: 1300px) {
+    .FeatureSelector {
+      padding-bottom: 136px; } }
 
 .FeatureSelector-heading {
   text-align: center;

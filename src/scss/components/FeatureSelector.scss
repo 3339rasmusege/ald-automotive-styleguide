@@ -1,7 +1,8 @@
 .FeatureSelector {
   background-color: #fff;
-  padding-bottom: 54px;
-  @media #{$tablet} { padding-bottom: 66px; }
+  padding-bottom: 120px;
+  @media #{$tablet} { padding-bottom: 130px; }
+  @media #{$laptop} { padding-bottom: 136px; }
 }
 
 .FeatureSelector-heading {

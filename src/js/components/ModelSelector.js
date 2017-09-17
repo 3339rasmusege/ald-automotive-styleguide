@@ -37,8 +37,10 @@
         $('.ModelSelector .Swiper-wrapper').removeClass('Swiper-wrapper')
       }
     }
-
-    initModelSelector()
+    
+    if($('.ModelSelector').length) {
+      initModelSelector()
+    }
 
   })
 })();
