@@ -1,4 +1,13 @@
 {% extends 'layouts/default.html' %}
 {% block content %}
-  <h1>Showroom</h1>
+
+  <div class="PageWrapper">
+    {% include 'partials/Header.html' %}
+    {% include 'partials/SwiperHero.html' %}
+    {% include 'partials/ModelSelectorSection.html' %}
+    {% include 'partials/BenefitsSection.html' %}
+    {% include 'partials/BigImage.html' %}
+    {% include 'partials/Footer.html' %}
+  </div>
+
 {% endblock %}

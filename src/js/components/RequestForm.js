@@ -46,12 +46,16 @@
     }
 
     // On pageload
-    setTogglePosition()
-    moveOverviewPriceDetails()
-
-    $( window ).resize(function() {
+    if(requestForm.length) {
       setTogglePosition()
       moveOverviewPriceDetails()
+    }
+
+    $( window ).resize(function() {
+      if(requestForm.length) {
+        setTogglePosition()
+        moveOverviewPriceDetails()
+      }
     })
 
   })

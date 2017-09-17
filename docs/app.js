@@ -325,12 +325,16 @@ $(window).bind("load", function() {
     }
 
     // On pageload
-    setTogglePosition()
-    moveOverviewPriceDetails()
-
-    $( window ).resize(function() {
+    if(requestForm.length) {
       setTogglePosition()
       moveOverviewPriceDetails()
+    }
+
+    $( window ).resize(function() {
+      if(requestForm.length) {
+        setTogglePosition()
+        moveOverviewPriceDetails()
+      }
     })
 
   })

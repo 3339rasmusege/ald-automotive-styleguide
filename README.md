@@ -17,11 +17,14 @@ Naming convention for components follows https://suitcss.github.io/
 - `gulp ru --name utilityName` removes a utility.
 
 ## Todos
+- Ford focus page
+- Showroom page
+- index page
+---
 - make blue Dropdown go to url
 - Dark blue sticky footer scroll down to it on click
-- Dark gray heading
-- index page
 - format components page - prettier
 - live update "Din konfiguration"
 - global max page width
 - Make dropdown go to url (Modeller)
+- 'reload browser to see models' when resizing window
