@@ -1,12 +1,8 @@
 (function(){
   $(window).bind("load", function() {
 
-
-
     // Sticky footer
     function stickUnstick() {
-
-
       var footerWrapper = $('.RequestFormFooterWrapper')
       var wrapperHeight = footerWrapper.height()
       var windowHeight = window.innerHeight
@@ -26,10 +22,9 @@
       var footerYPosition = windowHeight - footerYOffset
 
       // NOTE: The unstickpoint is calculated from another element that remains
-      // static while scrolling
+      // static while scrolling. The stickyness depends on this element for
+      // reference of position.
       var unstickPoint = featureSelectorBottomPosition + footerYOffset
-
-      console.log(window.pageYOffset+windowHeight+" "+unstickPoint)
 
       if( (window.pageYOffset+windowHeight) > unstickPoint ) {
         footerWrapper.css({
@@ -52,8 +47,6 @@
           'padding-bottom': wrapperHeight+'px'
         })
       }
-
-
     }
 
     stickUnstick()
@@ -65,6 +58,13 @@
     $(window).on( 'scroll', function(){
       stickUnstick()
     });
+
+    // Scroll to footer when .RequestForm-openClose is clicked
+    $('.RequestForm-openClose').click(function(){
+      var featureSelectorPosition = $('.FeatureSelector').position()
+      var featureSelectorBottomPosition = featureSelectorPosition.top + $('.FeatureSelector').outerHeight()
+      $("html, body").animate({ scrollTop: (featureSelectorBottomPosition-72) }, 300);
+    })
 
   })
 })();

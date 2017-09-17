@@ -1196,6 +1196,10 @@ template {
 .Footer {
   background-color: #fff;
   padding: 30px; }
+  .Footer:after {
+    content: "";
+    display: table;
+    clear: both; }
   @media (min-width: 768px) {
     .Footer {
       padding: 40px; } }

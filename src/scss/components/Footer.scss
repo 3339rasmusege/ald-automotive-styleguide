@@ -1,4 +1,5 @@
 .Footer {
+  @include clearfix;
   background-color: #fff;
   padding: 30px;
   @media #{$tablet} { padding: 40px; }
