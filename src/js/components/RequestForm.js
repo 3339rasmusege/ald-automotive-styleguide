@@ -46,9 +46,13 @@
     }
 
     function setOverviewHeight() {
-      if (window.matchMedia("(min-width: "+tabletScreenWidth+"px)").matches) {
+      if (window.matchMedia("(min-width: "+laptopScreenWidth+"px)").matches) {
         requestFormOverview.css({
           'min-height': requestForm.height()+'px'
+        })
+      } else if (window.matchMedia("(max-width: "+laptopScreenWidth+"px)").matches) {
+        requestFormOverview.css({
+          'min-height': '0'
         })
       }
     }
@@ -64,17 +68,8 @@
       if(requestForm.length) {
         setTogglePosition()
         moveOverviewPriceDetails()
+        setOverviewHeight()
       }
-    })
-
-    $(window).bind('resize', function(e) {
-      window.resizeEvt
-      $(window).resize(function() {
-        clearTimeout(window.resizeEvt)
-        window.resizeEvt = setTimeout(function() {
-          setOverviewHeight()
-        }, 250)
-      })
     })
 
   })

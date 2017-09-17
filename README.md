@@ -2,9 +2,10 @@
 
 Live at https://rommel-dk.github.io/ald-automotive-styleguide/
 
-## Naming convention
 Notice that the build folder is named 'docs'. This allows us to host it on Github Pages.
-Naming convention for components follows https://suitcss.github.io/
+
+## Naming convention
+Naming convention for components follows https://suitcss.github.io/:
 
 `u-utilityName`
 `ComponentName`
@@ -27,3 +28,4 @@ Naming convention for components follows https://suitcss.github.io/
 - Sticky footer
 - Dark blue sticky footer scroll down to it on click
 - 'reload browser to see models' when resizing window
+- redo conf updating (stop from jumping around and shifting position)

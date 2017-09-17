@@ -1,6 +1,6 @@
 .PageWrapper {
   min-height: 100vh;
-  max-width: 1600px;
+  max-width: $pageWrapperWidth;
   margin: 0 auto;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, .075), 0 0 5px 0 rgba(0, 0, 0, .05);
 }

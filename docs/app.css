@@ -2296,7 +2296,9 @@ h1, h2, h3, h4, h5, h6,
 .RequestFormFooterWrapper {
   position: relative;
   background-color: #12274B;
-  width: 100%; }
+  width: 100%;
+  opacity: 0;
+  max-width: 1600px; }
 
 /**
  * Swiper 3.4.2

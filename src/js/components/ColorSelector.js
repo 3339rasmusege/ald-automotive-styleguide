@@ -43,7 +43,7 @@
     function setColorInConfList(value) {
       if( configurationList.length ) {
         configurationList.find('li.color').remove()
-        configurationList.find('li.mileage').after('<li data-sort="1" class="color">Farve: '+value+'</li>')
+        configurationList.append('<li data-sort="1" class="color">Farve: '+value+'</li>')
       }
     }
 
