@@ -1,0 +1,53 @@
+.ImageHero {
+  @include clearfix;
+  background: #fff;
+}
+
+.ImageHero-copy {
+  padding: 30px;
+  padding-bottom: 60px;
+  .Heading {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 24px;
+    > b { display: block; }
+  }
+  p {
+    font-size: 16px;
+    line-height: 27px;
+    color: #7C7C7C;
+    margin: 0;
+    @media #{$tablet} { font-size: 12px; line-height: 20px; }
+    @media #{$laptop} { font-size: 16px; line-height: 27px; }
+  }
+  @media #{$tablet} {
+    height: 290px;
+    float: right;
+    width: 50%;
+    padding: 30px 60px;
+  }
+  @media #{$laptop} {
+    height: 470px;
+    padding: 80px 180px 0 110px;
+  }
+}
+
+.ImageHero-image {
+  height: 180px;
+  width: 100%;
+  background-color: $darkGray;
+  @media (min-width: 500px) { height: 220px; }
+  @media (min-width: 600px) { height: 250px; }
+  @media (min-width: 700px) { height: 260px; }
+  @media #{$tablet} {
+    height: 290px;
+    float: left;
+    width: 50%;
+  }
+  @media (min-width: 800px) { height: 300px; }
+  @media (min-width: 900px) { height: 340px; }
+  @media (min-width: 1000px) { height: 380px; }
+  @media (min-width: 1100px) { height: 400px; }
+  @media (min-width: 1200px) { height: 440px; }
+  @media #{$laptop} { height: 470px; }
+}

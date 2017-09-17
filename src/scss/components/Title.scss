@@ -7,7 +7,7 @@
   max-width: 320px;
   margin: 0 auto;
   padding-top: 50px;
-  padding-bottom: 130px;
+  padding-bottom: 120px;
 }
 
 .Title-heading {
@@ -25,7 +25,7 @@
 }
 
 @media #{$tablet} {
-  .Title-inner { padding-top: 60px; padding-bottom: 60px; }
+  .Title-inner { padding-top: 60px; padding-bottom: 70px; }
   .Title-heading { margin-bottom: 24px; }
   .Title-subheading { font-size: 16px; line-height: 25px; }
 }
@@ -33,7 +33,7 @@
 @media #{$laptop} {
   .Title { text-align: left; height: 470px; }
   .Title-inner {
-    padding-top: 100px;
+    padding-top: 4.5vw;
     padding-left: 130px;
     padding-right: 130px;
     max-width: 530px;

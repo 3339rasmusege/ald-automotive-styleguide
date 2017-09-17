@@ -721,6 +721,50 @@ template {
   background: #000;
   padding: 1em 30px 1.15em; }
 
+.ConfiguratorTitle {
+  background: #656A72;
+  text-align: center;
+  position: relative; }
+
+.ConfiguratorTitle-heading {
+  font-size: 20px;
+  line-height: 26px;
+  color: #fff;
+  padding: 40px;
+  padding-bottom: 60px;
+  margin: 0; }
+  @media (min-width: 768px) {
+    .ConfiguratorTitle-heading {
+      padding: 50px;
+      padding-bottom: 65px; } }
+  @media (min-width: 768px) {
+    .ConfiguratorTitle-heading {
+      padding: 55px;
+      padding-bottom: 70px; } }
+
+.ConfiguratorTitle-arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #656A72;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.4), 0 0 0 9px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 50%;
+  bottom: -25px;
+  margin-left: -25px; }
+  .ConfiguratorTitle-arrow:after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    background-image: url(/images/caret-right.png);
+    background-size: 6px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 19px;
+    left: 22px;
+    transform: rotate(90deg); }
+
 .Coupon {
   width: 244px;
   height: 98px;
@@ -1364,6 +1408,87 @@ h1, h2, h3, h4, h5, h6,
 .Heading--light {
   font-weight: 300; }
 
+.ImageHero {
+  background: #fff; }
+  .ImageHero:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.ImageHero-copy {
+  padding: 30px;
+  padding-bottom: 60px; }
+  .ImageHero-copy .Heading, .ImageHero-copy .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .ImageHero-copy .FeatureSelector-optionKey, .ImageHero-copy
+  .FeatureSelector-option .FeatureSelector-optionValue,
+  .FeatureSelector-option .ImageHero-copy .FeatureSelector-optionValue, .ImageHero-copy .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .ImageHero-copy h3, .ImageHero-copy .RequestForm-overviewPrice {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 24px; }
+    .ImageHero-copy .Heading > b, .ImageHero-copy .FeatureSelector-option .FeatureSelector-optionKey > b, .FeatureSelector-option .ImageHero-copy .FeatureSelector-optionKey > b, .ImageHero-copy
+    .FeatureSelector-option .FeatureSelector-optionValue > b,
+    .FeatureSelector-option .ImageHero-copy .FeatureSelector-optionValue > b, .ImageHero-copy .PackageSelector-optionHeader h3 > b, .PackageSelector-optionHeader .ImageHero-copy h3 > b, .ImageHero-copy .RequestForm-overviewPrice > b {
+      display: block; }
+  .ImageHero-copy p {
+    font-size: 16px;
+    line-height: 27px;
+    color: #7C7C7C;
+    margin: 0; }
+    @media (min-width: 768px) {
+      .ImageHero-copy p {
+        font-size: 12px;
+        line-height: 20px; } }
+    @media (min-width: 1300px) {
+      .ImageHero-copy p {
+        font-size: 16px;
+        line-height: 27px; } }
+  @media (min-width: 768px) {
+    .ImageHero-copy {
+      height: 290px;
+      float: right;
+      width: 50%;
+      padding: 30px 60px; } }
+  @media (min-width: 1300px) {
+    .ImageHero-copy {
+      height: 470px;
+      padding: 80px 180px 0 110px; } }
+
+.ImageHero-image {
+  height: 180px;
+  width: 100%;
+  background-color: #656A72; }
+  @media (min-width: 500px) {
+    .ImageHero-image {
+      height: 220px; } }
+  @media (min-width: 600px) {
+    .ImageHero-image {
+      height: 250px; } }
+  @media (min-width: 700px) {
+    .ImageHero-image {
+      height: 260px; } }
+  @media (min-width: 768px) {
+    .ImageHero-image {
+      height: 290px;
+      float: left;
+      width: 50%; } }
+  @media (min-width: 800px) {
+    .ImageHero-image {
+      height: 300px; } }
+  @media (min-width: 900px) {
+    .ImageHero-image {
+      height: 340px; } }
+  @media (min-width: 1000px) {
+    .ImageHero-image {
+      height: 380px; } }
+  @media (min-width: 1100px) {
+    .ImageHero-image {
+      height: 400px; } }
+  @media (min-width: 1200px) {
+    .ImageHero-image {
+      height: 440px; } }
+  @media (min-width: 1300px) {
+    .ImageHero-image {
+      height: 470px; } }
+
 .Logo {
   margin: 0;
   width: 84px;
@@ -1560,10 +1685,15 @@ h1, h2, h3, h4, h5, h6,
     .ModelSelectorSection {
       padding: 0; } }
 
-@media (min-width: 1300px) {
-  .ModelSelectorSection .ModelSelectorWidth {
-    position: relative;
-    top: -60px; } }
+.ModelSelectorSection .ModelSelectorWidth {
+  position: relative;
+  top: -80px; }
+  @media (min-width: 768px) {
+    .ModelSelectorSection .ModelSelectorWidth {
+      top: 0; } }
+  @media (min-width: 1300px) {
+    .ModelSelectorSection .ModelSelectorWidth {
+      top: -60px; } }
 
 .ModelSelectorSection-info:after {
   content: "";
@@ -2598,7 +2728,8 @@ button.swiper-pagination-bullet {
 
 /*img*/
 .Swiper-fullWidthImage {
-  width: 100%; }
+  width: 100%;
+  display: block; }
 
 .Swiper-heading {
   font-size: 12px;
@@ -2657,6 +2788,21 @@ button.swiper-pagination-bullet {
     .Swiper--onlyShowPaginationOnDektop .Swiper-pagination {
       display: block; } }
 
+.SwiperHero:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+@media (min-width: 1300px) {
+  .SwiperHero-swiper {
+    float: right;
+    width: 60%; } }
+
+@media (min-width: 1300px) {
+  .SwiperHero-title {
+    float: left;
+    width: 40%; } }
+
 .Title {
   background-color: #19315B;
   text-align: center; }
@@ -2665,7 +2811,7 @@ button.swiper-pagination-bullet {
   max-width: 320px;
   margin: 0 auto;
   padding-top: 50px;
-  padding-bottom: 130px; }
+  padding-bottom: 120px; }
 
 .Title-heading {
   margin-bottom: 18px;
@@ -2680,7 +2826,7 @@ button.swiper-pagination-bullet {
 @media (min-width: 768px) {
   .Title-inner {
     padding-top: 60px;
-    padding-bottom: 60px; }
+    padding-bottom: 70px; }
   .Title-heading {
     margin-bottom: 24px; }
   .Title-subheading {
@@ -2692,7 +2838,7 @@ button.swiper-pagination-bullet {
     text-align: left;
     height: 470px; }
   .Title-inner {
-    padding-top: 100px;
+    padding-top: 4.5vw;
     padding-left: 130px;
     padding-right: 130px;
     max-width: 530px;

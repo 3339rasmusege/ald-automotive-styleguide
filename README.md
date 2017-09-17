@@ -19,9 +19,6 @@ Naming convention for components follows https://suitcss.github.io/
 ## Todos
 - make blue Dropdown go to url
 - Dark blue sticky footer scroll down to it on click
-- Whtie text area                   
-- Hero with swiper
-- Hero with image
 - Dark gray heading
 - index page
 - format components page - prettier

@@ -1,0 +1,47 @@
+.ConfiguratorTitle {
+  background: #656A72;
+  text-align: center;
+  position: relative;
+}
+
+.ConfiguratorTitle-heading {
+  font-size: 20px;
+  line-height: 26px;
+  color: #fff;
+  padding: 40px;
+  padding-bottom: 60px;
+  margin: 0;
+  @media #{$tablet} {
+    padding: 50px;
+    padding-bottom: 65px;
+  }
+  @media #{$tablet} {
+    padding: 55px;
+    padding-bottom: 70px;
+  }
+}
+
+.ConfiguratorTitle-arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #656A72;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .4), 0 0 0 9px rgba(0, 0, 0, .1);
+  position: absolute;
+  left: 50%;
+  bottom: -25px;
+  margin-left: -25px;
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 10px;
+    background-image: url(/images/caret-right.png);
+    background-size: 6px;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 19px;
+    left: 22px;
+    transform: rotate(90deg);
+  }
+}

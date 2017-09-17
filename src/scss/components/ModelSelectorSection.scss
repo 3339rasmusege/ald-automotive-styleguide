@@ -7,10 +7,10 @@
 }
 
 .ModelSelectorSection .ModelSelectorWidth {
-  @media #{$laptop} {
-    position: relative;
-    top: -60px;
-  }
+  position: relative;
+  top: -80px;
+  @media #{$tablet} { top: 0; }
+  @media #{$laptop} { top: -60px; }
 }
 
 .ModelSelectorSection-info {

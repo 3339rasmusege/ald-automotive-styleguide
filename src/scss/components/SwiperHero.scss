@@ -1,0 +1,17 @@
+.SwiperHero {
+  @include clearfix;
+}
+
+.SwiperHero-swiper {
+  @media #{$laptop} {
+    float: right;
+    width: 60%;
+  }
+}
+
+.SwiperHero-title {
+  @media #{$laptop} {
+    float: left;
+    width: 40%;
+  }
+}
