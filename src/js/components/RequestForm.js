@@ -45,10 +45,17 @@
       }
     }
 
+    function setOverviewHeight() {
+      requestFormOverview.css({
+        'min-height': requestForm.height()+'px'
+      })
+    }
+
     // On pageload
     if(requestForm.length) {
       setTogglePosition()
       moveOverviewPriceDetails()
+      setOverviewHeight()
     }
 
     $( window ).resize(function() {
@@ -56,6 +63,16 @@
         setTogglePosition()
         moveOverviewPriceDetails()
       }
+    })
+
+    $(window).bind('resize', function(e) {
+      window.resizeEvt
+      $(window).resize(function() {
+        clearTimeout(window.resizeEvt)
+        window.resizeEvt = setTimeout(function() {
+          setOverviewHeight()
+        }, 250)
+      })
     })
 
   })

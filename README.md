@@ -1,9 +1,16 @@
 # ALD Automotive Styleguide
 
-https://rommel-dk.github.io/ald-automotive-styleguide/
+Live at https://rommel-dk.github.io/ald-automotive-styleguide/
 
+## Naming convention
 Notice that the build folder is named 'docs'. This allows us to host it on Github Pages.
 Naming convention for components follows https://suitcss.github.io/
+
+`u-utilityName`
+`ComponentName`
+`ComponentName--modifierName`
+`ComponentName-descendentName`
+`ComponentName.is-stateOfComponent`
 
 ## Gulp tasks
 - `gulp s` starts development server
@@ -17,13 +24,8 @@ Naming convention for components follows https://suitcss.github.io/
 - `gulp ru --name utilityName` removes a utility.
 
 ## Todos
-- Ford focus page
-- Showroom page
-- index page
----
 - make blue Dropdown go to url
 - Dark blue sticky footer scroll down to it on click
-- format components page - prettier
 - live update "Din konfiguration"
 - global max page width
 - Make dropdown go to url (Modeller)

@@ -146,6 +146,7 @@
     @media #{$laptop} { padding: 12px 32px; }
   }
   .Heading {
+    display: none;
     font-size: 13px;
     padding: 15px 48px;
     line-height: 1;
@@ -184,7 +185,7 @@
   @media #{$laptop} {
     float: right;
     width: 66.66%;
-    padding: 0 66px;
+    padding: 0 66px 50px;
   }
 }
 
