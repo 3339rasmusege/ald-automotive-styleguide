@@ -141,7 +141,9 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 
 // Dropdowns using http://selectric.js.org/
 $(window).bind("load", function() {
-  $('.Dropdown').selectric();
+  $('.Dropdown').selectric({
+    nativeOnMobile: false
+  });
 });
 
 (function(){

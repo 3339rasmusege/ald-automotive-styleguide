@@ -1,6 +1,8 @@
 // Dropdowns using http://selectric.js.org/
 $(window).bind("load", function() {
-  $('.Dropdown').selectric();
+  $('.Dropdown').selectric({
+    nativeOnMobile: false
+  });
 });
 
 (function(){
