@@ -1370,9 +1370,6 @@ h1, h2, h3, h4, h5, h6,
     text-align: center;
     margin-top: 0;
     margin-bottom: 24px; }
-  @media (min-width: 768px) {
-    .ModelSelector .ModelSelector-dropdown {
-      display: none; } }
 
 .ModelSelector-model {
   border-top: 1px solid #E7E7E7;
@@ -1508,6 +1505,75 @@ h1, h2, h3, h4, h5, h6,
   @media (min-width: 768px) {
     .ModelSelector-swiperHeading {
       display: block; } }
+
+.ModelSelectorSection {
+  background-color: #E8E8E8;
+  padding: 12px 12px 30px; }
+  @media (min-width: 768px) {
+    .ModelSelectorSection {
+      padding: 0; } }
+
+@media (min-width: 1300px) {
+  .ModelSelectorSection .ModelSelectorWidth {
+    position: relative;
+    top: -60px; } }
+
+.ModelSelectorSection-info {
+  overflow: hidden; }
+  @media (min-width: 768px) {
+    .ModelSelectorSection-info {
+      padding: 60px 40px; } }
+  @media (min-width: 1300px) {
+    .ModelSelectorSection-info {
+      padding: 10px 130px 100px; } }
+
+.ModelSelectorSection-conditions {
+  font-size: 12px;
+  line-height: 20px;
+  color: #7C7C7C;
+  padding: 12px;
+  padding-top: 30px; }
+  .ModelSelectorSection-conditions .Heading, .ModelSelectorSection-conditions .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .ModelSelectorSection-conditions .FeatureSelector-optionKey, .ModelSelectorSection-conditions
+  .FeatureSelector-option .FeatureSelector-optionValue,
+  .FeatureSelector-option .ModelSelectorSection-conditions .FeatureSelector-optionValue, .ModelSelectorSection-conditions .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .ModelSelectorSection-conditions h3, .ModelSelectorSection-conditions .RequestForm-overviewPrice {
+    margin-bottom: 20px; }
+  @media (min-width: 768px) {
+    .ModelSelectorSection-conditions {
+      padding: 0;
+      float: left;
+      width: 50%;
+      padding-right: 30px; }
+      .ModelSelectorSection-conditions .Heading, .ModelSelectorSection-conditions .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .ModelSelectorSection-conditions .FeatureSelector-optionKey, .ModelSelectorSection-conditions
+      .FeatureSelector-option .FeatureSelector-optionValue,
+      .FeatureSelector-option .ModelSelectorSection-conditions .FeatureSelector-optionValue, .ModelSelectorSection-conditions .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .ModelSelectorSection-conditions h3, .ModelSelectorSection-conditions .RequestForm-overviewPrice {
+        margin-bottom: 30px; } }
+  @media (min-width: 1300px) {
+    .ModelSelectorSection-conditions {
+      padding-right: 0;
+      width: 40%; } }
+
+.ModelSelectorSection-dropdown {
+  display: none; }
+  @media (min-width: 768px) {
+    .ModelSelectorSection-dropdown {
+      display: block;
+      padding: 0;
+      float: right;
+      width: 50%;
+      padding-left: 30px; }
+      .ModelSelectorSection-dropdown .Heading, .ModelSelectorSection-dropdown .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .ModelSelectorSection-dropdown .FeatureSelector-optionKey, .ModelSelectorSection-dropdown
+      .FeatureSelector-option .FeatureSelector-optionValue,
+      .FeatureSelector-option .ModelSelectorSection-dropdown .FeatureSelector-optionValue, .ModelSelectorSection-dropdown .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .ModelSelectorSection-dropdown h3, .ModelSelectorSection-dropdown .RequestForm-overviewPrice {
+        font-size: 20px;
+        margin-bottom: 30px; } }
+  @media (min-width: 1300px) {
+    .ModelSelectorSection-dropdown .Heading, .ModelSelectorSection-dropdown .FeatureSelector-option .FeatureSelector-optionKey, .FeatureSelector-option .ModelSelectorSection-dropdown .FeatureSelector-optionKey, .ModelSelectorSection-dropdown
+    .FeatureSelector-option .FeatureSelector-optionValue,
+    .FeatureSelector-option .ModelSelectorSection-dropdown .FeatureSelector-optionValue, .ModelSelectorSection-dropdown .PackageSelector-optionHeader h3, .PackageSelector-optionHeader .ModelSelectorSection-dropdown h3, .ModelSelectorSection-dropdown .RequestForm-overviewPrice {
+      font-size: 28px;
+      margin-bottom: 45px; }
+    .ModelSelectorSection-dropdown .selectric-Dropdown {
+      max-width: 400px; } }
 
 .ModelSelectorWidth {
   position: relative;

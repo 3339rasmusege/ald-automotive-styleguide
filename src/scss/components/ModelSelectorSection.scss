@@ -1,0 +1,68 @@
+.ModelSelectorSection {
+  background-color: #E8E8E8;
+  padding: 12px 12px 30px;
+  @media #{$tablet} {
+    padding: 0;
+  }
+}
+
+.ModelSelectorSection .ModelSelectorWidth {
+  @media #{$laptop} {
+    position: relative;
+    top: -60px;
+  }
+}
+
+.ModelSelectorSection-info {
+  overflow: hidden;
+  @media #{$tablet} {
+    padding: 60px 40px;
+  }
+  @media #{$laptop} {
+    padding: 10px 130px 100px;
+  }
+}
+
+.ModelSelectorSection-conditions {
+  font-size: 12px;
+  line-height: 20px;
+  color: #7C7C7C;
+  padding: 12px;
+  padding-top: 30px;
+  .Heading { margin-bottom: 20px; }
+  @media #{$tablet} {
+    padding: 0;
+    float: left;
+    width: 50%;
+    padding-right: 30px;
+    .Heading { margin-bottom: 30px; }
+  }
+  @media #{$laptop} {
+    padding-right: 0;
+    width: 40%;
+  }
+}
+
+.ModelSelectorSection-dropdown {
+  display: none;
+  @media #{$tablet} {
+    display: block;
+    padding: 0;
+    float: right;
+    width: 50%;
+    padding-left: 30px;
+    .Heading {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+  }
+  @media #{$laptop} {
+    .Heading {
+      font-size: 28px;
+      margin-bottom: 45px;
+    }
+    .selectric-Dropdown {
+      max-width: 400px;
+    }
+  }
+}
