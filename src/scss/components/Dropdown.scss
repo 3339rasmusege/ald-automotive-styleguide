@@ -59,6 +59,7 @@ $selectric-inner-height-large:  $selectric-height-large - ($selectric-border-wid
     background-color: $selectric-bg-color;
     color: $selectric-secondary-color;
     text-align: center;
+    border-radius: 3px;
     font: 0/0 a;
     *font: 20px/#{$selectric-inner-height-small} Lucida Sans Unicode, Arial Unicode MS, Arial;
 

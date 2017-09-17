@@ -152,7 +152,7 @@ gulp.task('renameAssetRefs', function() {
 // Used by the `ghp` task
 gulp.task('renameAssetRefsForGitHubPages', function() {
   return gulp.src('./docs/**/*.html')
-    .pipe(replace('http://localhost:3000/', '/ald-automotive-styleguide'))
+    .pipe(replace('http://localhost:3000/', '/ald-automotive-styleguide/'))
     .pipe(gulp.dest('./docs/'))
 });
 
@@ -166,7 +166,7 @@ gulp.task('renameFontRefsForGitHubPages', function() {
 
 gulp.task('renameImageUrlsForGitHubPages', function() {
   return gulp.src('./docs/*.css')
-    .pipe(replace('url(/images', 'url(/ald-automotive-styleguide/images'))
+    .pipe(replace('url(/images', 'url(/ald-automotive-styleguide/images/'))
     .pipe(gulp.dest('./docs/'))
 });
 
