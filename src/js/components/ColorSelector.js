@@ -1,7 +1,10 @@
 (function(){
   $(window).bind("load", function() {
 
-    var colors = $('.ColorSelector .ColorSelector-color');
+    var colorSelector = $('.ColorSelector')
+    var colors = colorSelector.find('.ColorSelector-color')
+    var configurationList = $('.RequestForm-configuration ul')
+    var initialColor = colorSelector.find('input:checked').closest('.ColorSelector-color').attr('data-color-name') // If an option is selected
 
     // When page is loaded: set checked color
     $('.ColorSelector-color').each( function(){
@@ -32,6 +35,20 @@
     // When a color is clicked
     $('.ColorSelector-color').click( function() {
       setActiveColor($(this))
+      var colorName = $(this).find('.ColorSelector-colorLabel').text()
+      setColorInConfList(colorName)
     })
+
+    // Add value to .RequestForm-configuration
+    function setColorInConfList(value) {
+      if( configurationList.length ) {
+        configurationList.find('li.color').remove()
+        configurationList.find('li.mileage').after('<li data-sort="1" class="color">Farve: '+value+'</li>')
+      }
+    }
+
+    // On pageload: Add value to .RequestForm-configuration
+    setColorInConfList(initialColor)
+
   })
 })();

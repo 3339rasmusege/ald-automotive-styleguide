@@ -1,6 +1,9 @@
 (function(){
   $(window).bind("load", function() {
 
+    var configurationList = $('.RequestForm-configuration ul')
+    var initialPackage = $('.PackageSelector').find('input:checked').siblings('h3').text()
+
     function openClosePackageOption(element) {
       var clickedPackageOption = element.closest('.PackageSelector-option')
       var allPackageOptions = clickedPackageOption.parent('form').find('.PackageSelector-option')
@@ -23,6 +26,23 @@
     $('.PackageSelector-optionOpenClose').click( function(){
       openClosePackageOption($(this))
     })
+
+    // Add value to .RequestForm-configuration
+    function setPackageInConfList(value) {
+      if( configurationList.length ) {
+        configurationList.find('li.package').remove()
+        configurationList.append('<li data-sort="2" class="package">Udstyrspakke: '+value+'</li>')
+      }
+    }
+
+    // On click: Add value to .RequestForm-configuration
+    $('.PackageSelector').find('.PackageSelector-option label').click(function(){
+      var packageValue = $(this).siblings('h3').text()
+      setPackageInConfList(packageValue)
+    })
+
+    // On pageload: Add value to .RequestForm-configuration
+    setPackageInConfList(initialPackage)
 
   })
 })();

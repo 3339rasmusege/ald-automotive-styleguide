@@ -21,7 +21,6 @@ $(window).bind("load", function() {
           }
         }
       })
-
     })
 
   });

@@ -46,9 +46,11 @@
     }
 
     function setOverviewHeight() {
-      requestFormOverview.css({
-        'min-height': requestForm.height()+'px'
-      })
+      if (window.matchMedia("(min-width: "+tabletScreenWidth+"px)").matches) {
+        requestFormOverview.css({
+          'min-height': requestForm.height()+'px'
+        })
+      }
     }
 
     // On pageload

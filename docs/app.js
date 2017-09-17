@@ -71,7 +71,10 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 (function(){
   $(window).bind("load", function() {
 
-    var colors = $('.ColorSelector .ColorSelector-color');
+    var colorSelector = $('.ColorSelector')
+    var colors = colorSelector.find('.ColorSelector-color')
+    var configurationList = $('.RequestForm-configuration ul')
+    var initialColor = colorSelector.find('input:checked').closest('.ColorSelector-color').attr('data-color-name') // If an option is selected
 
     // When page is loaded: set checked color
     $('.ColorSelector-color').each( function(){
@@ -102,7 +105,21 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
     // When a color is clicked
     $('.ColorSelector-color').click( function() {
       setActiveColor($(this))
+      var colorName = $(this).find('.ColorSelector-colorLabel').text()
+      setColorInConfList(colorName)
     })
+
+    // Add value to .RequestForm-configuration
+    function setColorInConfList(value) {
+      if( configurationList.length ) {
+        configurationList.find('li.color').remove()
+        configurationList.find('li.mileage').after('<li data-sort="1" class="color">Farve: '+value+'</li>')
+      }
+    }
+
+    // On pageload: Add value to .RequestForm-configuration
+    setColorInConfList(initialColor)
+
   })
 })();
 
@@ -162,14 +179,42 @@ $(window).bind("load", function() {
           }
         }
       })
-
     })
 
   });
 })();
 
-// FeatureSelector
+(function(){
+  $(window).bind("load", function() {
 
+    var featureSelector = $('.FeatureSelector')
+    var configurationList = $('.RequestForm-configuration ul')
+
+    // Add value to .RequestForm-configuration
+    function setFeaturesInConfList() {
+      if( configurationList.length ) {
+        configurationList.find('li.feature').remove()
+        setTimeout(function(){
+          featureSelector.find('input[type="checkbox"]').each(function(){
+            if( $(this).is(':checked') ) {
+              var value = $(this).siblings('label').text()
+              configurationList.append('<li data-sort="3" class="feature">Ekstraudstyr: '+value+'</li>')
+            }
+          })
+        }, 100);
+      }
+    }
+
+    // On click:  Add value to .RequestForm-configuration
+    featureSelector.find('.FeatureSelector-option label').click(function(){
+      setFeaturesInConfList()
+    })
+
+    // On pageload:  Add value to .RequestForm-configuration
+    setFeaturesInConfList()
+
+  })
+})();
 
 (function(){
   $(window).bind("load", function() {
@@ -203,8 +248,34 @@ $(window).bind("load", function() {
 // ImageHero
 
 
-// MileageSelector
+(function(){
+  $(window).bind("load", function() {
 
+    // Add value to .RequestForm-configuration
+    var mileageSelector = $('.MileageSelector')
+    var configurationList = $('.RequestForm-configuration ul')
+
+    var initialValue = mileageSelector.find('.selectric-hide-select select option:first-child').text() // If no option is set to selected
+    var initialValue = mileageSelector.find('.selectric-hide-select select option:selected').text() // If an option is selected
+
+    function setMileageInConfList(value) {
+      if( configurationList.length ) {
+        configurationList.find('li.mileage').remove()
+        configurationList.prepend('<li data-sort="0" class="mileage">Km: '+value+'</li>')
+      }
+    }
+
+    // On click
+    mileageSelector.find('.selectric-Dropdown .selectric-items li').click(function(){
+      var optionValue = $(this).text()
+      setMileageInConfList(optionValue)
+    })
+
+    // On pageload
+    setMileageInConfList(initialValue)
+
+  })
+})();
 
 // http://idangero.us/swiper/api/
 
@@ -280,6 +351,9 @@ $(window).bind("load", function() {
 (function(){
   $(window).bind("load", function() {
 
+    var configurationList = $('.RequestForm-configuration ul')
+    var initialPackage = $('.PackageSelector').find('input:checked').siblings('h3').text()
+
     function openClosePackageOption(element) {
       var clickedPackageOption = element.closest('.PackageSelector-option')
       var allPackageOptions = clickedPackageOption.parent('form').find('.PackageSelector-option')
@@ -302,6 +376,23 @@ $(window).bind("load", function() {
     $('.PackageSelector-optionOpenClose').click( function(){
       openClosePackageOption($(this))
     })
+
+    // Add value to .RequestForm-configuration
+    function setPackageInConfList(value) {
+      if( configurationList.length ) {
+        configurationList.find('li.package').remove()
+        configurationList.append('<li data-sort="2" class="package">Udstyrspakke: '+value+'</li>')
+      }
+    }
+
+    // On click: Add value to .RequestForm-configuration
+    $('.PackageSelector').find('.PackageSelector-option label').click(function(){
+      var packageValue = $(this).siblings('h3').text()
+      setPackageInConfList(packageValue)
+    })
+
+    // On pageload: Add value to .RequestForm-configuration
+    setPackageInConfList(initialPackage)
 
   })
 })();
@@ -354,9 +445,11 @@ $(window).bind("load", function() {
     }
 
     function setOverviewHeight() {
-      requestFormOverview.css({
-        'min-height': requestForm.height()+'px'
-      })
+      if (window.matchMedia("(min-width: "+tabletScreenWidth+"px)").matches) {
+        requestFormOverview.css({
+          'min-height': requestForm.height()+'px'
+        })
+      }
     }
 
     // On pageload

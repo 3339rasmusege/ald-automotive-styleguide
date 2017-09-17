@@ -24,9 +24,7 @@ Naming convention for components follows https://suitcss.github.io/
 - `gulp ru --name utilityName` removes a utility.
 
 ## Todos
-- make blue Dropdown go to url
-- Dark blue sticky footer scroll down to it on click
 - live update "Din konfiguration"
-- global max page width
-- Make dropdown go to url (Modeller)
+- Sticky footer
+- Dark blue sticky footer scroll down to it on click
 - 'reload browser to see models' when resizing window
