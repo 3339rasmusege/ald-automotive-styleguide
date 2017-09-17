@@ -1,4 +1,15 @@
 {% extends 'layouts/default.html' %}
 {% block content %}
-  <h1>Ford Focus</h1>
+
+  <div class="PageWrapper">
+    {% include 'partials/Header.html' %}
+    {% include 'partials/ImageHero.html' %}
+    <div class="Configurator">
+      {% include 'partials/ConfiguratorTitle.html' %}
+      {% include 'partials/MileageSelector.html' %}
+      {% include 'partials/ColorSelector.html' %}
+    </div>
+    {% include 'partials/Footer.html' %}
+  </div>
+
 {% endblock %}

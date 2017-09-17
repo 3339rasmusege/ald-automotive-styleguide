@@ -27,15 +27,17 @@
       $('.Swiper--big .Swiper-pagination').css({ 'left': headingOffset+'px' })
     }
 
-    positionPagination()
-
-    swiper.on('slideChangeEnd', function () {
+    if($('.Swiper--big').length) {
       positionPagination()
-    })
 
-    swiper.on('onResize', function () {
-      positionPagination()
-    })
+      swiper.on('slideChangeEnd', function () {
+        positionPagination()
+      })
+
+      swiper.on('onResize', function () {
+        positionPagination()
+      })
+    }
 
   })
 })();
