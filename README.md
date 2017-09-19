@@ -6,8 +6,8 @@ Live at https://rommel-dk.github.io/ald-automotive-styleguide/
 
 Include `app.css` and `app.js` located in the /build/ folder on the page. Run the following javascript after the script is included, to run the javascript for the components.
 ```
-var triggerJavascriptEvent = new Event('trigger-load');
-window.dispatchEvent(triggerJavascriptEvent)
+var triggerJavascriptLoadEvent = new Event('trigger-load');
+window.dispatchEvent(triggerJavascriptLoadEvent)
 ```
 
 ## Building with npm or yarn
