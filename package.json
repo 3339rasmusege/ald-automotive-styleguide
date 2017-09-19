@@ -1,9 +1,12 @@
 {
-  "name": "ALD Automotive Styleguide",
+  "name": "ald-automotive-styleguide",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "gulp build",
+    "develop": "gulp s"
+  },
   "author": "Jacques Mourier",
   "license": "ISC",
   "devDependencies": {
@@ -15,6 +18,8 @@
     "gulp-clean-css": "^3.0.4",
     "gulp-concat": "^2.6.1",
     "gulp-data": "^1.2.1",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-html-prettify": "^0.0.1",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.2.0",
     "gulp-nunjucks-render": "^2.2.1",
