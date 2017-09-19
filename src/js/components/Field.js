@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('field initiated')
 
     var Field = $('.Field')
 

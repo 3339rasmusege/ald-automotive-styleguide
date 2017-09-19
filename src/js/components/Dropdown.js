@@ -1,12 +1,14 @@
 // Dropdowns using http://selectric.js.org/
-$(window).bind("load", function() {
+window.addEventListener('trigger-load', function() {
+    console.log('selectric initiated')
   $('.Dropdown').selectric({
     nativeOnMobile: false
   });
 });
 
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('selectric-part-2 initiated')
 
     // Go to url when option is selected
     // The option element needs the data-href attr for this to work

@@ -2,7 +2,28 @@
 
 Live at https://rommel-dk.github.io/ald-automotive-styleguide/
 
-Notice that the build folder is named 'docs'. This allows us to host it on Github Pages.
+## How to us the styles, scripts and html
+
+Include `app.css` and `app.js` located in the /build/ folder on the page. Run the following javascript after the script is included, to run the javascript for the components.
+```
+var triggerJavascriptEvent = new Event('trigger-load');
+window.dispatchEvent(triggerJavascriptEvent)
+```
+
+## Building with npm or yarn
+### Build with npm
+```
+npm install
+npm run build
+```
+
+### Build with yarn
+```
+yarn
+yarn build
+```
+
+The builded files in the 'docs' folder is for hosting the styleguide on Github Pages.
 
 ## Naming convention
 Naming convention for components follows https://suitcss.github.io/:

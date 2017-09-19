@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('color-selector initiated')
 
     var colorSelector = $('.ColorSelector')
     var colors = colorSelector.find('.ColorSelector-color')

@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('milage-selector initiated')
 
     // Add value to .RequestForm-configuration
     var mileageSelector = $('.MileageSelector')

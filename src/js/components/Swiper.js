@@ -1,7 +1,8 @@
 // http://idangero.us/swiper/api/
 
 (function() {
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('swiper initiated')
 
     var swiper = new Swiper('.Swiper--big', {
       pagination: '.Swiper-pagination',

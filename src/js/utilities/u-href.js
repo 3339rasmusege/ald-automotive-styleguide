@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('u-hrefs initiated')
 
     $('[data-href]').click( function(){
       var href = $(this).attr('data-href')

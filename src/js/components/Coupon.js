@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('coupon loaded')
 
     var coupon = $('.Coupon')
     var couponField = coupon.find('.Coupon-field')

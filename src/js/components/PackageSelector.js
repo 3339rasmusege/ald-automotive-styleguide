@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('package-selector initiated')
 
     var configurationList = $('.RequestForm-configuration ul')
     var initialPackage = $('.PackageSelector').find('input:checked').siblings('h3').text()

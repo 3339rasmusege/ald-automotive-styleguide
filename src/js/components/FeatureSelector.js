@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('feature-selector initiated')
 
     var featureSelector = $('.FeatureSelector')
     var configurationList = $('.RequestForm-configuration ul')

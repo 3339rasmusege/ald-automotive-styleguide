@@ -1,4 +1,4 @@
-$(window).bind("load", function() {
+window.addEventListener('trigger-load', function() {
 	( function( $, window, document, undefined ){
 		$( '.Upload-input' ).each( function(){
 

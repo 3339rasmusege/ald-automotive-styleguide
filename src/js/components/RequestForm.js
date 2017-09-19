@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('request-form initiated')
 
     var laptopScreenWidth = 1300
     var tabletScreenWidth =  768

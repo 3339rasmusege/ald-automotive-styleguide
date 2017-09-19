@@ -1,5 +1,6 @@
 (function(){
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('background-image initiated')
 
     $('[data-background-image]').each( function() {
       var imageUrl = $(this).attr('data-background-image')

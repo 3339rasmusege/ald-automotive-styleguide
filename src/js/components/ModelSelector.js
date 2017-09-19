@@ -1,7 +1,8 @@
 // http://idangero.us/swiper/api/
 
 (function() {
-  $(window).bind("load", function() {
+  window.addEventListener('trigger-load', function() {
+    console.log('model initiated')
 
     var ModelSelector = new Swiper('.ModelSelector', {
       spaceBetween: 0,
