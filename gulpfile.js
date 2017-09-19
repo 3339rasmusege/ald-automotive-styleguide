@@ -20,6 +20,8 @@ var requireDir = require('require-dir');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var plumber = require('gulp-plumber');
+var prettify = require('gulp-html-prettify');
+var beautify = require('gulp-html-beautify');
 
 requireDir('./gulp-tasks');
 
@@ -34,11 +36,14 @@ gulp.task('html', function() {
         './src/templates'
       ]
     }))
-    .pipe(htmlmin({
-      collapseWhitespace: true,
-      minifyJS: true
-    }))
+    // .pipe(prettify({indent_char: ' ', indent_size: 4}))
+    .pipe(beautify({"preserve_newlines": false}))
+    // .pipe(htmlmin({
+    //   collapseWhitespace: true,
+    //   minifyJS: true
+    // }))
     .pipe(gulp.dest('./docs'))
+    .pipe(gulp.dest('./build'))
 });
 
 gulp.task('compressHtml', function() {
@@ -60,13 +65,14 @@ gulp.task('css', function() {
         '**/utilities/reset.scss'
         ]
     }))
-    .pipe(sass())
+    .pipe(sass({outputStyle: 'expanded'}))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
     .pipe(gulp.dest('./docs'))
-    .pipe(browserSync.stream())
+    .pipe(gulp.dest('./build'))
+    // .pipe(browserSync.stream())
 });
 
 gulp.task('compressCss', function() {
@@ -83,11 +89,13 @@ gulp.task('js', function() {
   ])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./docs'))
+    .pipe(gulp.dest('./build'))
 });
 
 gulp.task('moveJsFallbacks', function() {
    gulp.src('./src/js/fallbacks/**/*.js')
    .pipe(gulp.dest('./docs'))
+   .pipe(gulp.dest('./build'))
 });
 
 gulp.task('compressJs', function() {
@@ -100,16 +108,19 @@ gulp.task('images', function() {
   return gulp.src('./src/images/**/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./docs/images'))
+    .pipe(gulp.dest('./build/images'))
 });
 
 gulp.task('moveFavicons', function() {
    gulp.src('./src/favicons/**/*')
    .pipe(gulp.dest('./docs'))
+   .pipe(gulp.dest('./build'))
 });
 
 gulp.task('moveFonts', function() {
    gulp.src('./src/fonts/**/*')
    .pipe(gulp.dest('./docs/fonts'))
+   .pipe(gulp.dest('./build/fonts'))
 });
 
 gulp.task('devServer', ['css', 'js'], function() {
@@ -227,7 +238,7 @@ gulp.task('production', function(done) {
     'build',
     'compressCss',
     'compressJs',
-    'compressHtml',
+    // 'compressHtml',
     'moveFavicons', function() {
       runSequence('cachebust', 'removeUnwantedFiles')
       done();
