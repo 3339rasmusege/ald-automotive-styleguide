@@ -1,4 +1,4 @@
-window.addEventListener('trigger-load', function() {
+moduleScripts.upload = function() {
 	( function( $, window, document, undefined ){
 		$( '.Upload-input' ).each( function(){
 
@@ -36,4 +36,4 @@ window.addEventListener('trigger-load', function() {
 	    $(this).hide()
 	  })
 	})( jQuery, window, document )
-})
+}

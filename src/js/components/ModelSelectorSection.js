@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.modelSelectorSection = function() {
     console.log('trigger load')
 
     var tabletScreenWidth =  768
@@ -20,5 +20,5 @@
       moveModelSelectorDropdown()
     })
 
-  })
+  }
 })();

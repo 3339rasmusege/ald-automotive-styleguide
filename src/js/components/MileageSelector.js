@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.mileageSelector = function() {
     console.log('milage-selector initiated')
 
     // Add value to .RequestForm-configuration
@@ -25,5 +25,5 @@
     // On pageload
     setMileageInConfList(initialValue)
 
-  })
+  }
 })();

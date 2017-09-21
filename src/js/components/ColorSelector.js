@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.colorSelector = function() {
     console.log('color-selector initiated')
 
     var colorSelector = $('.ColorSelector')
@@ -51,5 +51,5 @@
     // On pageload: Add value to .RequestForm-configuration
     setColorInConfList(initialColor)
 
-  })
+  }
 })();

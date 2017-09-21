@@ -7,7 +7,8 @@
     "build": "gulp build",
     "develop": "gulp s",
     "build-docs": "gulp ghp",
-    "watch-scss": "gulp watch-scss"
+    "watch-scss": "gulp watch-scss",
+    "watch-js": "gulp watch-js"
   },
   "author": "Jacques Mourier",
   "license": "ISC",

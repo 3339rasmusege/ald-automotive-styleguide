@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.featureSelector = function() {
     console.log('feature-selector initiated')
 
     var featureSelector = $('.FeatureSelector')
@@ -32,5 +32,5 @@
     // On pageload:  Add value to .RequestForm-configuration
     setFeaturesInConfList()
 
-  })
+  }
 })();

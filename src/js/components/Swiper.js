@@ -1,7 +1,7 @@
 // http://idangero.us/swiper/api/
 
 (function() {
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.swiper = function() {
     console.log('swiper initiated')
 
     var swiper = new Swiper('.Swiper--big', {
@@ -40,5 +40,5 @@
       })
     }
 
-  })
+  }
 })();

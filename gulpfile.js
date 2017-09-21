@@ -88,6 +88,7 @@ gulp.task('compressCss', function() {
 
 gulp.task('js', function() {
   return gulp.src([
+    './src/js/main.js',
     './src/js/vendor/**/*.js',
     './src/js/utilities/**/*.js',
     './src/js/components/**/*.js'
@@ -275,4 +276,8 @@ gulp.task('ghp', function(done) {
 
 gulp.task('watch-scss',['css'], function() {
   gulp.watch('./src/scss/**/*.scss', ['css'])
+})
+
+gulp.task('watch-js',['js'], function() {
+  gulp.watch('./src/js/**/*.js', ['js'])
 })

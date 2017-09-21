@@ -2,21 +2,21 @@
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 300;
-  src: local("Antenna Light"), local("AntennaLight"), url(fonts/antenna-light.woff) format("woff");
+  src: local("Antenna Light"), local("AntennaLight"), url(/fonts/antenna-light.woff) format("woff");
 }
 
 @font-face {
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 400;
-  src: local("Antenna Regular"), local("AntennaRegular"), url(fonts/antenna-regular.woff) format("woff");
+  src: local("Antenna Regular"), local("AntennaRegular"), url(/fonts/antenna-regular.woff) format("woff");
 }
 
 @font-face {
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 700;
-  src: local("Antenna Bold"), local("AntennaBold"), url(fonts/antenna-bold.woff) format("woff");
+  src: local("Antenna Bold"), local("AntennaBold"), url(/fonts/antenna-bold.woff) format("woff");
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -2972,6 +2972,7 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
   opacity: 0;
   max-width: 1600px;
+  z-index: 100;
 }
 
 /**

@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.requestForm = function() {
     console.log('request-form initiated')
 
     var laptopScreenWidth = 1300
@@ -73,5 +73,5 @@
       }
     })
 
-  })
+  }
 })();

@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.packageSelector = function() {
     console.log('package-selector initiated')
 
     var configurationList = $('.RequestForm-configuration ul')
@@ -45,5 +45,5 @@
     // On pageload: Add value to .RequestForm-configuration
     setPackageInConfList(initialPackage)
 
-  })
+  }
 })();

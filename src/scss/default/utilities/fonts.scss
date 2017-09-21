@@ -2,19 +2,19 @@
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 300;
-  src: local('Antenna Light'), local('AntennaLight'), url(fonts/antenna-light.woff) format('woff');
+  src: local('Antenna Light'), local('AntennaLight'), url(/fonts/antenna-light.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 400;
-  src: local('Antenna Regular'), local('AntennaRegular'), url(fonts/antenna-regular.woff) format('woff');
+  src: local('Antenna Regular'), local('AntennaRegular'), url(/fonts/antenna-regular.woff) format('woff');
 }
 
 @font-face {
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 700;
-  src: local('Antenna Bold'), local('AntennaBold'), url(fonts/antenna-bold.woff) format('woff');
+  src: local('Antenna Bold'), local('AntennaBold'), url(/fonts/antenna-bold.woff) format('woff');
 }

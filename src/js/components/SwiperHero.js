@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.swiperHero = function() {
     console.log('swiper-hero initiated')
 
     var laptopScreenWidth = 1300
@@ -31,5 +31,5 @@
       })
     })
 
-  })
+  }
 })();

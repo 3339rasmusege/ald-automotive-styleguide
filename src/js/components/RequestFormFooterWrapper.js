@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.requestFormFooterWrapper = function() {
     console.log('request-form-footer-wrapper initiated')
 
     // Sticky footer
@@ -67,5 +67,5 @@
       $("html, body").animate({ scrollTop: (featureSelectorBottomPosition-72) }, 300);
     })
 
-  })
+  }
 })();

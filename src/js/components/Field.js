@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.field = function() {
     console.log('field initiated')
 
     var Field = $('.Field')
@@ -22,5 +22,5 @@
       addRemoveClasses($(this))
     })
 
-  })
+  }
 })();

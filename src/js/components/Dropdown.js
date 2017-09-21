@@ -1,14 +1,13 @@
 // Dropdowns using http://selectric.js.org/
-window.addEventListener('trigger-load', function() {
+ moduleScripts.dropdown = function() {
     console.log('selectric initiated')
   $('.Dropdown').selectric({
     nativeOnMobile: false
   });
-});
+};
 
 (function(){
-  window.addEventListener('trigger-load', function() {
-    console.log('selectric-part-2 initiated')
+  moduleScripts.dropdownLinks = function() {
 
     // Go to url when option is selected
     // The option element needs the data-href attr for this to work
@@ -25,5 +24,5 @@ window.addEventListener('trigger-load', function() {
       })
     })
 
-  });
+  };
 })();

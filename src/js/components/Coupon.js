@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.coupon = function() {
     console.log('coupon loaded')
 
     var coupon = $('.Coupon')
@@ -26,5 +26,5 @@
       showButton()
     })
 
-  })
+  }
 })();
