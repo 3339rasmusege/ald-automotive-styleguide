@@ -19,6 +19,8 @@ instead of
 ### Javascript usage
 To execute the javascript and bind the events of the components, run the following script after app.js is included:
 `moduleScripts.loadScripts()`
+or
+`window.moduleScripts.loadScripts()`
 
 ## Building, watching and extending
 Building the html, assets and css can be done with the folling package manager commands
