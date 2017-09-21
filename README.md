@@ -16,6 +16,8 @@ or
 instead of
 `build/css/main-default.css`
 
+See "Building, watching and extending" for explanation of how to create these.
+
 ### Javascript usage
 To execute the javascript and bind the events of the components, run the following script after app.js is included:
 `moduleScripts.loadScripts()`
@@ -43,10 +45,10 @@ yarn build
 To create a new .css file for a new styleguide variation, create a folder here:
 `/src/scss/<foldername>`
 Include the `main.scss` file and a `variables.scss` file for the necessary scss theme configurations. See the example inside `/src/scss/examplevariation/`.
+The example files is set up to use the SCSS files from the `/src/scss/default/`-folder with its own variables defined in the local `variables.scss` file. This way you can use the default styling and extend as necessary. I recommend adding any extra files that should only be included for an individual variation in its local folder (ex. `src/scss/examplevariation/`) and `@import` it to the local `main.scss`.
 
-
+## Github Pages docs
 The builded files in the 'docs' folder is for hosting the styleguide on Github Pages.
-
 
 
 ## Naming convention
