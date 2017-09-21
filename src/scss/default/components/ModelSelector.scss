@@ -68,7 +68,7 @@ $verticalListMaxWidth: 400px;
 .ModelSelector .Swiper-slide:hover,
 .ModelSelector .Swiper-slide:focus {
   img { transform: scale3d(1.05, 1.05, 1); }
-  .Swiper-heading { color: $lightBlue; }
+  .Swiper-heading { color: $primaryLight; }
 }
 
 .ModelSelector .Swiper-slide .Swiper-heading {

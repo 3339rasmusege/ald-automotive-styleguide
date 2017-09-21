@@ -22,6 +22,7 @@ var buffer = require('vinyl-buffer');
 var plumber = require('gulp-plumber');
 var prettify = require('gulp-html-prettify');
 var beautify = require('gulp-html-beautify');
+var rename = require('gulp-rename');
 
 requireDir('./gulp-tasks');
 
@@ -43,7 +44,7 @@ gulp.task('html', function() {
     //   minifyJS: true
     // }))
     .pipe(gulp.dest('./docs'))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./build/html'))
 });
 
 gulp.task('compressHtml', function() {
@@ -56,7 +57,7 @@ gulp.task('compressHtml', function() {
 });
 
 gulp.task('css', function() {
-  return gulp.src('./src/scss/app.scss')
+  return gulp.src('./src/scss/**/main.scss')
     .pipe(sassGlob({
       ignorePaths: [
         '**/utilities/variables.scss',
@@ -70,8 +71,12 @@ gulp.task('css', function() {
       browsers: ['last 2 versions'],
       cascade: false
     }))
+    .pipe(rename(function(path){
+      path.basename += '-'+path.dirname
+      path.dirname = ''
+    }))
     .pipe(gulp.dest('./docs'))
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./build/css'))
     // .pipe(browserSync.stream())
 });
 
@@ -267,3 +272,7 @@ gulp.task('ghp', function(done) {
       done();
   });
 });
+
+gulp.task('watch-scss',['css'], function() {
+  gulp.watch('./src/scss/**/*.scss', ['css'])
+})

@@ -6,7 +6,7 @@ $buttonHeight: 55px;
   text-align: center;
   appearance: none;
   border: 0;
-  background-color: $green;
+  background-color: $tertiary;
   border-radius: 4px;
   color: #fff;
   font-size: 15px;
@@ -16,14 +16,14 @@ $buttonHeight: 55px;
   line-height: $buttonHeight*.925;
   width: auto;
   padding: 0 $buttonHeight;
-  box-shadow: inset 0 -2px 0 0 $darkGreen;
+  box-shadow: inset 0 -2px 0 0 $tertiaryDark;
   outline: 0;
   transition: background-color .2s ease;
 }
 
 .Button:hover,
 .Button:focus {
-  background-color: $lightGreen;
+  background-color: $tertiaryLight;
   cursor: pointer;
   box-shadow: inset 0 -2px 0 0 #21A57D;
 }

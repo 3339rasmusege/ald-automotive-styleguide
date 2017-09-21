@@ -1,0 +1,34 @@
+// Typography
+$font-family: Antenna, sans-serif;
+
+// Colors
+$black: #000000;
+$primary: #1A6B95;
+$primaryDark: #19315B;
+$primaryDarker: #12274B;
+$primaryLight: #2D96CD;
+$primaryLighter: #38AFED;
+$secondaryDark: #656A72;
+$secondaryLight: #E8E8E8;
+$tertiary: #00B681;
+$tertiaryLight: #2DDBA8;
+$tertiaryDark: #008931;
+
+// Screen sizes
+$smallScreen:    414px;
+$mediumScreen:   768px;
+$largeScreen:   1300px;
+$xLargeScreen:  1600px;
+$xxLargeScreen: 1900px;
+
+// Media queries
+$phone:        (only screen and (max-width:#{$smallScreen}));
+$tablet:       (only screen and (min-width:#{$mediumScreen}));
+$laptop:       (only screen and (min-width:#{$largeScreen}));
+$desktop:      (only screen and (min-width:#{$xLargeScreen}));
+$largeDesktop: (only screen and (min-width:#{$xxLargeScreen}));
+
+// Sizes
+$maxContentWidth: 1260px;
+$maxSiteWidth: 1440px;
+$pageWrapperWidth: 1600px;

@@ -3,11 +3,11 @@
 }
 
 .Paragraph > a {
-  color: $lightBlue;
+  color: $primaryLight;
   font-weight: 400;
   text-decoration: none;
   &:hover {
-    color: $lighterBlue;
+    color: $primaryLighter;
   }
 }
 

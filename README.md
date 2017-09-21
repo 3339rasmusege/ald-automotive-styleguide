@@ -4,13 +4,21 @@ Live at https://rommel-dk.github.io/ald-automotive-styleguide/
 
 ## How to us the styles, scripts and html
 
-Include `app.css` and `app.js` located in the /build/ folder on the page. Run the following javascript after the script is included, to run the javascript for the components.
-```
-var triggerJavascriptLoadEvent = new Event('trigger-load');
-window.dispatchEvent(triggerJavascriptLoadEvent)
-```
+Include the following files:
 
-## Building with npm or yarn
+`build/app.js`
+`build/css/main-default.css`
+
+To use a different styled variation, include 
+`build/css/main-ford.css` 
+or 
+`build/css/main-examplevariation.css` 
+instead of
+`build/css/main-default.css`
+
+
+## Building, watching and extending
+Building the html, assets and css can be done with the folling package manager commands
 ### Build with npm
 ```
 npm install
@@ -23,7 +31,18 @@ yarn
 yarn build
 ```
 
+### Watch and build only the SCSS
+`yarn watch-scss`
+
+### Extend the scss for new variations
+To create a new .css file for a new styleguide variation, create a folder here:
+`/src/scss/<foldername>`
+Include the `main.scss` file and a `variables.scss` file for the necessary scss theme configurations. See the example inside `/src/scss/examplevariation/`.
+
+
 The builded files in the 'docs' folder is for hosting the styleguide on Github Pages.
+
+
 
 ## Naming convention
 Naming convention for components follows https://suitcss.github.io/:
