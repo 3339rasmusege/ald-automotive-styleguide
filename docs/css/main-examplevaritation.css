@@ -2,21 +2,21 @@
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 300;
-  src: local("Antenna Light"), local("AntennaLight"), url(/fonts/antenna-light.woff) format("woff");
+  src: local("Antenna Light"), local("AntennaLight"), url(/ald-automotive-styleguide/fonts/antenna-light.woff) format("woff");
 }
 
 @font-face {
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 400;
-  src: local("Antenna Regular"), local("AntennaRegular"), url(/fonts/antenna-regular.woff) format("woff");
+  src: local("Antenna Regular"), local("AntennaRegular"), url(/ald-automotive-styleguide/fonts/antenna-regular.woff) format("woff");
 }
 
 @font-face {
   font-family: 'Antenna';
   font-style: normal;
   font-weight: 700;
-  src: local("Antenna Bold"), local("AntennaBold"), url(/fonts/antenna-bold.woff) format("woff");
+  src: local("Antenna Bold"), local("AntennaBold"), url(/ald-automotive-styleguide/fonts/antenna-bold.woff) format("woff");
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -627,7 +627,7 @@ template {
   display: inline-block;
   width: 6px;
   height: 10px;
-  background-image: url(/images/caret-right.png);
+  background-image: url(/ald-automotive-styleguide/images/caret-right.png);
   background-size: 6px;
   background-repeat: no-repeat;
   margin-left: .5em;
@@ -705,7 +705,7 @@ template {
   width: 23px;
   height: 23px;
   background-size: 11.5px;
-  background-image: url(/images/arrow-left.png);
+  background-image: url(/ald-automotive-styleguide/images/arrow-left.png);
   background-repeat: no-repeat;
   background-position: 4px 1px;
   background-color: transparent;
@@ -719,7 +719,7 @@ template {
 .Caret--small {
   width: 7px;
   height: 12px;
-  background-image: url(/images/caret-left.png);
+  background-image: url(/ald-automotive-styleguide/images/caret-left.png);
   background-size: 7px;
   background-position: 0 0;
 }
@@ -891,7 +891,7 @@ template {
   display: inline-block;
   width: 6px;
   height: 10px;
-  background-image: url(/images/caret-right.png);
+  background-image: url(/ald-automotive-styleguide/images/caret-right.png);
   background-size: 6px;
   background-repeat: no-repeat;
   position: absolute;
@@ -1356,7 +1356,7 @@ template {
   position: absolute;
   top: 6px;
   left: 5px;
-  background-image: url(/images/checkmark-large.png);
+  background-image: url(/ald-automotive-styleguide/images/checkmark-large.png);
   background-size: 14px;
   background-repeat: no-repeat;
   width: 14px;
@@ -1911,7 +1911,7 @@ h1, h2, h3, h4, h5, h6,
   margin: 0;
   width: 84px;
   height: 48px;
-  background-image: url(/images/ford-logo.png);
+  background-image: url(/ald-automotive-styleguide/images/ford-logo.png);
   background-size: 84px;
   background-repeat: no-repeat;
   text-indent: -300px;
@@ -2098,7 +2098,7 @@ h1, h2, h3, h4, h5, h6,
     display: block;
     width: 20px;
     height: 205px;
-    background-image: url(/images/model-selector-button-shadow.png);
+    background-image: url(/ald-automotive-styleguide/images/model-selector-button-shadow.png);
     background-size: 7px;
     background-repeat: no-repeat;
     position: absolute;
@@ -2440,7 +2440,7 @@ h1, h2, h3, h4, h5, h6,
   position: absolute;
   top: 8px;
   left: 37px;
-  background-image: url(/images/checkmark.png);
+  background-image: url(/ald-automotive-styleguide/images/checkmark.png);
   background-size: 11px;
   background-repeat: no-repeat;
   width: 11px;
@@ -2828,7 +2828,7 @@ h1, h2, h3, h4, h5, h6,
   .RequestForm-configuration ul li:before {
     content: "";
     display: inline-block;
-    background-image: url(/images/checkmark-large-gray.png);
+    background-image: url(/ald-automotive-styleguide/images/checkmark-large-gray.png);
     background-size: 11px;
     background-repeat: no-repeat;
     width: 11px;
@@ -3716,7 +3716,7 @@ button.swiper-pagination-bullet {
   display: block;
   width: 21px;
   height: 21px;
-  background-image: url(/images/circular-arrow-up.png);
+  background-image: url(/ald-automotive-styleguide/images/circular-arrow-up.png);
   background-repeat: no-repeat;
   background-size: 21px;
   background-position: center right;

@@ -169,21 +169,22 @@ gulp.task('renameAssetRefs', function() {
 // Used by the `ghp` task
 gulp.task('renameAssetRefsForGitHubPages', function() {
   return gulp.src('./docs/**/*.html')
-    .pipe(replace('http://localhost:3000/', '/ald-automotive-styleguide/'))
+    .pipe(replace('href="/', 'href="/ald-automotive-styleguide/'))
+    .pipe(replace('src="/', 'src="/ald-automotive-styleguide/'))
     .pipe(gulp.dest('./docs/'))
 });
 
 // Rename references to fonts in css files (for GitHub Pages)
 // Used by the `ghp` task
 gulp.task('renameFontRefsForGitHubPages', function() {
-  return gulp.src('./docs/*.css')
-    .pipe(replace('url(fonts', 'url(/ald-automotive-styleguide/fonts/'))
+  return gulp.src('./docs/**/*.css')
+    .pipe(replace('url(/fonts', 'url(/ald-automotive-styleguide/fonts'))
     .pipe(gulp.dest('./docs/'))
 });
 
 gulp.task('renameImageUrlsForGitHubPages', function() {
-  return gulp.src('./docs/*.css')
-    .pipe(replace('url(/images', 'url(/ald-automotive-styleguide/images/'))
+  return gulp.src('./docs/**/*.css')
+    .pipe(replace('url(/images', 'url(/ald-automotive-styleguide/images'))
     .pipe(gulp.dest('./docs/'))
 });
 
