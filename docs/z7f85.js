@@ -109,13 +109,12 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
     })
 
     function setActiveColor(element) {
-      $('.ColorSelector-color').each( function(){
-        $(this).removeClass('is-selected')
-        $(this).find('input').removeAttr('checked')
-      })
-      if(element.find('input').is(':checked')) {
-        element.addClass('is-selected')
-      }
+        $('.ColorSelector-color').each(function () {
+            $(this).removeClass('is-selected');
+            $(this).find('input').removeAttr('checked');
+        });
+ 
+        element.addClass('is-selected');
     }
 
     // Build colors
@@ -236,11 +235,14 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
     }
 
     // On click:  Add value to .RequestForm-configuration
-    featureSelector.find('.FeatureSelector-option label').click(function(){
-      setTimeout(function(){
-        setFeaturesInConfList()
-      }, 100);
-    })
+    if(featureSelector) {
+      featureSelector.find('.FeatureSelector-option label').click(function(){
+        setTimeout(function(){
+          setFeaturesInConfList()
+        }, 100);
+      })  
+    }
+    
 
     // On pageload:  Add value to .RequestForm-configuration
     setFeaturesInConfList()
@@ -515,71 +517,83 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 (function(){
   moduleScripts.requestFormFooterWrapper = function() {
     console.log('request-form-footer-wrapper initiated')
-
     // Sticky footer
     function stickUnstick() {
       var footerWrapper = $('.RequestFormFooterWrapper')
-      var wrapperHeight = footerWrapper.height()
-      var windowHeight = window.innerHeight
-      var windowWidth = window.innerWidth
-      var featureSelectorPosition = $('.FeatureSelector').position()
-      var featureSelectorBottomPosition = featureSelectorPosition.top + $('.FeatureSelector').outerHeight()
-      var wrapperXPosition = (windowWidth - footerWrapper.innerWidth)/2
+      var featureSelector = $('.FeatureSelector')
+      
+      if(footerWrapper.length && featureSelector.length) {
+        var wrapperHeight = footerWrapper.height()
+        var windowHeight = window.innerHeight
+        var windowWidth = window.innerWidth
+        
+        var featureSelectorPosition = featureSelector.position()
+        
+        var featureSelectorBottomPosition = featureSelectorPosition.top + $('.FeatureSelector').outerHeight()
+        var wrapperXPosition = (windowWidth - footerWrapper.innerWidth)/2
 
-      if( window.innerWidth < 767 ) {
-        var footerYOffset = 48
-      } else if ( (window.innerWidth > 768) && (window.innerWidth < 1300) ) {
-        var footerYOffset = 66
-      } else if ( window.innerWidth > 1301 ) {
-        var footerYOffset = 88
+        if( window.innerWidth < 767 ) {
+          var footerYOffset = 48
+        } else if ( (window.innerWidth > 768) && (window.innerWidth < 1300) ) {
+          var footerYOffset = 66
+        } else if ( window.innerWidth > 1301 ) {
+          var footerYOffset = 88
+        }
+
+        var footerYPosition = windowHeight - footerYOffset
+
+        // NOTE: The unstickpoint is calculated from another element that remains
+        // static while scrolling. The stickyness depends on this element for
+        // reference of position.
+        var unstickPoint = featureSelectorBottomPosition + footerYOffset
+
+        if( (window.pageYOffset+windowHeight) > unstickPoint ) {
+          footerWrapper.css({
+            'opacity': '1',
+            'position': 'relative',
+            'transform': 'translate3d(0, 0, 0)'
+          })
+          $('body').css({
+            'padding-bottom': '0'
+          })
+        } else {
+          footerWrapper.css({
+            'opacity': '1',
+            'position': 'fixed',
+            'top': '0',
+            'left': wrapperXPosition+'px',
+            'transform': 'translate3d(0, '+footerYPosition+'px, 0)'
+          })
+          $('body').css({
+            'padding-bottom': wrapperHeight+'px'
+          })
+        }
       }
-
-      var footerYPosition = windowHeight - footerYOffset
-
-      // NOTE: The unstickpoint is calculated from another element that remains
-      // static while scrolling. The stickyness depends on this element for
-      // reference of position.
-      var unstickPoint = featureSelectorBottomPosition + footerYOffset
-
-      if( (window.pageYOffset+windowHeight) > unstickPoint ) {
-        footerWrapper.css({
-          'opacity': '1',
-          'position': 'relative',
-          'transform': 'translate3d(0, 0, 0)'
-        })
-        $('body').css({
-          'padding-bottom': '0'
-        })
-      } else {
-        footerWrapper.css({
-          'opacity': '1',
-          'position': 'fixed',
-          'top': '0',
-          'left': wrapperXPosition+'px',
-          'transform': 'translate3d(0, '+footerYPosition+'px, 0)'
-        })
-        $('body').css({
-          'padding-bottom': wrapperHeight+'px'
-        })
-      }
+      
     }
 
-    stickUnstick()
+    if($('.RequestFormFooterWrapper').length){
 
-    $( window ).resize(function() {
       stickUnstick()
-    })
 
-    $(window).on( 'scroll', function(){
-      stickUnstick()
-    });
+      $( window ).resize(function() {
+        stickUnstick()
+      })
 
-    // Scroll to footer when .RequestForm-openClose is clicked
-    $('.RequestForm-openClose').click(function(){
-      var featureSelectorPosition = $('.FeatureSelector').position()
-      var featureSelectorBottomPosition = featureSelectorPosition.top + $('.FeatureSelector').outerHeight()
-      $("html, body").animate({ scrollTop: (featureSelectorBottomPosition-72) }, 300);
-    })
+      $(window).on( 'scroll', function(){
+        stickUnstick()
+      });
+
+      // Scroll to footer when .RequestForm-openClose is clicked
+      $('.RequestForm-openClose').click(function(){
+        var featureSelectorPosition = $('.FeatureSelector').position()
+        var featureSelectorBottomPosition = featureSelectorPosition.top + $('.FeatureSelector').outerHeight()
+        $("html, body").animate({ scrollTop: (featureSelectorBottomPosition-72) }, 300);
+      })
+
+    }
+
+    
 
   }
 })();

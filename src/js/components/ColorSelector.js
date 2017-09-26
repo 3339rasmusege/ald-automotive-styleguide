@@ -15,13 +15,12 @@
     })
 
     function setActiveColor(element) {
-      $('.ColorSelector-color').each( function(){
-        $(this).removeClass('is-selected')
-        $(this).find('input').removeAttr('checked')
-      })
-      if(element.find('input').is(':checked')) {
-        element.addClass('is-selected')
-      }
+        $('.ColorSelector-color').each(function () {
+            $(this).removeClass('is-selected');
+            $(this).find('input').removeAttr('checked');
+        });
+ 
+        element.addClass('is-selected');
     }
 
     // Build colors

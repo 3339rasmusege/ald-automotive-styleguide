@@ -23,11 +23,14 @@
     }
 
     // On click:  Add value to .RequestForm-configuration
-    featureSelector.find('.FeatureSelector-option label').click(function(){
-      setTimeout(function(){
-        setFeaturesInConfList()
-      }, 100);
-    })
+    if(featureSelector) {
+      featureSelector.find('.FeatureSelector-option label').click(function(){
+        setTimeout(function(){
+          setFeaturesInConfList()
+        }, 100);
+      })  
+    }
+    
 
     // On pageload:  Add value to .RequestForm-configuration
     setFeaturesInConfList()

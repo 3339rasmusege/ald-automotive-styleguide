@@ -75,7 +75,7 @@ gulp.task('css', function() {
       path.basename += '-'+path.dirname
       path.dirname = ''
     }))
-    .pipe(gulp.dest('./docs'))
+    .pipe(gulp.dest('./docs/css'))
     .pipe(gulp.dest('./build/css'))
     // .pipe(browserSync.stream())
 });
@@ -262,9 +262,9 @@ gulp.task('ghp', function(done) {
   runSequence(
     'removeBuild',
     'build',
-    'compressCss',
-    'compressJs',
-    'compressHtml',
+    // 'compressCss',
+    // 'compressJs',
+    // 'compressHtml',
     'moveFavicons',
     'renameAssetRefsForGitHubPages',
     'renameFontRefsForGitHubPages',
