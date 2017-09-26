@@ -171,6 +171,7 @@ gulp.task('renameAssetRefsForGitHubPages', function() {
   return gulp.src('./docs/**/*.html')
     .pipe(replace('href="/', 'href="/ald-automotive-styleguide/'))
     .pipe(replace('src="/', 'src="/ald-automotive-styleguide/'))
+    .pipe(replace('data-background-image="/', 'data-background-image="/ald-automotive-styleguide/'))
     .pipe(gulp.dest('./docs/'))
 });
 

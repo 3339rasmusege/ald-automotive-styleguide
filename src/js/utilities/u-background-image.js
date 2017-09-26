@@ -1,5 +1,5 @@
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.backgroundImageHelper = function() {
     console.log('background-image initiated')
 
     $('[data-background-image]').each( function() {
@@ -9,5 +9,5 @@
       })
     })
 
-  })
+  }
 })();

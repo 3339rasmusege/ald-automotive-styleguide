@@ -17,6 +17,7 @@ moduleScripts.loadScripts = function() {
     this.swiper()
     this.swiperHero()
     this.upload()
+    this.backgroundImageHelper()
 }
 
 
@@ -62,7 +63,7 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 //# sourceMappingURL=maps/swiper.min.js.map
 
 (function(){
-  window.addEventListener('trigger-load', function() {
+  moduleScripts.backgroundImageHelper = function() {
     console.log('background-image initiated')
 
     $('[data-background-image]').each( function() {
@@ -72,7 +73,7 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
       })
     })
 
-  })
+  }
 })();
 
 (function(){

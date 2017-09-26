@@ -17,5 +17,6 @@ moduleScripts.loadScripts = function() {
     this.swiper()
     this.swiperHero()
     this.upload()
+    this.backgroundImageHelper()
 }
 
