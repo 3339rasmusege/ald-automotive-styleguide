@@ -8,7 +8,7 @@
     function matchTitleHeightToSwiper() {
       var title = $('.SwiperHero .Title')
       var height = $('.SwiperHero .Swiper img').height()
-      console.log(height, title.length)
+      
       if(height > 1 && title.length) {
         if (window.matchMedia("(min-width: "+laptopScreenWidth+"px)").matches) {
           title.css({

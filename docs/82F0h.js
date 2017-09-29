@@ -654,7 +654,7 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
     function matchTitleHeightToSwiper() {
       var title = $('.SwiperHero .Title')
       var height = $('.SwiperHero .Swiper img').height()
-      console.log(height, title.length)
+      
       if(height > 1 && title.length) {
         if (window.matchMedia("(min-width: "+laptopScreenWidth+"px)").matches) {
           title.css({
