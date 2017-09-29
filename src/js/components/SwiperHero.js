@@ -8,17 +8,24 @@
     function matchTitleHeightToSwiper() {
       var title = $('.SwiperHero .Title')
       var height = $('.SwiperHero .Swiper img').height()
-      if (window.matchMedia("(min-width: "+laptopScreenWidth+"px)").matches) {
-        title.css({
-          'height': height+'px'
-        })
-      } else if (window.matchMedia("(max-width: "+laptopScreenWidth+"px)").matches) {
-        title.css({
-          'height': 'auto'
-        })
+      console.log(height, title.length)
+      if(height > 1 && title.length) {
+        if (window.matchMedia("(min-width: "+laptopScreenWidth+"px)").matches) {
+          title.css({
+            'height': height+'px'
+          })
+        } else if (window.matchMedia("(max-width: "+laptopScreenWidth+"px)").matches) {
+          title.css({
+            'height': 'auto'
+          })
+        }  
+      } else if($('.SwiperHero .Swiper img').length) {
+        setTimeout(function() {
+          matchTitleHeightToSwiper()
+        }, 500)
       }
     }
-
+    
     matchTitleHeightToSwiper()
 
     $(window).bind('resize', function(e) {
