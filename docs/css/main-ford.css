@@ -1322,7 +1322,6 @@ template {
 
 .FeatureSelector-option {
   border-bottom: 1px solid #E5E5E5;
-  height: 64px;
   position: relative;
 }
 
@@ -1379,20 +1378,24 @@ template {
 
 .FeatureSelector-option .FeatureSelector-optionKey,
 .FeatureSelector-option .FeatureSelector-optionValue {
-  height: 64px;
   margin: 0;
-  line-height: 63px !important;
+  margin-top: 18px;
+  margin-bottom: 18px;
   padding-left: 72px;
   padding-right: 20px;
-  float: left;
   width: 65%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.FeatureSelector-option .FeatureSelector-optionKey {
+  min-height: 26px;
 }
 
 .FeatureSelector-option .FeatureSelector-optionValue {
   padding: 0;
   padding-right: 20px;
-  float: right;
-  width: 35%;
+  width: 33%;
   text-align: right;
 }
 
@@ -2817,7 +2820,7 @@ h1, h2, h3, h4, h5, h6,
   font-size: 13px;
   color: #fff;
   padding: 11px 48px;
-  line-height: 1;
+  line-height: 1.5;
   border-bottom: 1px solid #3A4A65;
 }
 
