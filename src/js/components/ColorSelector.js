@@ -34,6 +34,12 @@
 
     // When a color is clicked
     $('.ColorSelector-color').click( function() {
+      if($('.ColorSelector-color.is-selected').data('color-name') !== $(this).data('color-name')) {
+        dataLayer.push({
+          event: "form_interact",
+          form_field: "color",
+        })
+      }
       setActiveColor($(this))
       var colorName = $(this).find('.ColorSelector-colorLabel').text()
       setColorInConfList(colorName)

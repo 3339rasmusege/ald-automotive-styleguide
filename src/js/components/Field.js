@@ -22,5 +22,12 @@
       addRemoveClasses($(this))
     })
 
+    Field.blur( function() {
+      dataLayer.push({
+        event: "form_interact",
+        form_field: "form_field"
+      })
+    })
+
   }
 })();

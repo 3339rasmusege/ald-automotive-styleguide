@@ -8,6 +8,10 @@
 
     function showButton() {
       if( couponField.val() ) {
+        dataLayer.push({
+          event: "form_interact",
+          form_field: "coupon",
+        })
         coupon.addClass('is-open')
         coupon.css({ 'height': '160px' })
         setTimeout( function() {

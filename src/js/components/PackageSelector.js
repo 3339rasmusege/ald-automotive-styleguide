@@ -30,6 +30,10 @@
 
     // Add value to .RequestForm-configuration
     function setPackageInConfList(value) {
+      dataLayer.push({
+        event: "form_interact",
+        form_field: "package_select",
+      })
       if( configurationList.length ) {
         // configurationList.find('li.package').remove()
         configurationList.find('li.package').text('Udstyrspakke: '+value)

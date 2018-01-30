@@ -7,6 +7,10 @@
 
     // Add value to .RequestForm-configuration
     function setFeaturesInConfList() {
+      dataLayer.push({
+          event: "form_interact",
+          form_field: "feature",
+        })
       if( configurationList.length ) {
         featureSelector.find('input[type="checkbox"]').each(function(){
           if( $(this).is(':checked') ) {

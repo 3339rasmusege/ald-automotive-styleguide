@@ -19,6 +19,12 @@
     // On click
     mileageSelector.find('.selectric-Dropdown .selectric-items li').click(function(){
       var optionValue = $(this).text()
+      
+      dataLayer.push({
+        event: "form_interact",
+        form_field: "milage",
+      })
+      
       setMileageInConfList(optionValue)
     })
 
