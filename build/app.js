@@ -129,6 +129,12 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 
     // When a color is clicked
     $('.ColorSelector-color').click( function() {
+      if($('.ColorSelector-color.is-selected').data('color-name') !== $(this).data('color-name')) {
+        dataLayer.push({
+          event: "form_interact",
+          form_field: "color",
+        })
+      }
       setActiveColor($(this))
       var colorName = $(this).find('.ColorSelector-colorLabel').text()
       setColorInConfList(colorName)
@@ -161,6 +167,10 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 
     function showButton() {
       if( couponField.val() ) {
+        dataLayer.push({
+          event: "form_interact",
+          form_field: "coupon",
+        })
         coupon.addClass('is-open')
         coupon.css({ 'height': '160px' })
         setTimeout( function() {
@@ -220,6 +230,10 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 
     // Add value to .RequestForm-configuration
     function setFeaturesInConfList() {
+      dataLayer.push({
+          event: "form_interact",
+          form_field: "feature",
+        })
       if( configurationList.length ) {
         featureSelector.find('input[type="checkbox"]').each(function(){
           if( $(this).is(':checked') ) {
@@ -275,6 +289,13 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
       addRemoveClasses($(this))
     })
 
+    Field.blur( function() {
+      dataLayer.push({
+        event: "form_interact",
+        form_field: "form_field"
+      })
+    })
+
   }
 })();
 
@@ -305,6 +326,12 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
     // On click
     mileageSelector.find('.selectric-Dropdown .selectric-items li').click(function(){
       var optionValue = $(this).text()
+      
+      dataLayer.push({
+        event: "form_interact",
+        form_field: "milage",
+      })
+      
       setMileageInConfList(optionValue)
     })
 
@@ -419,6 +446,10 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
 
     // Add value to .RequestForm-configuration
     function setPackageInConfList(value) {
+      dataLayer.push({
+        event: "form_interact",
+        form_field: "package_select",
+      })
       if( configurationList.length ) {
         // configurationList.find('li.package').remove()
         configurationList.find('li.package').text('Udstyrspakke: '+value)
