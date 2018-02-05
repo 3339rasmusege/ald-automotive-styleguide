@@ -133,6 +133,7 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
         dataLayer.push({
           event: "form_interact",
           form_field: "color",
+          interaction_value: $(this).data('color-name')
         })
       }
       setActiveColor($(this))
@@ -289,10 +290,11 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
       addRemoveClasses($(this))
     })
 
-    Field.blur( function() {
+    Field.one('blur' , function() {
       dataLayer.push({
         event: "form_interact",
-        form_field: "form_field"
+        form_field: "form_field",
+        interaction_value: this.name
       })
     })
 
@@ -330,6 +332,7 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
       dataLayer.push({
         event: "form_interact",
         form_field: "milage",
+        interaction_value: optionValue
       })
       
       setMileageInConfList(optionValue)
@@ -449,6 +452,7 @@ return this.length>0?e?this[0].offsetWidth+parseFloat(this.css("margin-right"))+
       dataLayer.push({
         event: "form_interact",
         form_field: "package_select",
+        interaction_value: value
       })
       if( configurationList.length ) {
         // configurationList.find('li.package').remove()

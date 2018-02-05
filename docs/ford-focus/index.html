@@ -7,9 +7,30 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link rel="stylesheet" href="/css/main-ford.css"> </head>
+    <link rel="stylesheet" href="/css/main-ford.css">
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TJXGXBV');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
 
 <body class="App">
+    <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJXGXBV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="PageWrapper">
         <header class='Header'>
             <div class="Header-inner">
@@ -207,8 +228,9 @@
                     <div class="RequestForm-form">
                         <h3 class="RequestForm-formHeading Heading Heading--white Heading--medium">Send en forspørgsel på din kommende bil</h3>
                         <p class="RequestForm-formExplainer">Udfyld oplysninger nedenfor og vi vil sende dig en PDF med oplysninger om Ford PrivatLeasing. En sælger vil vende tilbage til dig snarest muligt.</p>
-                        <form> <input class="Field Field--marginBottom" type="text" placeholder="Dit navn"> <input class="Field Field--marginBottom" type="text" placeholder="Adresse">
-                            <div class="FieldGroup FieldGroup--zipCity"> <input class="Field Field--marginBottom Field--zipCode" type="number" placeholder="Postnummer"> <input class="Field Field--marginBottom Field--city" type="text" placeholder="By"> </div> <input class="Field" type="email" placeholder="Email">
+                        <form> <input class="Field Field--marginBottom" type="text" name="navn" placeholder="Dit navn"> <input class="Field Field--marginBottom" type="text" name="addresse" placeholder="Adresse">
+                            <div class="FieldGroup FieldGroup--zipCity"> <input class="Field Field--marginBottom Field--zipCode" type="number" name="postnummer" placeholder="Postnummer"> <input class="Field Field--marginBottom Field--city" type="text" placeholder="By"> </div> <input class="Field"
+                                type="email" placeholder="Email">
                             <div class="Divider"></div>
                             <div class="Upload"> <input type="file" name="file" id="file" class="Upload-input" data-multiple-caption="{count} files selected" multiple /> <label for="file" class="Upload-button">Upload kørekort eller pas</label>
                                 <div class="Upload-list"><span></span><a href="#" class="Upload-listRemove">Fjern</a></div>
