@@ -23,6 +23,7 @@
       dataLayer.push({
         event: "form_interact",
         form_field: "milage",
+        interaction_value: optionValue
       })
       
       setMileageInConfList(optionValue)

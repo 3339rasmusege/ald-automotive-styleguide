@@ -38,6 +38,7 @@
         dataLayer.push({
           event: "form_interact",
           form_field: "color",
+          interaction_value: $(this).data('color-name')
         })
       }
       setActiveColor($(this))

@@ -22,10 +22,11 @@
       addRemoveClasses($(this))
     })
 
-    Field.blur( function() {
+    Field.one('blur' , function() {
       dataLayer.push({
         event: "form_interact",
-        form_field: "form_field"
+        form_field: "form_field",
+        interaction_value: this.name
       })
     })
 

@@ -33,6 +33,7 @@
       dataLayer.push({
         event: "form_interact",
         form_field: "package_select",
+        interaction_value: value
       })
       if( configurationList.length ) {
         // configurationList.find('li.package').remove()
